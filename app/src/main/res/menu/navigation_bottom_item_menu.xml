@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/nav_bottom_home_selector"
+        android:title="@string/nav_home_name" />
+    <item
+        android:id="@+id/menu_second"
+        android:icon="@drawable/nav_bottom_second_selector"
+        android:title="@string/nav_second_name" />
+    <item
+        android:id="@+id/menu_third"
+        android:icon="@drawable/nav_bottom_third_selector"
+        android:title="@string/nav_third_name" />
+
+    <item
+        android:id="@+id/menu_fourth"
+        android:icon="@drawable/nav_bottom_fourth_selector"
+        android:title="@string/nav_fourth_name" />
+</menu>

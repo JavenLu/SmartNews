@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SmartNews</string>
+
+    <string name="nav_home_name">首页</string>
+    <string name="nav_second_name">西瓜视频</string>
+    <string name="nav_third_name">小视频</string>
+    <string name="nav_fourth_name">我的</string>
+
 </resources>
