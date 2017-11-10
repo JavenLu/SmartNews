@@ -1,2 +1,2 @@
 # SmartNews
-asdf
+智能新闻客户端
