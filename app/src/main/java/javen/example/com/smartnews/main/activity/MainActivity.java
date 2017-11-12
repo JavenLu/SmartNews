@@ -81,6 +81,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
     @Override
     public void init() {
 
+
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
