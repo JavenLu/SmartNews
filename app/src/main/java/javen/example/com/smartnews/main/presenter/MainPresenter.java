@@ -29,9 +29,5 @@ public class MainPresenter extends BasePresenter<MainActivity> implements IMainP
 
     }
 
-    @Override
-    public List<Fragment> getViewPagerData() {
 
-        return iMainModel.getViewPagerData();
-    }
 }

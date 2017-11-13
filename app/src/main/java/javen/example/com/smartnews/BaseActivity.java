@@ -16,8 +16,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
         basePresenter = initPresent();
-        initView();
         init();
+        initView();
     }
 
     public abstract int getLayout();
