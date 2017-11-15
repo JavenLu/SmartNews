@@ -5,10 +5,10 @@ import android.support.v4.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import javen.example.com.smartnews.main.fragment.ALittleVideoFragment;
-import javen.example.com.smartnews.main.fragment.HomeFragment;
-import javen.example.com.smartnews.main.fragment.PersonFragment;
-import javen.example.com.smartnews.main.fragment.PlayVideoFragment;
+import javen.example.com.smartnews.main.fragment.a_little_video.ALittleVideoFragment;
+import javen.example.com.smartnews.main.fragment.home.HomeFragment;
+import javen.example.com.smartnews.main.fragment.person.PersonFragment;
+import javen.example.com.smartnews.main.fragment.play_video.PlayVideoFragment;
 import javen.example.com.smartnews.main.iinterface.IMainModel;
 
 /**

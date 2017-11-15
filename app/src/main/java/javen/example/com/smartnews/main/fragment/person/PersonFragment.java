@@ -1,4 +1,4 @@
-package javen.example.com.smartnews.main.fragment;
+package javen.example.com.smartnews.main.fragment.person;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import javen.example.com.smartnews.R;
+import javen.example.com.smartnews.main.fragment.BaseFragment;
 
 /**
  * Created by Javen on 10/11/2017.
  */
 
-public class PlayVideoFragment extends BaseFragment {
+public class PersonFragment extends BaseFragment {
     @Override
     public void onCreate() {
 
@@ -20,6 +21,6 @@ public class PlayVideoFragment extends BaseFragment {
 
     @Override
     public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(getContext().getResources().getLayout(R.layout.play_video_fragment_layout), container, false);
+        return inflater.inflate(getContext().getResources().getLayout(R.layout.person_fragment_layout), container, false);
     }
 }

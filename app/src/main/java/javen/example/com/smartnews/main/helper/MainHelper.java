@@ -7,10 +7,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import javen.example.com.smartnews.R;
-import javen.example.com.smartnews.main.fragment.ALittleVideoFragment;
-import javen.example.com.smartnews.main.fragment.HomeFragment;
-import javen.example.com.smartnews.main.fragment.PersonFragment;
-import javen.example.com.smartnews.main.fragment.PlayVideoFragment;
+import javen.example.com.smartnews.main.fragment.a_little_video.ALittleVideoFragment;
+import javen.example.com.smartnews.main.fragment.home.HomeFragment;
+import javen.example.com.smartnews.main.fragment.person.PersonFragment;
+import javen.example.com.smartnews.main.fragment.play_video.PlayVideoFragment;
 
 /**
  * Created by Javen on 13/11/2017.

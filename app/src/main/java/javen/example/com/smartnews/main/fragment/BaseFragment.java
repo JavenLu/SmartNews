@@ -7,18 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import javen.example.com.smartnews.BasePresenter;
 
 /**
  * Created by Javen on 10/11/2017.
  */
 
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
+public abstract class BaseFragment<E extends BaseFragmentPresenter> extends Fragment {
+    public E baseFragmentPresenter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onCreate();
+        baseFragmentPresenter = initPresent();
     }
 
     @Nullable
@@ -27,8 +27,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         return initView(inflater, container, savedInstanceState);
     }
 
-    public abstract void onCreate();
-
     public abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
+    public abstract E initPresent();
 }
