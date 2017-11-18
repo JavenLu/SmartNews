@@ -19,15 +19,20 @@ public abstract class BaseFragment<E extends BaseFragmentPresenter> extends Frag
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         baseFragmentPresenter = initPresent();
+        initData();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return initView(inflater, container, savedInstanceState);
+        return getRootView(inflater, container, savedInstanceState);
     }
 
-    public abstract View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
+    public abstract View getRootView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
     public abstract E initPresent();
+
+    public abstract void initData();
+
+    public abstract void initView(View view);
 }
