@@ -25,7 +25,9 @@ public abstract class BaseFragment<E extends BaseFragmentPresenter> extends Frag
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return getRootView(inflater, container, savedInstanceState);
+        View view = getRootView(inflater, container, savedInstanceState);
+        initView(view);
+        return view;
     }
 
     public abstract View getRootView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);

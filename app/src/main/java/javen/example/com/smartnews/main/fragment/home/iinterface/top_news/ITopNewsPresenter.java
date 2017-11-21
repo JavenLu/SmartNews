@@ -6,5 +6,5 @@ package javen.example.com.smartnews.main.fragment.home.iinterface.top_news;
  */
 
 public interface ITopNewsPresenter {
-    
+    public void requestTopNewsDataFromServer();
 }

@@ -12,6 +12,7 @@ import org.greenrobot.greendao.annotation.Unique;
 
 /**
  * Created by Javen on 16/11/2017.
+ * 阿里云的接口数据字段命名不是很规范
  */
 @Entity
 public class TopNewsBean implements Serializable {
