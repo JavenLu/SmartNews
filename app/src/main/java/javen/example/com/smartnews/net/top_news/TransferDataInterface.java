@@ -11,5 +11,4 @@ import retrofit2.Response;
 
 public interface TransferDataInterface<E> {
     public void getTopNewsData(Response<TopNewsResultBean> response);
-    public void insertTopNewsListIntoDataBase(List<TopNewsBean> list);
 }

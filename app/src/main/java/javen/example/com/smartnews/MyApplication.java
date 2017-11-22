@@ -18,6 +18,7 @@ import javen.example.com.smartnews.main.fragment.home.fragments.TopNewsFragment;
 public class MyApplication extends Application {
     public static DaoSession daoSession;
     public static HashMap<String, Fragment> typeHashMap = new HashMap<>();
+    public static boolean isStaggeredGridLayoutManager = false;
 
     @Override
     public void onCreate() {

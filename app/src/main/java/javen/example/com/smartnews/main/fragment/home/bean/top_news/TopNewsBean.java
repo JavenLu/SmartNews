@@ -10,12 +10,15 @@ import java.io.Serializable;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Unique;
 
+import javen.example.com.smartnews.BaseNewsBean;
+import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
+
 /**
  * Created by Javen on 16/11/2017.
- * 阿里云的接口数据字段命名不是很规范
+ * 阿里云(聚合)的接口数据字段命名不是很规范
  */
 @Entity
-public class TopNewsBean implements Serializable {
+public class TopNewsBean extends BaseNewsBean {
 
     public static final String TYPE = "头条";
 

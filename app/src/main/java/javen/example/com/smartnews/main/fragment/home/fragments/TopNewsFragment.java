@@ -2,16 +2,20 @@ package javen.example.com.smartnews.main.fragment.home.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.List;
 
 import javen.example.com.smartnews.R;
+import javen.example.com.smartnews.custom_view.FlexibleRecyclerView;
+import javen.example.com.smartnews.main.decoration.DividerDecoration;
+import javen.example.com.smartnews.main.helper.LayoutManagerHelper;
+import javen.example.com.smartnews.db.GreenDaoManager;
+import javen.example.com.smartnews.main.delegate.CommonRecyclerViewAdapter;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
 import javen.example.com.smartnews.main.fragment.home.bean.top_news.TopNewsBean;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.ITopNewsFragment;
@@ -23,8 +27,7 @@ import javen.example.com.smartnews.main.fragment.home.presenter.top_news.TopNews
 
 public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements ITopNewsFragment<TopNewsBean> {
     public static final String TAG = TopNewsFragment.class.getSimpleName();
-    private RecyclerView topNewsRecyclerView;
-    private TopNewsPresenter topNewsPresenter;
+    private FlexibleRecyclerView topNewsRecyclerView;
 
 
     @Override
@@ -34,8 +37,7 @@ public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements I
 
     @Override
     public void initData() {
-        topNewsPresenter = (TopNewsPresenter) baseFragmentPresenter;
-        topNewsPresenter.requestTopNewsDataFromServer();
+        baseFragmentPresenter.requestTopNewsDataFromServer();
     }
 
     @Override
@@ -51,7 +53,25 @@ public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements I
 
     @Override
     public void getTopNewsData(List<TopNewsBean> list) {
-        topNewsPresenter.insertTopNewsListIntoDataBase(list);
+
+        baseFragmentPresenter.insertTopNewsListIntoDataBase(list);
+        List<TopNewsBean> topNewsList = baseFragmentPresenter.getAllTopNewsFromDataBase();
+        GreenDaoManager.getInstance(getActivity()).closeConnection();
+
+        initRecyclerView(topNewsList);
     }
 
+    private void initRecyclerView(List<TopNewsBean> topNewsList) {
+        RecyclerView.LayoutManager layoutManager = topNewsRecyclerView.createLinearLayoutManager(LayoutManagerHelper.LINEAR_TYPE);
+
+        if (layoutManager instanceof LinearLayoutManager) {
+            ((LinearLayoutManager) layoutManager).setSmoothScrollbarEnabled(true);
+        }
+
+        topNewsRecyclerView.setHasFixedSize(true);
+        topNewsRecyclerView.setLayoutManager(layoutManager);
+        topNewsRecyclerView.addItemDecoration(new DividerDecoration(getActivity(), R.dimen.material_0dp, R.dimen.material_8dp, DividerDecoration.BOTTOM_LINE_TYPE));
+        CommonRecyclerViewAdapter commonAdapter = new CommonRecyclerViewAdapter(getActivity(), topNewsList);
+        topNewsRecyclerView.setAdapter(commonAdapter);
+    }
 }
