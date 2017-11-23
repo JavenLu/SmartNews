@@ -26,10 +26,13 @@ import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispa
 public class TopNewsDelegate extends AdapterDelegate<List<IDispalyNews>> {
     private LayoutInflater inflater;
     private Context context;
+    private OnItemClickListenerInTopNewsDelegate onItemClickListenerInTopNewsDelegate;
 
     public TopNewsDelegate(Activity activity) {
         inflater = activity.getLayoutInflater();
         context = activity;
+        onItemClickListenerInTopNewsDelegate = (OnItemClickListenerInTopNewsDelegate) activity;
+
     }
 
     @Override
@@ -45,13 +48,30 @@ public class TopNewsDelegate extends AdapterDelegate<List<IDispalyNews>> {
 
     @Override
     protected void onBindViewHolder(@NonNull List<IDispalyNews> items, int position, @NonNull RecyclerView.ViewHolder holder, @NonNull List<Object> payloads) {
-        TopNewsBean topNewsBean = (TopNewsBean) items.get(position);
-        ViewHolder viewHolder = (ViewHolder) holder;
+        final TopNewsBean topNewsBean = (TopNewsBean) items.get(position);
+        final ViewHolder viewHolder = (ViewHolder) holder;
 
         boolean isCheckHasAllPic = isCheckHasAllPic(topNewsBean);
         showLayout(viewHolder, isCheckHasAllPic);
         showContent(topNewsBean, viewHolder, isCheckHasAllPic);
+        setItemClickListener(topNewsBean, viewHolder);
 
+    }
+
+    private void setItemClickListener(final TopNewsBean topNewsBean, ViewHolder viewHolder) {
+        viewHolder.topNewsOneLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListenerInTopNewsDelegate.onItemClick(topNewsBean.getUrl());
+            }
+        });
+
+        viewHolder.topNewsThreeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListenerInTopNewsDelegate.onItemClick(topNewsBean.getUrl());
+            }
+        });
     }
 
     private void showContent(TopNewsBean topNewsBean, ViewHolder viewHolder, boolean isCheckHasAllPic) {
@@ -119,6 +139,15 @@ public class TopNewsDelegate extends AdapterDelegate<List<IDispalyNews>> {
             topNewsOneLayoutAuthorName = itemView.findViewById(R.id.author_name_one_pic_layout);
             topNewsOneLayoutPublishTimeFromNow = itemView.findViewById(R.id.publish_time_from_now_one_pic_layout);
         }
+
     }
+
+    /**
+     * 将RecyclerView item点击事件回调到MainActivity
+     */
+    public interface OnItemClickListenerInTopNewsDelegate {
+        void onItemClick(String webContentUrl);
+    }
+
 
 }

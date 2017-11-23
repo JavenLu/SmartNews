@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.View;
 
+import javen.example.com.smartnews.MyApplication;
+
 
 /**
  * Created by LuJun on 01/11/2017.
@@ -33,8 +35,8 @@ public class DividerDecoration extends RecyclerView.ItemDecoration {
 
 
         TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(android.R.attr.listDivider, typedValue, true) && typedValue.data != 0) {
-            this.divider = context.getResources().getDrawable(typedValue.resourceId);
+        if (MyApplication.getContext().getTheme().resolveAttribute(android.R.attr.listDivider, typedValue, true) && typedValue.data != 0) {
+            this.divider = MyApplication.getContext().getResources().getDrawable(typedValue.resourceId);
         }
     }
 

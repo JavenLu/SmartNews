@@ -1,5 +1,6 @@
 package javen.example.com.smartnews.main.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
@@ -8,6 +9,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import javen.example.com.smartnews.BaseActivity;
 import javen.example.com.smartnews.R;
+import javen.example.com.smartnews.main.fragment.home.bean.top_news.TopNewsDelegate;
 import javen.example.com.smartnews.main.helper.MainHelper;
 import javen.example.com.smartnews.main.iinterface.IMainActivity;
 import javen.example.com.smartnews.main.presenter.MainPresenter;
@@ -17,7 +19,7 @@ import static javen.example.com.smartnews.main.helper.MainHelper.FOURTH_PAGE;
 import static javen.example.com.smartnews.main.helper.MainHelper.SECOND_PAGE;
 import static javen.example.com.smartnews.main.helper.MainHelper.THIRD_PAGE;
 
-public class MainActivity extends BaseActivity<MainPresenter> implements IMainActivity {
+public class MainActivity extends BaseActivity<MainPresenter> implements IMainActivity, TopNewsDelegate.OnItemClickListenerInTopNewsDelegate {
     private BottomNavigationViewEx bottomNavigationViewEx;
     private MainHelper mainHelper;
 
@@ -69,6 +71,15 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
     @Override
     public void init() {
         mainHelper = MainHelper.getInstance(this);
+    }
+
+
+    @Override
+    public void onItemClick(String webContentUrl) {
+        Intent intent = new Intent(this, CommonContentActivity.class);
+        intent.putExtra("webUrl", webContentUrl);
+        startActivity(intent);
+        overridePendingTransition(R.anim.common_right_in, R.anim.anim_stay);
     }
 
 }

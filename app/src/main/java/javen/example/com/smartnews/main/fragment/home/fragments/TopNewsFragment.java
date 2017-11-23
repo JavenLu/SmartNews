@@ -13,6 +13,7 @@ import java.util.List;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.FlexibleRecyclerView;
 import javen.example.com.smartnews.main.decoration.DividerDecoration;
+import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeFragment;
 import javen.example.com.smartnews.main.helper.LayoutManagerHelper;
 import javen.example.com.smartnews.db.GreenDaoManager;
 import javen.example.com.smartnews.main.delegate.CommonRecyclerViewAdapter;
@@ -28,7 +29,6 @@ import javen.example.com.smartnews.main.fragment.home.presenter.top_news.TopNews
 public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements ITopNewsFragment<TopNewsBean> {
     public static final String TAG = TopNewsFragment.class.getSimpleName();
     private FlexibleRecyclerView topNewsRecyclerView;
-
 
     @Override
     public TopNewsPresenter initPresent() {
@@ -50,13 +50,16 @@ public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements I
         topNewsRecyclerView = view.findViewById(R.id.recycler_view);
     }
 
-
+    /**
+     * 网络请求结果回调
+     *
+     * @param list
+     */
     @Override
     public void getTopNewsData(List<TopNewsBean> list) {
 
         baseFragmentPresenter.insertTopNewsListIntoDataBase(list);
         List<TopNewsBean> topNewsList = baseFragmentPresenter.getAllTopNewsFromDataBase();
-        GreenDaoManager.getInstance(getActivity()).closeConnection();
 
         initRecyclerView(topNewsList);
     }
@@ -74,4 +77,5 @@ public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements I
         CommonRecyclerViewAdapter commonAdapter = new CommonRecyclerViewAdapter(getActivity(), topNewsList);
         topNewsRecyclerView.setAdapter(commonAdapter);
     }
+
 }

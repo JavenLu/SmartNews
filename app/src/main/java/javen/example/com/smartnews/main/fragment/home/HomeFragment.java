@@ -27,6 +27,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     private List<Fragment> fragmentList;
     private ViewPager viewPager;
     private FragmentManager fragmentManager;
+
     @Override
     public BaseFragmentPresenter initPresent() {
         return new HomePresenter(this);
@@ -69,6 +70,5 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
             return fragmentList != null && fragmentList.size() > 0 ? fragmentList.size() : 0;
         }
     }
-
 
 }

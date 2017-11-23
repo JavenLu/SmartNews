@@ -1,6 +1,7 @@
 package javen.example.com.smartnews;
 
 import android.app.Application;
+import android.content.Context;
 import android.support.v4.app.Fragment;
 
 import java.util.ArrayList;
@@ -19,11 +20,18 @@ public class MyApplication extends Application {
     public static DaoSession daoSession;
     public static HashMap<String, Fragment> typeHashMap = new HashMap<>();
     public static boolean isStaggeredGridLayoutManager = false;
+    private static Context context;
+
 
     @Override
     public void onCreate() {
         super.onCreate();
         daoSession = GreenDaoManager.getInstance(this).getDaoSession();
         typeHashMap.put("头条", new TopNewsFragment());
+        context = getApplicationContext();
+    }
+
+    public  static Context getContext() {
+        return context;
     }
 }
