@@ -3,16 +3,14 @@
     android:id="@+id/top_news_one_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="15dp"
-    >
+    android:paddingTop="@dimen/y30">
 
     <LinearLayout
         android:id="@+id/pic_layout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/y200"
         android:orientation="horizontal"
-        android:weightSum="1"
-        >
+        android:weightSum="1">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,10 +20,10 @@
             <TextView
                 android:id="@+id/content_text_view"
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="@dimen/y150"
                 android:text="摄影"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="@dimen/x40" />
 
             <LinearLayout
                 android:id="@+id/news_information_layout"
@@ -45,8 +43,8 @@
                     android:id="@+id/publish_time_from_now_one_pic_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
                     android:text="41分钟前" />
 
             </LinearLayout>
@@ -57,8 +55,7 @@
             android:id="@+id/image_view_one_pic_layout"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:layout_weight="0.7"
-             />
+            android:layout_weight="0.7" />
     </LinearLayout>
 
 

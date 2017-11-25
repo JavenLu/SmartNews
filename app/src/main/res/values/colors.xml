@@ -6,6 +6,12 @@
 
     <color name="gray_light">#F7F7F7</color>
     <color name="bottom_navigation_view_content_color">#FF0000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="status_bar_color_1">#FF3030</color>
+    <color name="status_bar_color_2">#70000000</color>
 </resources>
 
 

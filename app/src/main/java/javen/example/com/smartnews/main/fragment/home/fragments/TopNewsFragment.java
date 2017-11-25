@@ -73,7 +73,7 @@ public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements I
 
         topNewsRecyclerView.setHasFixedSize(true);
         topNewsRecyclerView.setLayoutManager(layoutManager);
-        topNewsRecyclerView.addItemDecoration(new DividerDecoration(getActivity(), R.dimen.material_0dp, R.dimen.material_8dp, DividerDecoration.BOTTOM_LINE_TYPE));
+        topNewsRecyclerView.addItemDecoration(new DividerDecoration(getActivity(), R.dimen.x1, R.dimen.x16, DividerDecoration.BOTTOM_LINE_TYPE));
         CommonRecyclerViewAdapter commonAdapter = new CommonRecyclerViewAdapter(getActivity(), topNewsList);
         topNewsRecyclerView.setAdapter(commonAdapter);
     }
