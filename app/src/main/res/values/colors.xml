@@ -11,7 +11,7 @@
     <color name="black">#000000</color>
 
     <color name="status_bar_color_1">#FF3030</color>
-    <color name="status_bar_color_2">#70000000</color>
+    <color name="status_bar_color_2">#ffffff</color>
 </resources>
 
 

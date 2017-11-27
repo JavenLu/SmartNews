@@ -13,6 +13,7 @@ import javen.example.com.smartnews.main.fragment.home.bean.top_news.TopNewsDeleg
 import javen.example.com.smartnews.main.helper.MainHelper;
 import javen.example.com.smartnews.main.iinterface.IMainActivity;
 import javen.example.com.smartnews.main.presenter.MainPresenter;
+import javen.example.com.smartnews.utils.WindowUtil;
 
 import static javen.example.com.smartnews.main.helper.MainHelper.FIRST_PAGE;
 import static javen.example.com.smartnews.main.helper.MainHelper.FOURTH_PAGE;
@@ -30,6 +31,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
 
     @Override
     public void initView() {
+        WindowUtil.getInstance().setStatusBar(MainActivity.this);
         initBottomNavigationView();
         mainHelper.switchFragmentByClickBottomNavigationView(FIRST_PAGE);
     }

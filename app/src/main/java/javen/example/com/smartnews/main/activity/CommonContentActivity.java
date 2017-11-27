@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.CustomToolBar;
+import javen.example.com.smartnews.utils.WindowUtil;
 
 /**
  * Created by Javen on 23/11/2017.
@@ -26,6 +27,7 @@ public class CommonContentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.ContentActivityTheme);
         setContentView(R.layout.common_content_layout);
         initView();
         showContent();
@@ -40,6 +42,7 @@ public class CommonContentActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        WindowUtil.getInstance().setStatusBarTextAndIconDark(CommonContentActivity.this);
         initCustomToolBar();
 
         webView = findViewById(R.id.web_view);
