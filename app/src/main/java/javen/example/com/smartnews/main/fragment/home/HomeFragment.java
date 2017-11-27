@@ -1,14 +1,11 @@
 package javen.example.com.smartnews.main.fragment.home;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +13,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import javen.example.com.smartnews.R;
+import javen.example.com.smartnews.custom_view.CustomToolBar;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
 import javen.example.com.smartnews.main.fragment.BaseFragmentPresenter;
 import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeFragment;
@@ -40,7 +38,6 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     public void initData() {
         homePresenter = (HomePresenter) baseFragmentPresenter;
         fragmentList = homePresenter.getHomeFragments();
-
     }
 
     @Override
@@ -52,6 +49,10 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
 
     @Override
     public void initView(View view) {
+        CustomToolBar customToolBar = view.findViewById(R.id.custom_toolbar);
+        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_FIRST_LEVEL);
+        customToolBar.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+
         viewPager = view.findViewById(R.id.viewPager);
         fragmentManager = getActivity().getSupportFragmentManager();
         viewPager.setAdapter(new FragmentAdapter(fragmentManager));

@@ -64,6 +64,8 @@ public class CommonContentActivity extends AppCompatActivity {
     private void initCustomToolBar() {
         CustomToolBar customToolBar = findViewById(R.id.custom_toolbar);
         customToolBar.setNavigationIcon(R.drawable.back_arrow);
+        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_SECOND_LEVEL);
+
         customToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

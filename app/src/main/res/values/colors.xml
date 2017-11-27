@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="gray_light">#F7F7F7</color>
+    <color name="gray_dark_search_text">#C2C2C2</color>
+
     <color name="bottom_navigation_view_content_color">#FF0000</color>
 
     <color name="white">#ffffff</color>
@@ -12,6 +14,8 @@
 
     <color name="status_bar_color_1">#FF3030</color>
     <color name="status_bar_color_2">#ffffff</color>
+
+    <color name="separator">#EAEAEA</color>
 </resources>
 
 

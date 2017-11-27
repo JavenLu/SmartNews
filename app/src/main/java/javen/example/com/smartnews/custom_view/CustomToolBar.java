@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import javen.example.com.smartnews.R;
 
 /**
@@ -17,11 +18,17 @@ import javen.example.com.smartnews.R;
  */
 
 public class CustomToolBar extends FrameLayout {
+    public static final int TOOLBAR_FIRST_LEVEL = 0;
+    public static final int TOOLBAR_SECOND_LEVEL = 1;
+
+
     private Toolbar toolbar;
     private TextView toolbarTitleTextView;
     private OnClickListener onClickNavigationListener;
     private Toolbar.OnMenuItemClickListener onMenuItemClickListener;
     private ToolbarTitleClickListener toolbarTitleClickListener;
+    private CircleImageView circleImageView;
+    private TextView searchTextView;
 
     public CustomToolBar(@NonNull Context context) {
         this(context, null);
@@ -33,6 +40,8 @@ public class CustomToolBar extends FrameLayout {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         toolbarTitleTextView = findViewById(R.id.toolbar_title_text_view);
+        circleImageView = findViewById(R.id.profile_image);
+        searchTextView = findViewById(R.id.search_text_view);
     }
 
     /**
@@ -169,6 +178,20 @@ public class CustomToolBar extends FrameLayout {
 
     }
 
+    public void setToolbarType(int titleType) {
+
+        if (titleType == TOOLBAR_FIRST_LEVEL) {
+            toolbarTitleTextView.setVisibility(GONE);
+            circleImageView.setVisibility(VISIBLE);
+            searchTextView.setVisibility(VISIBLE);
+        } else if (titleType == TOOLBAR_SECOND_LEVEL) {
+            toolbarTitleTextView.setVisibility(VISIBLE);
+            circleImageView.setVisibility(GONE);
+            searchTextView.setVisibility(GONE);
+        }
+
+    }
+
 
     /**
      * ToolBar标题文字点击接口
@@ -176,5 +199,6 @@ public class CustomToolBar extends FrameLayout {
     public interface ToolbarTitleClickListener {
         void toolbarTitleListener();
     }
+
 
 }

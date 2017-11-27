@@ -29,7 +29,7 @@
     <style name="ToolBarStyle">
         <item name="android:layout_width">match_parent</item>
         <!--<item name="android:layout_height">?attr/actionBarSize</item>-->
-        <item name="android:layout_height">@dimen/x90</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">@dimen/x90</item>
         <item name="android:background">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
@@ -49,8 +49,8 @@
         <item name="android:textSize">@dimen/x35</item>
     </style>
 
-    <style name="MainActivityTheme">
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <style name="MainActivityTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
     </style>
 
     <style name="ContentActivityTheme" parent="AppTheme">
