@@ -1,6 +1,5 @@
 package javen.example.com.smartnews.main.activity;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.CustomToolBar;
@@ -79,7 +77,7 @@ public class CommonContentActivity extends AppCompatActivity {
         customToolBar.setMenuListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                 DialogUtil.getInstance().showCustomBottomDialog(CommonContentActivity.this, R.style.ContentActivityBottomDialog, R.layout.share_dialog_layout, R.style.BottomDialog_Animation);
+                 DialogUtil.getInstance().showCustomBottomShareDialog(CommonContentActivity.this, R.style.ContentActivityBottomDialog, R.layout.share_dialog_layout, R.style.BottomDialog_Animation);
                 return false;
             }
         });

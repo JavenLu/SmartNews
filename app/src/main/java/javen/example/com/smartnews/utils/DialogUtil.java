@@ -6,6 +6,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import javen.example.com.smartnews.R;
@@ -24,10 +25,20 @@ public class DialogUtil {
         return dialogUtil;
     }
 
-    public void showCustomBottomDialog(Context context, int dialogStyle, int dialogLayout, int animationStyle) {
+    public void showCustomBottomShareDialog(Context context, int dialogStyle, int dialogLayout, int animationStyle) {
         final Dialog dialog = new Dialog(context, dialogStyle);
         View contentView = LayoutInflater.from(context).inflate(dialogLayout, null);
         TextView textView = contentView.findViewById(R.id.cancel_text_view);
+        LinearLayout friendLayout = contentView.findViewById(R.id.friend_layout);
+        LinearLayout weChatLayout = contentView.findViewById(R.id.we_chat_layout);
+        LinearLayout qqLayout = contentView.findViewById(R.id.qq_layout);
+
+        //设置动画
+        AnimationUtil.getInstance().showYShakePropertyAnimationInShareDialog(friendLayout, 40, 800);
+        AnimationUtil.getInstance().showYShakePropertyAnimationInShareDialog(weChatLayout, 40, 850);
+        AnimationUtil.getInstance().showYShakePropertyAnimationInShareDialog(qqLayout, 40, 900);
+
+        //取消点击事件
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
