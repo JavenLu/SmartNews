@@ -62,7 +62,7 @@ public class MainHelper {
                 showFourthPage(fragmentTransaction);
                 break;
         }
-        fragmentTransaction.commit();
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
     private void hideAllFragment(FragmentTransaction fragmentTransaction) {
