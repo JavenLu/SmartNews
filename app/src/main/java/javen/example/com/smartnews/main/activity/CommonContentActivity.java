@@ -1,20 +1,33 @@
 package javen.example.com.smartnews.main.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.CustomToolBar;
+import javen.example.com.smartnews.main.fragment.home.fragments.WebViewErrorFragment;
 import javen.example.com.smartnews.utils.DialogUtil;
+import javen.example.com.smartnews.utils.NetUtil;
 import javen.example.com.smartnews.utils.WindowUtil;
 
 /**
@@ -23,6 +36,9 @@ import javen.example.com.smartnews.utils.WindowUtil;
 
 public class CommonContentActivity extends AppCompatActivity {
     private WebView webView;
+    private FrameLayout containerFrameLayout;
+    private FragmentManager fragmentManager;
+    private Boolean isInstanceStateLoss = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,17 +49,28 @@ public class CommonContentActivity extends AppCompatActivity {
         showContent();
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void showContent() {
         Intent intent = getIntent();
+
         if (intent != null) {
             String webUrl = intent.getStringExtra("webUrl");
             webView.loadUrl(webUrl);
+            webView.getSettings().setJavaScriptEnabled(true);
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);  //允许加载javascript
+            webSettings.setSupportZoom(true);     //允许缩放
+            webSettings.setBuiltInZoomControls(true); //原网页基础上缩放
+            webSettings.setUseWideViewPort(true);   //任意比例缩放
         }
     }
 
     private void initView() {
         WindowUtil.getInstance().setStatusBarTextAndIconDark(CommonContentActivity.this);
         initCustomToolBar();
+
+        containerFrameLayout = findViewById(R.id.container);
+        fragmentManager = getSupportFragmentManager();
 
         webView = findViewById(R.id.web_view);
         webView.setWebViewClient(new WebViewClient() {
@@ -57,8 +84,40 @@ public class CommonContentActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
             }
+
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                super.onReceivedError(view, request, error);
+                showErrorFragment();
+            }
+
         });
 
+    }
+
+    private void showErrorFragment() {
+        webView.setVisibility(View.GONE);
+        containerFrameLayout.setVisibility(View.VISIBLE);
+
+        WebViewErrorFragment fragment = new WebViewErrorFragment();
+        fragment.setReLoadClickListener(new WebViewErrorFragment.OnClickReloadText() {
+            @Override
+            public void reloadWeb() {
+                reload();
+            }
+        });
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.commitAllowingStateLoss();
+    }
+
+    private void reload() {
+        if (NetUtil.getInstance().isNetworkConnected(CommonContentActivity.this)) {
+            containerFrameLayout.setVisibility(View.GONE);
+            webView.setVisibility(View.VISIBLE);
+            webView.reload();
+        }
     }
 
     private void initCustomToolBar() {
@@ -77,7 +136,7 @@ public class CommonContentActivity extends AppCompatActivity {
         customToolBar.setMenuListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                 DialogUtil.getInstance().showCustomBottomShareDialog(CommonContentActivity.this, R.style.ContentActivityBottomDialog, R.layout.share_dialog_layout, R.style.BottomDialog_Animation);
+                DialogUtil.getInstance().showCustomBottomShareDialog(CommonContentActivity.this, R.style.ContentActivityBottomDialog, R.layout.share_dialog_layout, R.style.BottomDialog_Animation);
                 return false;
             }
         });

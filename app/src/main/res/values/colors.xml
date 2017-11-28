@@ -16,6 +16,8 @@
     <color name="status_bar_color_2">#ffffff</color>
 
     <color name="separator">#EAEAEA</color>
+    <!--webView-->
+    <color name="gray_for_background">#E6E6E6</color>
 </resources>
 
 

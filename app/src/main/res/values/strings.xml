@@ -17,5 +17,7 @@
     <string name="qq_share_text">QQ</string>
     <string name="we_chat_share_text">微信</string>
     <string name="friends_share_text">朋友圈</string>
+    <string name="data_load_failed">数据获取失败</string>
+    <string name="retry_text">请检查网络后,点击<u>重新加载</u></string>
 
 </resources>
