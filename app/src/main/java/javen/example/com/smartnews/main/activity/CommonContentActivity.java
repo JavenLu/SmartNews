@@ -1,5 +1,6 @@
 package javen.example.com.smartnews.main.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.CustomToolBar;
+import javen.example.com.smartnews.utils.DialogUtil;
 import javen.example.com.smartnews.utils.WindowUtil;
 
 /**
@@ -77,7 +79,7 @@ public class CommonContentActivity extends AppCompatActivity {
         customToolBar.setMenuListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(CommonContentActivity.this, "弹出分享对话框", Toast.LENGTH_SHORT).show();
+                 DialogUtil.getInstance().showCustomBottomDialog(CommonContentActivity.this, R.style.ContentActivityBottomDialog, R.layout.share_dialog_layout, R.style.BottomDialog_Animation);
                 return false;
             }
         });
