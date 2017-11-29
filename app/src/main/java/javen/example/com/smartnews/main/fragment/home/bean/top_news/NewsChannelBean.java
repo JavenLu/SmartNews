@@ -1,4 +1,4 @@
-package javen.example.com.smartnews.db.news_channel;
+package javen.example.com.smartnews.main.fragment.home.bean.top_news;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
