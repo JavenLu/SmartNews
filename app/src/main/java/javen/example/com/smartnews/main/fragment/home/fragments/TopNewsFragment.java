@@ -13,26 +13,24 @@ import java.util.List;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.FlexibleRecyclerView;
 import javen.example.com.smartnews.main.decoration.DividerDecoration;
-import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeFragment;
 import javen.example.com.smartnews.main.helper.LayoutManagerHelper;
-import javen.example.com.smartnews.db.GreenDaoManager;
 import javen.example.com.smartnews.main.delegate.CommonRecyclerViewAdapter;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
-import javen.example.com.smartnews.main.fragment.home.bean.top_news.TopNewsBean;
+import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsBean;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.ITopNewsFragment;
-import javen.example.com.smartnews.main.fragment.home.presenter.top_news.TopNewsPresenter;
+import javen.example.com.smartnews.main.fragment.home.presenter.top_news.NewsPresenter;
 
 /**
  * Created by Javen on 17/11/2017.
  */
 
-public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements ITopNewsFragment<TopNewsBean> {
+public class TopNewsFragment extends BaseFragment<NewsPresenter> implements ITopNewsFragment<NewsBean> {
     public static final String TAG = TopNewsFragment.class.getSimpleName();
     private FlexibleRecyclerView topNewsRecyclerView;
 
     @Override
-    public TopNewsPresenter initPresent() {
-        return new TopNewsPresenter(this);
+    public NewsPresenter initPresent() {
+        return new NewsPresenter(this);
     }
 
     @Override
@@ -56,15 +54,15 @@ public class TopNewsFragment extends BaseFragment<TopNewsPresenter> implements I
      * @param list
      */
     @Override
-    public void getTopNewsData(List<TopNewsBean> list) {
+    public void getTopNewsData(List<NewsBean> list) {
 
         baseFragmentPresenter.insertTopNewsListIntoDataBase(list);
-        List<TopNewsBean> topNewsList = baseFragmentPresenter.getAllTopNewsFromDataBase();
+        List<NewsBean> topNewsList = baseFragmentPresenter.getAllTopNewsFromDataBase();
 
         initRecyclerView(topNewsList);
     }
 
-    private void initRecyclerView(List<TopNewsBean> topNewsList) {
+    private void initRecyclerView(List<NewsBean> topNewsList) {
         RecyclerView.LayoutManager layoutManager = topNewsRecyclerView.createLinearLayoutManager(LayoutManagerHelper.LINEAR_TYPE);
 
         if (layoutManager instanceof LinearLayoutManager) {

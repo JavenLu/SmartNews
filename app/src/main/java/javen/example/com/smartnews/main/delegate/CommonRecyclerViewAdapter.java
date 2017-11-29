@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import javen.example.com.smartnews.main.fragment.home.bean.top_news.TopNewsDelegate;
+import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsDelegate;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
 
 /**
@@ -20,7 +20,7 @@ public class CommonRecyclerViewAdapter<T extends List<IDispalyNews>> extends Rec
     public CommonRecyclerViewAdapter(Activity activity, T itemList) {
         this.itemList = itemList;
         adapterDelegatesManager = new AdapterDelegatesManager<>();
-        adapterDelegatesManager.addDelegate((AdapterDelegate<T>) new TopNewsDelegate(activity));
+        adapterDelegatesManager.addDelegate((AdapterDelegate<T>) new NewsDelegate(activity));
     }
 
     @Override

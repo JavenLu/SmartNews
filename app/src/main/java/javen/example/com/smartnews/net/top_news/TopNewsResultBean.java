@@ -2,7 +2,7 @@ package javen.example.com.smartnews.net.top_news;
 
 import java.util.List;
 
-import javen.example.com.smartnews.main.fragment.home.bean.top_news.TopNewsBean;
+import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsBean;
 
 /**
  * Created by Javen on 21/11/2017.
@@ -32,7 +32,7 @@ public class TopNewsResultBean {
 
     public static class Result{
       private String stat;
-      private List<TopNewsBean> data;
+      private List<NewsBean> data;
 
         public String getStat() {
             return stat;
@@ -42,11 +42,11 @@ public class TopNewsResultBean {
             this.stat = stat;
         }
 
-        public List<TopNewsBean> getData() {
+        public List<NewsBean> getData() {
             return data;
         }
 
-        public void setData(List<TopNewsBean> data) {
+        public void setData(List<NewsBean> data) {
             this.data = data;
         }
     }

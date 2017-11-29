@@ -11,18 +11,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/friend_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingTop="@dimen/x40"
-                android:paddingBottom="@dimen/x40"
                 android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/x40"
+                android:paddingTop="@dimen/x40">
 
                 <ImageView
                     android:layout_width="@dimen/x110"
@@ -40,10 +39,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingTop="@dimen/x40"
-                android:paddingBottom="@dimen/x40"
                 android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/x40"
+                android:paddingTop="@dimen/x40">
 
                 <ImageView
                     android:layout_width="@dimen/x64"
@@ -61,10 +60,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingTop="@dimen/x40"
-                android:paddingBottom="@dimen/x40"
                 android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/x40"
+                android:paddingTop="@dimen/x40">
 
                 <ImageView
                     android:layout_width="@dimen/x64"
@@ -96,6 +95,7 @@
         android:layout_below="@id/separator"
         android:background="@color/white"
         android:gravity="center"
+        android:paddingTop="@dimen/x20"
         android:text="@string/cancel_text_share_layout"
         android:textColor="@color/black"
         android:textSize="@dimen/x30" />
