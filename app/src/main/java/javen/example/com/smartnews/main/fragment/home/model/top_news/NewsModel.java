@@ -9,7 +9,7 @@ import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.INewsM
 import javen.example.com.smartnews.main.fragment.home.presenter.top_news.NewsPresenter;
 import javen.example.com.smartnews.net.NetConstants;
 import javen.example.com.smartnews.net.top_news.GetRequestTopNewsInterface;
-import javen.example.com.smartnews.net.top_news.TopNewsResultBean;
+import javen.example.com.smartnews.net.top_news.NewsResultBean;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -61,15 +61,15 @@ public class NewsModel implements INewsModel<NewsBean> {
                 .build();
 
         GetRequestTopNewsInterface getRequestTopNewsInterface = retrofit.create(GetRequestTopNewsInterface.class);
-        Call<TopNewsResultBean> call = getRequestTopNewsInterface.getTopNewsResult(NetConstants.AUTHORIZATION, NetConstants.TOP_NEWS_TYPE);
-        call.enqueue(new Callback<TopNewsResultBean>() {
+        Call<NewsResultBean> call = getRequestTopNewsInterface.getTopNewsResult(NetConstants.AUTHORIZATION, NetConstants.TOP_NEWS_TYPE);
+        call.enqueue(new Callback<NewsResultBean>() {
             @Override
-            public void onResponse(Call<TopNewsResultBean> call, Response<TopNewsResultBean> response) {
+            public void onResponse(Call<NewsResultBean> call, Response<NewsResultBean> response) {
                 newsPresenter.getTopNewsData(response);
             }
 
             @Override
-            public void onFailure(Call<TopNewsResultBean> call, Throwable t) {
+            public void onFailure(Call<NewsResultBean> call, Throwable t) {
                 newsPresenter.getTopNewsData(null);
             }
         });

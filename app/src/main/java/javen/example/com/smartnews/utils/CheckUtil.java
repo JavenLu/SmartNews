@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.util.List;
 
 import javen.example.com.smartnews.net.NetConstants;
-import javen.example.com.smartnews.net.top_news.TopNewsResultBean;
+import javen.example.com.smartnews.net.top_news.NewsResultBean;
 import retrofit2.Response;
 
 /**
@@ -33,11 +33,11 @@ public class CheckUtil {
         return list != null && list.size() > 0;
     }
 
-    public boolean isCheckResponseAvailable(Response<TopNewsResultBean> response) {
+    public boolean isCheckResponseAvailable(Response<NewsResultBean> response) {
         return response != null && response.body() != null && !TextUtils.isEmpty(response.body().getReason()) && NetConstants.SUCCESS_REASON.equals(response.body().getReason());
     }
 
-    public boolean isCheckTopNewsListNotNull(Response<TopNewsResultBean> response) {
+    public boolean isCheckTopNewsListNotNull(Response<NewsResultBean> response) {
         return response.body().getResult().getData() != null && response.body().getResult().getData().size() > 0;
     }
 }

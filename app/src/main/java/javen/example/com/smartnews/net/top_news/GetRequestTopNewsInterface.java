@@ -13,6 +13,6 @@ import retrofit2.http.Query;
 public interface GetRequestTopNewsInterface {
 
     @GET(NetConstants.TOP_NEWS_PATH)
-    Call<TopNewsResultBean> getTopNewsResult(@Header("Authorization") String authorization, @Query("type") String type);
+    Call<NewsResultBean> getTopNewsResult(@Header("Authorization") String authorization, @Query("type") String type);
 
 }

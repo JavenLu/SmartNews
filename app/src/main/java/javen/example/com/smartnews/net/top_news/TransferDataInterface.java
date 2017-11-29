@@ -7,5 +7,5 @@ import retrofit2.Response;
  */
 
 public interface TransferDataInterface<E> {
-    public void getTopNewsData(Response<TopNewsResultBean> response);
+    public void getTopNewsData(Response<NewsResultBean> response);
 }
