@@ -2,8 +2,8 @@ package javen.example.com.smartnews.db;
 
 import android.content.Context;
 
-import javen.example.com.smartnews.main.fragment.home.bean.top_news.DaoMaster;
-import javen.example.com.smartnews.main.fragment.home.bean.top_news.DaoSession;
+import javen.example.com.smartnews.db.news_channel.DaoMaster;
+import javen.example.com.smartnews.db.news_channel.DaoSession;
 
 /**
  * Created by Javen on 16/11/2017.
