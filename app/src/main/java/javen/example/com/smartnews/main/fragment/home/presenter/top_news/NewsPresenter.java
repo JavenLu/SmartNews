@@ -4,7 +4,7 @@ import java.util.List;
 
 import javen.example.com.smartnews.main.fragment.BaseFragmentPresenter;
 import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsBean;
-import javen.example.com.smartnews.main.fragment.home.fragments.TopNewsFragment;
+import javen.example.com.smartnews.main.fragment.home.fragments.NewsFragment;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.ITopNewsFragment;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.INewsModel;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.ITopNewsPresenter;
@@ -18,7 +18,7 @@ import retrofit2.Response;
  * Created by Javen on 17/11/2017.
  */
 
-public class NewsPresenter extends BaseFragmentPresenter<TopNewsFragment> implements ITopNewsPresenter<NewsBean>, TransferDataInterface<NewsBean> {
+public class NewsPresenter extends BaseFragmentPresenter<NewsFragment> implements ITopNewsPresenter<NewsBean>, TransferDataInterface<NewsBean> {
     private ITopNewsFragment iTopNewsFragment;
     private INewsModel iNewsModel;
 

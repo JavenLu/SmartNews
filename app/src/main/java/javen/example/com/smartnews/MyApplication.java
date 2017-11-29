@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 import javen.example.com.smartnews.db.GreenDaoManager;
 import javen.example.com.smartnews.main.fragment.home.bean.top_news.DaoSession;
-import javen.example.com.smartnews.main.fragment.home.fragments.TopNewsFragment;
+import javen.example.com.smartnews.main.fragment.home.fragments.NewsFragment;
 
 
 /**
@@ -26,7 +26,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         daoSession = GreenDaoManager.getInstance(this).getDaoSession();
-        typeHashMap.put("头条", new TopNewsFragment());
+        typeHashMap.put("头条", new NewsFragment());
         context = getApplicationContext();
     }
 
