@@ -1,7 +1,10 @@
 /build
 /build.gradle
-.idea/
+/.idea
 app.iml
 .gradle/
+.iml
+workspace.xml
+.idea/
 
 
