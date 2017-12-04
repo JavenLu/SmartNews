@@ -26,9 +26,10 @@ public class LayoutManagerHelper {
     private static int type;
     private static int layoutSpanCount;
     private static int layoutOrientation;
+    private static boolean layoutReverseLayout;
 
 
-    public static RecyclerView.LayoutManager createLayoutManager(Context context) {
+    private static RecyclerView.LayoutManager createLayoutManager(Context context) {
         RecyclerView.LayoutManager layoutManager = null;
 
         switch (type) {
@@ -36,7 +37,13 @@ public class LayoutManagerHelper {
                 layoutManager = new LinearLayoutManager(context);
                 break;
             case GRID_TYPE:
-                layoutManager = new GridLayoutManager(context, layoutSpanCount);
+
+                if (layoutOrientation != -1) {
+                    layoutManager = new GridLayoutManager(context, layoutSpanCount, layoutOrientation, layoutReverseLayout);
+                } else {
+                    layoutManager = new GridLayoutManager(context, layoutSpanCount);
+                }
+
                 break;
             case STAGGERED_TYPE:
                 layoutManager = new StaggeredGridLayoutManager(layoutSpanCount, layoutOrientation);
@@ -48,19 +55,30 @@ public class LayoutManagerHelper {
         return layoutManager;
     }
 
-    public static void configurationLayoutManagerInformation(int layoutType, int spanCount, int orientation) {
+    public static RecyclerView.LayoutManager configurationLayoutManagerInformation(Context context, int layoutType, int spanCount, int orientation, boolean reverseLayout) {
         type = layoutType;
         layoutSpanCount = spanCount;
         layoutOrientation = orientation;
+        layoutReverseLayout = reverseLayout;
+        return createLayoutManager(context);
     }
 
-    public static void configurationLayoutManagerInformation(int layoutType, int spanCount) {
+    public static RecyclerView.LayoutManager configurationLayoutManagerInformation(Context context, int layoutType, int spanCount, int orientation) {
         type = layoutType;
         layoutSpanCount = spanCount;
+        layoutOrientation = orientation;
+        return configurationLayoutManagerInformation(context, type, layoutSpanCount, layoutOrientation, false);
     }
 
-    public static void configurationLayoutManagerInformation(int layoutType) {
+    public static RecyclerView.LayoutManager configurationLayoutManagerInformation(Context context, int layoutType, int spanCount) {
         type = layoutType;
+        layoutSpanCount = spanCount;
+        return configurationLayoutManagerInformation(context, type, layoutSpanCount, -1);
+    }
+
+    public static RecyclerView.LayoutManager configurationLayoutManagerInformation(Context context, int layoutType) {
+        type = layoutType;
+        return configurationLayoutManagerInformation(context, type, 1);
     }
 
     public static View handleStaggeredGridNoFullSpan(LayoutInflater inflater, @NonNull ViewGroup parent, int layoutResourceId) {

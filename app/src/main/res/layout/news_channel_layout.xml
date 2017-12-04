@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_for_background"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_custom_toolbar_layout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/x20"
+        android:layout_marginTop="@dimen/x20"
+        android:text="@string/channel_explain"
+        android:textColor="@color/black_87"
+        android:textSize="@dimen/x32" />
+
+    <TextView
+        style="@style/news_channel_sort_title"
+        android:text="@string/my_channel" />
+
+    <javen.example.com.smartnews.custom_view.FlexibleRecyclerView
+        android:id="@+id/news_channel_mine_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never" />
+
+    <TextView
+        style="@style/news_channel_sort_title"
+        android:text="@string/more_channel" />
+
+    <javen.example.com.smartnews.custom_view.FlexibleRecyclerView
+        android:id="@+id/news_channel_more_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" />
+
+</LinearLayout>

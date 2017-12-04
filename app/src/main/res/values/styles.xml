@@ -75,5 +75,18 @@
         <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
     </style>
 
+    <style name="NewsChannelActivityStartAnimation" >
+        <item name="android:windowEnterAnimation">@anim/alpha_activity_in</item>
+        <item name="android:windowExitAnimation">@anim/alpha_activity_out</item>
+    </style>
+
+    <style name="news_channel_sort_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/x16</item>
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textSize">@dimen/x35</item>
+    </style>
+
 
 </resources>

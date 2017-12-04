@@ -9,6 +9,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import javen.example.com.smartnews.BaseActivity;
 import javen.example.com.smartnews.R;
+import javen.example.com.smartnews.main.activity.home.NewsDetailsActivity;
 import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsDelegate;
 import javen.example.com.smartnews.main.helper.MainHelper;
 import javen.example.com.smartnews.main.iinterface.IMainActivity;
@@ -78,7 +79,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
 
     @Override
     public void onItemClick(String webContentUrl) {
-        Intent intent = new Intent(this, CommonContentActivity.class);
+        Intent intent = new Intent(this, NewsDetailsActivity.class);
         intent.putExtra("webUrl", webContentUrl);
         startActivity(intent);
         overridePendingTransition(R.anim.common_right_in, R.anim.anim_stay);

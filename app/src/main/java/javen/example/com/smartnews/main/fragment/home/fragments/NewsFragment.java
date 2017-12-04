@@ -63,7 +63,7 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements INewsFr
     }
 
     private void initRecyclerView(List<NewsBean> topNewsList) {
-        RecyclerView.LayoutManager layoutManager = topNewsRecyclerView.createLinearLayoutManager(LayoutManagerHelper.LINEAR_TYPE);
+        RecyclerView.LayoutManager layoutManager = topNewsRecyclerView.createLayoutManager(LayoutManagerHelper.LINEAR_TYPE);
 
         if (layoutManager instanceof LinearLayoutManager) {
             ((LinearLayoutManager) layoutManager).setSmoothScrollbarEnabled(true);

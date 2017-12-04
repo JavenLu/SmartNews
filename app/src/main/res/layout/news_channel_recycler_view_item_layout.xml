@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_channel_Text_view"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_margin="@dimen/x16"
+    android:background="@drawable/news_channel_recycler_item_shape"
+    android:gravity="center"
+    android:textColor="@color/news_channel_recycler_item_text"
+    android:textSize="@dimen/x32"
+    tools:text="头条">
+
+</TextView>

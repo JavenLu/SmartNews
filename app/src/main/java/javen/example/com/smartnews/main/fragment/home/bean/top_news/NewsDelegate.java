@@ -59,19 +59,8 @@ public class NewsDelegate extends AdapterDelegate<List<IDispalyNews>> {
     }
 
     private void setItemClickListener(final NewsBean newsBean, ViewHolder viewHolder) {
-        viewHolder.topNewsOneLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onItemClickListenerInTopNewsDelegate.onItemClick(newsBean.getUrl());
-            }
-        });
-
-        viewHolder.topNewsThreeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onItemClickListenerInTopNewsDelegate.onItemClick(newsBean.getUrl());
-            }
-        });
+        viewHolder.topNewsOneLayout.setOnClickListener(v -> onItemClickListenerInTopNewsDelegate.onItemClick(newsBean.getUrl()));
+        viewHolder.topNewsThreeLayout.setOnClickListener(v -> onItemClickListenerInTopNewsDelegate.onItemClick(newsBean.getUrl()));
     }
 
     private void showContent(NewsBean newsBean, ViewHolder viewHolder, boolean isCheckHasAllPic) {

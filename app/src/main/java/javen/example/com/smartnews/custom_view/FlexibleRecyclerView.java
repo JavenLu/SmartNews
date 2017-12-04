@@ -27,20 +27,25 @@ public class FlexibleRecyclerView extends RecyclerView {
         this.context = context;
     }
 
+    public RecyclerView.LayoutManager createLayoutManager(int layoutType, int spanCount, int orientation, boolean reverseLayout) {
 
-    public RecyclerView.LayoutManager createStaggeredLayoutManager(int layoutType, int spanCount, int orientation) {
-        LayoutManagerHelper.configurationLayoutManagerInformation(layoutType, spanCount, orientation);
-        return LayoutManagerHelper.createLayoutManager(context);
+        return LayoutManagerHelper.configurationLayoutManagerInformation(context, layoutType, spanCount, orientation, reverseLayout);
     }
 
-    public RecyclerView.LayoutManager createGridLayoutManager(int layoutType, int spanCount) {
-        LayoutManagerHelper.configurationLayoutManagerInformation(layoutType, spanCount);
-        return LayoutManagerHelper.createLayoutManager(context);
+
+    public RecyclerView.LayoutManager createLayoutManager(int layoutType, int spanCount, int orientation) {
+
+        return LayoutManagerHelper.configurationLayoutManagerInformation(context, layoutType, spanCount, orientation);
     }
 
-    public RecyclerView.LayoutManager createLinearLayoutManager(int layoutType) {
-        LayoutManagerHelper.configurationLayoutManagerInformation(layoutType);
-        return LayoutManagerHelper.createLayoutManager(context);
+    public RecyclerView.LayoutManager createLayoutManager(int layoutType, int spanCount) {
+
+        return LayoutManagerHelper.configurationLayoutManagerInformation(context, layoutType, spanCount);
+    }
+
+    public RecyclerView.LayoutManager createLayoutManager(int layoutType) {
+
+        return LayoutManagerHelper.configurationLayoutManagerInformation(context, layoutType);
     }
 
 

@@ -11,6 +11,7 @@ import javen.example.com.smartnews.MyApplication;
 
 public class SharedPreferencesUtil {
     private static final String APPLICATION_PREFERENCE_NAME = "sp_name";
+    public static final String INIT_CHANNEL_DB = "int_channel_db";
 
     private static SharedPreferences getApplicationPreference(Context context) {
         return context.getSharedPreferences(APPLICATION_PREFERENCE_NAME, Context.MODE_PRIVATE);
