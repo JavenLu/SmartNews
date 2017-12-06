@@ -4,6 +4,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.delegate.CommonRecyclerViewAdapter;
 import javen.example.com.smartnews.main.helper.LayoutManagerHelper;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
+import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnClickListener;
 import javen.example.com.smartnews.main.presenter.home.NewsChannelPresenter;
 import javen.example.com.smartnews.utils.WindowUtil;
 
@@ -30,7 +32,7 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
     private NewsChannelPresenter newsChannelPresenter;
     private FlexibleRecyclerView mineRecyclerView;
     private FlexibleRecyclerView moreRecyclerView;
-    private CommonRecyclerViewAdapter newsMineAdapter, newsMoreAdapter;
+    private NewsChannelRecyclerViewAdapter newsMineAdapter, newsMoreAdapter;
 
     @Override
     public int getLayout() {
@@ -85,7 +87,6 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
 
     }
 
-
     @Override
     public void getNewsChannelDataSuccess(Map<Integer, List<NewsChannelBean>> data) {
         List<NewsChannelBean> newsChannelMine = data.get(DBConstant.NEWS_CHANNEL_MINE);
@@ -93,7 +94,6 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
 
         initRecyclerView(mineRecyclerView, newsChannelMine, true);
         initRecyclerView(moreRecyclerView, newsChannelUnSelect, false);
-
     }
 
     @Override
@@ -106,18 +106,46 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
 
         if (isChannelMine) {
             RecyclerView.LayoutManager newsMineManager = mineRecyclerView.createLayoutManager(LayoutManagerHelper.GRID_TYPE, 4, LinearLayout.VERTICAL, false);
-            newsMineAdapter = new CommonRecyclerViewAdapter(NewsChannelActivity.this, data);
+            newsMineAdapter = new NewsChannelRecyclerViewAdapter(NewsChannelActivity.this, data);
+            newsMineAdapter.newsChannelDelegate.setOnItemClickListener(position -> LogicByClickSelectedTag(data, position));
+
             recyclerView.setLayoutManager(newsMineManager);
             recyclerView.setAdapter(newsMineAdapter);
-//            setChannelMineOnItemClick();
-//            initItemDragHelper();
         } else {
-            RecyclerView.LayoutManager newsMoreLayoutManager = mineRecyclerView.createLayoutManager(LayoutManagerHelper.GRID_TYPE, 4, LinearLayout.VERTICAL, false);
-            newsMoreAdapter = new CommonRecyclerViewAdapter(NewsChannelActivity.this, data);
+            RecyclerView.LayoutManager newsMoreLayoutManager = moreRecyclerView.createLayoutManager(LayoutManagerHelper.GRID_TYPE, 4, LinearLayout.VERTICAL, false);
+            newsMoreAdapter = new NewsChannelRecyclerViewAdapter(NewsChannelActivity.this, data);
+            newsMoreAdapter.newsChannelDelegate.setOnItemClickListener(position -> LogicByClickUnSelectTag(position, data));
+
             recyclerView.setLayoutManager(newsMoreLayoutManager);
             recyclerView.setAdapter(newsMoreAdapter);
-            //setChannelMoreOnItemClick();
         }
 
     }
+
+    private void LogicByClickUnSelectTag(int position, List<NewsChannelBean> data) {
+        if (position != -1) {
+            NewsChannelBean newsChannelBean = data.get(position);
+            boolean isNewsChannelFixed = newsChannelBean.getNewsChannelFixed();
+
+            if (!isNewsChannelFixed) {
+                newsMineAdapter.add(newsMineAdapter.getItemCount(), newsChannelBean);
+                newsMoreAdapter.delete(position);
+                newsChannelPresenter.upDateDBWhenOnItemClick(newsChannelBean, false);
+            }
+        }
+    }
+
+    private void LogicByClickSelectedTag(List<NewsChannelBean> data, int position) {
+        if (position != -1) {
+            NewsChannelBean newsChannelBean = data.get(position);
+            boolean isNewsChannelFixed = newsChannelBean.getNewsChannelFixed();
+
+            if (!isNewsChannelFixed) {
+                newsMoreAdapter.add(newsMoreAdapter.getItemCount(), newsChannelBean);
+                newsMineAdapter.delete(position);
+                newsChannelPresenter.upDateDBWhenOnItemClick(newsChannelBean, true);
+            }
+        }
+    }
+
 }

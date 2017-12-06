@@ -15,6 +15,8 @@ import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.delegate.AdapterDelegate;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
+import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
+import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnClickListener;
 
 /**
  * Created by Javen on 01/12/2017.
@@ -23,10 +25,15 @@ import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispa
 public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
     private LayoutInflater inflater;
     private Context context;
+    private INewsChannelOnClickListener iNewsChannelOnClickListener;
 
     public NewsChannelDelegate(Activity activity) {
         inflater = activity.getLayoutInflater();
         context = activity;
+    }
+
+    public void setOnItemClickListener(INewsChannelOnClickListener clickListener) {
+        this.iNewsChannelOnClickListener = clickListener;
     }
 
     @Override
@@ -43,8 +50,8 @@ public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
 
     @Override
     protected void onBindViewHolder(@NonNull List<IDispalyNews> items, int position, @NonNull RecyclerView.ViewHolder holder, @NonNull List<Object> payloads) {
-        NewsChannelBean newsChannelBean = (NewsChannelBean) items.get(position);
         ViewHolder viewHolder = (ViewHolder) holder;
+        NewsChannelBean newsChannelBean = (NewsChannelBean) items.get(position);
         viewHolder.textView.setText(newsChannelBean.getNewsChannelName());
     }
 
@@ -54,7 +61,10 @@ public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
         public ViewHolder(View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.news_channel_Text_view);
+
+            textView.setOnClickListener(v -> {
+                iNewsChannelOnClickListener.setOnItemClickListener(getAdapterPosition());
+            });
         }
     }
-
 }

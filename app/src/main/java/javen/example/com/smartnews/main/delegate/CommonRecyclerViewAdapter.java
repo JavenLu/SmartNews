@@ -18,13 +18,16 @@ import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispa
 public class CommonRecyclerViewAdapter<T extends List<IDispalyNews>> extends RecyclerView.Adapter {
     private T itemList;
     private AdapterDelegatesManager<T> adapterDelegatesManager;
+    public NewsChannelDelegate newsChannelDelegate;
 
     public CommonRecyclerViewAdapter(Activity activity, T itemList) {
         this.itemList = itemList;
         adapterDelegatesManager = new AdapterDelegatesManager<>();
 
+        newsChannelDelegate = new NewsChannelDelegate(activity);
+
         if (activity instanceof NewsChannelActivity) {
-            adapterDelegatesManager.addDelegate((AdapterDelegate<T>) new NewsChannelDelegate(activity));
+            adapterDelegatesManager.addDelegate((AdapterDelegate<T>) newsChannelDelegate);
         } else {
             adapterDelegatesManager.addDelegate((AdapterDelegate<T>) new NewsDelegate(activity));
         }
@@ -49,4 +52,10 @@ public class CommonRecyclerViewAdapter<T extends List<IDispalyNews>> extends Rec
     public int getItemCount() {
         return itemList != null && itemList.size() > 0 ? itemList.size() : 0;
     }
+
+    public T getData() {
+        return itemList;
+    }
+
+
 }

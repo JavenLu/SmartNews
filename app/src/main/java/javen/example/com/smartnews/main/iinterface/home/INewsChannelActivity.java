@@ -10,6 +10,7 @@ import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
  */
 
 public interface INewsChannelActivity {
-    void  getNewsChannelDataSuccess(Map<Integer, List<NewsChannelBean>> data);
+    void getNewsChannelDataSuccess(Map<Integer, List<NewsChannelBean>> data);
+
     void getNewsChannelDataFail(String errorMsg);
 }

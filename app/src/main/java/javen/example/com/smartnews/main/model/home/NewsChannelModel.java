@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableOnSubscribe;
@@ -28,13 +30,14 @@ import javen.example.com.smartnews.utils.SharedPreferencesUtil;
  */
 
 public class NewsChannelModel implements INewsChannelModel<NewsChannelBean> {
+    private ExecutorService mSingleThreadPool;
 
     @Override
     public void lodeNewsChannels(RequestCallBack<Map<Integer, List<NewsChannelBean>>> callback) {
 
         Observable.create((ObservableOnSubscribe<Map<Integer, List<NewsChannelBean>>>) emitter -> {
             initNewsChannelDB();
-            Map<Integer, List<NewsChannelBean>> map = getAllNewsChannelData();
+            Map<Integer, List<NewsChannelBean>> map = getAllNewsChannelDataReturnMap();
 
             emitter.onNext(map);
             emitter.onComplete();
@@ -93,6 +96,11 @@ public class NewsChannelModel implements INewsChannelModel<NewsChannelBean> {
     }
 
     @Override
+    public void upDateSingleObject(NewsChannelBean object) {
+        MyApplication.daoSession.getNewsChannelBeanDao().update(object);
+    }
+
+    @Override
     public List<NewsChannelBean> queryAllObjectByNewsChannelSelect() {
         QueryBuilder<NewsChannelBean> newsChannelBeanQueryBuilder = MyApplication.daoSession.getNewsChannelBeanDao().queryBuilder();
         newsChannelBeanQueryBuilder.where(NewsChannelBeanDao.Properties.NewsChannelSelect.eq(true))
@@ -111,7 +119,7 @@ public class NewsChannelModel implements INewsChannelModel<NewsChannelBean> {
     }
 
     @Override
-    public Map<Integer, List<NewsChannelBean>> getAllNewsChannelData() {
+    public Map<Integer, List<NewsChannelBean>> getAllNewsChannelDataReturnMap() {
         @SuppressLint("UseSparseArrays")
         Map<Integer, List<NewsChannelBean>> dataMap = new HashMap<>();
 
@@ -121,6 +129,85 @@ public class NewsChannelModel implements INewsChannelModel<NewsChannelBean> {
         dataMap.put(DBConstant.NEWS_CHANNEL_MORE, unSelectNewsChannelBeanList);
 
         return dataMap;
+    }
+
+    @Override
+    public int getAllNewsChannelDataSize() {
+        return MyApplication.daoSession.getNewsChannelBeanDao().loadAll().size();
+    }
+
+    @Override
+    public List<NewsChannelBean> loadNewsChannelsIndexGt(int channelIndex) {
+
+        QueryBuilder<NewsChannelBean> newsChannelBeanQueryBuilder = MyApplication.daoSession.getNewsChannelBeanDao().queryBuilder();
+        newsChannelBeanQueryBuilder.where(NewsChannelBeanDao.Properties.NewsChannelIndex.gt(channelIndex)).build();
+
+        return newsChannelBeanQueryBuilder.list();
+    }
+
+    public void upDateDBWhenOnItemClick(NewsChannelBean newsChannelBean, boolean isChannelMine) {
+        if (mSingleThreadPool == null) {
+            mSingleThreadPool = Executors.newSingleThreadExecutor();
+        }
+
+        mSingleThreadPool.execute(() -> {
+            int channelIndex = newsChannelBean.getNewsChannelIndex();
+            List<NewsChannelBean> newsChannelBeanList;
+
+            if (isChannelMine) {
+                newsChannelBeanList = loadNewsChannelsIndexGt(channelIndex);
+                changeTheLocationOfTheSurroundingElements(newsChannelBeanList, false);
+                int allNewsChannelDataSize = getAllNewsChannelDataSize();
+                updateClickObject(newsChannelBean, allNewsChannelDataSize, false);
+
+            } else {
+                newsChannelBeanList = loadNewsChannelsLtAndUnSelect(channelIndex);
+                changeTheLocationOfTheSurroundingElements(newsChannelBeanList, true);
+                int selectedNewsDataSize = (int) getSelectedNewsDataSize();
+                updateClickObject(newsChannelBean, selectedNewsDataSize, true);
+            }
+        });
+
+
+    }
+
+    private void updateClickObject(NewsChannelBean newsChannelBean, int toPosition, boolean isSelect) {
+        newsChannelBean.setNewsChannelSelect(isSelect);
+        newsChannelBean.setNewsChannelIndex(toPosition);
+        upDateSingleObject(newsChannelBean);
+    }
+
+    @Override
+    public List<NewsChannelBean> loadNewsChannelsLtAndUnSelect(int channelIndex) {
+        QueryBuilder<NewsChannelBean> newsChannelBeanQueryBuilder = MyApplication.daoSession.getNewsChannelBeanDao().queryBuilder();
+        newsChannelBeanQueryBuilder.where(NewsChannelBeanDao.Properties.NewsChannelIndex.lt(channelIndex), NewsChannelBeanDao.Properties.NewsChannelSelect.eq(false))
+                .build();
+        return newsChannelBeanQueryBuilder.list();
+    }
+
+    @Override
+    public long getSelectedNewsDataSize() {
+
+        QueryBuilder<NewsChannelBean> newsChannelBeanQueryBuilder = MyApplication.daoSession.getNewsChannelBeanDao().queryBuilder();
+
+        return newsChannelBeanQueryBuilder.where(NewsChannelBeanDao.Properties.NewsChannelSelect.eq(true)).buildCount().count();
+    }
+
+    private void changeTheLocationOfTheSurroundingElements(List<NewsChannelBean> newsChannelBeanList, boolean isIncrease) {
+        int index;
+
+        for (NewsChannelBean channelBean : newsChannelBeanList) {
+
+            if (isIncrease) {
+                index = channelBean.getNewsChannelIndex() + 1;
+            } else {
+                index = channelBean.getNewsChannelIndex() - 1;
+            }
+
+            channelBean.setNewsChannelIndex(index);
+            upDateSingleObject(channelBean);
+        }
+
     }
 
 

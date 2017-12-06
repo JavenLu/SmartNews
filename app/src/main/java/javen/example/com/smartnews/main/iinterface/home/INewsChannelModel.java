@@ -18,11 +18,23 @@ public interface INewsChannelModel<T> {
 
     public void insertSingleObject(T object);
 
+    public void upDateSingleObject(T object);
+
     public List<T> queryAllObjectByNewsChannelSelect();
 
     public List<T> queryAllObjectByNewsChannelUnSelect();
 
-    public Map<Integer, List<T>> getAllNewsChannelData();
+    public Map<Integer, List<T>> getAllNewsChannelDataReturnMap();
+
+    public int getAllNewsChannelDataSize();
+
+    public List<T> loadNewsChannelsIndexGt(int channelIndex);
+
+    public void upDateDBWhenOnItemClick(NewsChannelBean newsChannelBean, boolean isChannelMine);
+
+    public List<T> loadNewsChannelsLtAndUnSelect(int channelIndex);
+
+    public long getSelectedNewsDataSize();
 
 
 }

@@ -47,4 +47,10 @@ public class NewsChannelPresenter extends BasePresenter<NewsChannelActivity> imp
             }
         });
     }
+
+    @Override
+    public void upDateDBWhenOnItemClick(NewsChannelBean newsChannelBean, boolean isChannelMine) {
+        iNewsChannelModel.upDateDBWhenOnItemClick(newsChannelBean, isChannelMine);
+    }
+
 }
