@@ -29,7 +29,6 @@ public class AnimationUtil {
 
         );
 
-
         ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(view, translationValuesHolder);
         objectAnimator.setDuration(duration);
         objectAnimator.start();
