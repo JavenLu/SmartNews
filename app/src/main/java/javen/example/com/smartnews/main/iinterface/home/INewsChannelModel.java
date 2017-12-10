@@ -36,6 +36,12 @@ public interface INewsChannelModel<T> {
 
     public long getSelectedNewsDataSize();
 
+    public void upDataDBWhenDragFinished(int fromPosition, int toPosition);
+
+    public T getNewsChannelSingleObjectByIndex(int position);
+
+    public List<T> queryAllObjectByBetween(int from, int to);
+
 
 }
 

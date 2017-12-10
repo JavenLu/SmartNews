@@ -53,4 +53,10 @@ public class NewsChannelPresenter extends BasePresenter<NewsChannelActivity> imp
         iNewsChannelModel.upDateDBWhenOnItemClick(newsChannelBean, isChannelMine);
     }
 
+    @Override
+    public void upDateDBWhenDragFinished(int fromPosition, int toPosition) {
+        iNewsChannelModel.upDataDBWhenDragFinished(fromPosition,toPosition);
+    }
+
+
 }

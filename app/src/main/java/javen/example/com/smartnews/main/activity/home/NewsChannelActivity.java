@@ -2,9 +2,8 @@ package javen.example.com.smartnews.main.activity.home;
 
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -17,11 +16,11 @@ import javen.example.com.smartnews.custom_view.CustomToolBar;
 import javen.example.com.smartnews.custom_view.FlexibleRecyclerView;
 import javen.example.com.smartnews.db.DBConstant;
 import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
-import javen.example.com.smartnews.main.delegate.CommonRecyclerViewAdapter;
 import javen.example.com.smartnews.main.helper.LayoutManagerHelper;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
-import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnClickListener;
+import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnLongPressListener;
 import javen.example.com.smartnews.main.presenter.home.NewsChannelPresenter;
+import javen.example.com.smartnews.utils.ItemDragHelperCallback;
 import javen.example.com.smartnews.utils.WindowUtil;
 
 /**
@@ -101,6 +100,11 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
         Toast.makeText(NewsChannelActivity.this, errorMsg, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void updateNewsChannelDataWhenDragFinished(int fromPosition, int toPosition) {
+        newsChannelPresenter.upDateDBWhenDragFinished(fromPosition, toPosition);
+    }
+
     private void initRecyclerView(RecyclerView recyclerView, List<NewsChannelBean> data, final boolean isChannelMine) {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -111,6 +115,8 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
 
             recyclerView.setLayoutManager(newsMineManager);
             recyclerView.setAdapter(newsMineAdapter);
+
+            initItemDragHelper();
         } else {
             RecyclerView.LayoutManager newsMoreLayoutManager = moreRecyclerView.createLayoutManager(LayoutManagerHelper.GRID_TYPE, 4, LinearLayout.VERTICAL, false);
             newsMoreAdapter = new NewsChannelRecyclerViewAdapter(NewsChannelActivity.this, data);
@@ -120,6 +126,16 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
             recyclerView.setAdapter(newsMoreAdapter);
         }
 
+    }
+
+    private void initItemDragHelper() {
+        ItemDragHelperCallback itemDragHelperCallback = new ItemDragHelperCallback(newsMineAdapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemDragHelperCallback);
+        itemTouchHelper.attachToRecyclerView(mineRecyclerView);
+
+        newsMineAdapter.newsChannelDelegate.setOnLongPressClickListener(position -> {
+            newsMineAdapter.setLongPressEnable(itemDragHelperCallback, position);
+        });
     }
 
     private void LogicByClickUnSelectTag(int position, List<NewsChannelBean> data) {
@@ -147,5 +163,6 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
             }
         }
     }
+
 
 }

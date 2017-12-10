@@ -10,4 +10,6 @@ public interface INewsChannelPresenter {
     void loadNewsChannelData();
 
     void upDateDBWhenOnItemClick(NewsChannelBean newsChannelBean, boolean isChannelMine);
+
+    void upDateDBWhenDragFinished(int fromPosition,int toPosition);
 }

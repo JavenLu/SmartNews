@@ -92,7 +92,7 @@ public class NewsChannelModel implements INewsChannelModel<NewsChannelBean> {
 
     @Override
     public void insertSingleObject(NewsChannelBean object) {
-        MyApplication.daoSession.getNewsChannelBeanDao().insert(object);
+        MyApplication.daoSession.getNewsChannelBeanDao().insertOrReplace(object);
     }
 
     @Override
@@ -193,6 +193,75 @@ public class NewsChannelModel implements INewsChannelModel<NewsChannelBean> {
         return newsChannelBeanQueryBuilder.where(NewsChannelBeanDao.Properties.NewsChannelSelect.eq(true)).buildCount().count();
     }
 
+    @Override
+    public void upDataDBWhenDragFinished(int fromPosition, int toPosition) {
+        updateDragDB(fromPosition, toPosition);
+    }
+
+    private void updateDragDB(int fromPosition, int toPosition) {
+        createThreadPool();
+        mSingleThreadPool.execute(new Runnable() {
+            @Override
+            public void run() {
+                NewsChannelBean fromNewsChannelBean = getNewsChannelSingleObjectByIndex(fromPosition);
+                NewsChannelBean toNewsChannelBean = getNewsChannelSingleObjectByIndex(toPosition);
+
+                if (isCheckFixed(fromNewsChannelBean, toNewsChannelBean)) return;
+
+                if (isCheckNeighbor()) {
+                    swapNeighborAndUpdate(fromNewsChannelBean, toNewsChannelBean);
+                } else if (fromPosition - toPosition > 0) {
+                    swapFromRightToLeftNotNeighborAndUpdate(fromNewsChannelBean);
+                } else if (fromPosition - toPosition < 0) {
+                    swapFromLeftToRightNotNeighborAndUpdate(fromNewsChannelBean);
+                }
+            }
+
+            private void swapFromLeftToRightNotNeighborAndUpdate(NewsChannelBean fromNewsChannelBean) {
+                List<NewsChannelBean> list = queryAllObjectByBetween(fromPosition + 1, toPosition);
+                changeTheLocationOfTheSurroundingElements(list, false);
+                fromNewsChannelBean.setNewsChannelIndex(toPosition);
+                upDateSingleObject(fromNewsChannelBean);
+            }
+
+            private void swapFromRightToLeftNotNeighborAndUpdate(NewsChannelBean fromNewsChannelBean) {
+                List<NewsChannelBean> list = queryAllObjectByBetween(toPosition, fromPosition - 1);
+                changeTheLocationOfTheSurroundingElements(list, true);
+                fromNewsChannelBean.setNewsChannelIndex(toPosition);
+                upDateSingleObject(fromNewsChannelBean);
+            }
+
+            private void swapNeighborAndUpdate(NewsChannelBean fromNewsChannelBean, NewsChannelBean toNewsChannelBean) {
+                fromNewsChannelBean.setNewsChannelIndex(toPosition);
+                toNewsChannelBean.setNewsChannelIndex(fromPosition);
+
+                upDateSingleObject(fromNewsChannelBean);
+                upDateSingleObject(toNewsChannelBean);
+            }
+
+            private boolean isCheckNeighbor() {
+                return Math.abs(fromPosition - toPosition) == 1;
+            }
+
+            private boolean isCheckFixed(NewsChannelBean fromNewsChannelBean, NewsChannelBean toNewsChannelBean) {
+                return fromNewsChannelBean.getNewsChannelFixed() || toNewsChannelBean.getNewsChannelFixed();
+            }
+        });
+    }
+
+    @Override
+    public NewsChannelBean getNewsChannelSingleObjectByIndex(int position) {
+        QueryBuilder<NewsChannelBean> newsChannelBeanQueryBuilder = MyApplication.daoSession.getNewsChannelBeanDao().queryBuilder();
+        return newsChannelBeanQueryBuilder.where(NewsChannelBeanDao.Properties.NewsChannelIndex.eq(position)).build().unique();
+    }
+
+    @Override
+    public List<NewsChannelBean> queryAllObjectByBetween(int from, int to) {
+        QueryBuilder<NewsChannelBean> newsChannelBeanQueryBuilder = MyApplication.daoSession.getNewsChannelBeanDao().queryBuilder();
+        newsChannelBeanQueryBuilder.where(NewsChannelBeanDao.Properties.NewsChannelIndex.between(from, to)).build();
+        return newsChannelBeanQueryBuilder.list();
+    }
+
     private void changeTheLocationOfTheSurroundingElements(List<NewsChannelBean> newsChannelBeanList, boolean isIncrease) {
         int index;
 
@@ -208,6 +277,12 @@ public class NewsChannelModel implements INewsChannelModel<NewsChannelBean> {
             upDateSingleObject(channelBean);
         }
 
+    }
+
+    private void createThreadPool() {
+        if (mSingleThreadPool == null) {
+            mSingleThreadPool = Executors.newSingleThreadExecutor();
+        }
     }
 
 

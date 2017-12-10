@@ -13,4 +13,6 @@ public interface INewsChannelActivity {
     void getNewsChannelDataSuccess(Map<Integer, List<NewsChannelBean>> data);
 
     void getNewsChannelDataFail(String errorMsg);
+
+    void updateNewsChannelDataWhenDragFinished(int fromPosition, int toPosition);
 }

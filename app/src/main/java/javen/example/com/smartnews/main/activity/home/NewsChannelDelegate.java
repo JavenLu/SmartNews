@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ import javen.example.com.smartnews.main.delegate.AdapterDelegate;
 import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnClickListener;
+import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnLongPressListener;
+import javen.example.com.smartnews.utils.ItemDragHelperCallback;
 
 /**
  * Created by Javen on 01/12/2017.
@@ -26,6 +29,7 @@ public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
     private LayoutInflater inflater;
     private Context context;
     private INewsChannelOnClickListener iNewsChannelOnClickListener;
+    private INewsChannelOnLongPressListener iNewsChannelOnLongPressListener;
 
     public NewsChannelDelegate(Activity activity) {
         inflater = activity.getLayoutInflater();
@@ -34,6 +38,10 @@ public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
 
     public void setOnItemClickListener(INewsChannelOnClickListener clickListener) {
         this.iNewsChannelOnClickListener = clickListener;
+    }
+
+    public void setOnLongPressClickListener(INewsChannelOnLongPressListener iNewsChannelOnLongPressListener) {
+        this.iNewsChannelOnLongPressListener = iNewsChannelOnLongPressListener;
     }
 
     @Override
@@ -62,9 +70,16 @@ public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
             super(itemView);
             textView = itemView.findViewById(R.id.news_channel_Text_view);
 
-            textView.setOnClickListener(v -> {
-                iNewsChannelOnClickListener.setOnItemClickListener(getAdapterPosition());
-            });
+            if (iNewsChannelOnClickListener != null) {
+                textView.setOnClickListener(v -> iNewsChannelOnClickListener.setOnItemClickListener(getAdapterPosition()));
+            }
+
+            if (iNewsChannelOnLongPressListener != null) {
+                textView.setOnTouchListener((v, event) -> {
+                    iNewsChannelOnLongPressListener.setOnLongPressListener(getLayoutPosition());
+                    return false;
+                });
+            }
         }
     }
 }
