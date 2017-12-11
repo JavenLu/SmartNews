@@ -11,27 +11,38 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import javen.example.com.smartnews.MyApplication;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.CustomToolBar;
+import javen.example.com.smartnews.db.DBConstant;
+import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.activity.home.NewsChannelActivity;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
 import javen.example.com.smartnews.main.fragment.BaseFragmentPresenter;
+import javen.example.com.smartnews.main.fragment.home.fragments.NewsFragment;
 import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeFragment;
 import javen.example.com.smartnews.main.fragment.home.presenter.HomePresenter;
+import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
+import javen.example.com.smartnews.main.presenter.home.NewsChannelPresenter;
 
 /**
  * Created by Javen on 10/11/2017.
  */
 
-public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements IHomeFragment {
+public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements IHomeFragment, INewsChannelActivity {
     private HomePresenter homePresenter;
     private List<Fragment> fragmentList;
     private ViewPager viewPager;
     private FragmentManager fragmentManager;
     private ImageView channelImageView;
+    private NewsChannelPresenter newsChannelPresenter;
+    private FragmentAdapter fragmentAdapter;
 
     @Override
     public BaseFragmentPresenter initPresent() {
@@ -40,8 +51,9 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
 
     @Override
     public void initData() {
+        fragmentList = new ArrayList<>();
         homePresenter = (HomePresenter) baseFragmentPresenter;
-        fragmentList = homePresenter.getHomeFragments();
+        newsChannelPresenter = new NewsChannelPresenter(HomeFragment.this);
     }
 
     @Override
@@ -60,8 +72,26 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
         customToolBar.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
 
         viewPager = view.findViewById(R.id.viewPager);
-        fragmentManager = getActivity().getSupportFragmentManager();
-        viewPager.setAdapter(new FragmentAdapter(fragmentManager));
+        fragmentManager = getChildFragmentManager();
+        fragmentAdapter = new FragmentAdapter(fragmentManager);
+        viewPager.setAdapter(fragmentAdapter);
+
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         initClickListener();
     }
@@ -72,6 +102,25 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
             getActivity().startActivity(intent);
             getActivity().overridePendingTransition(R.anim.alpha_activity_in, R.anim.anim_stay);
         });
+    }
+
+    @Override
+    public void getNewsChannelDataSuccess(Map<Integer, List<NewsChannelBean>> data) {
+        if (fragmentList != null && fragmentAdapter != null) {
+            List<NewsChannelBean> list = data.get(DBConstant.NEWS_CHANNEL_MINE);
+            fragmentList = homePresenter.getHomeFragments(list);
+            fragmentAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void getNewsChannelDataFail(String errorMsg) {
+
+    }
+
+    @Override
+    public void updateNewsChannelDataWhenDragFinished(int fromPosition, int toPosition) {
+
     }
 
     private class FragmentAdapter extends FragmentPagerAdapter {
@@ -88,6 +137,11 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
         @Override
         public int getCount() {
             return fragmentList != null && fragmentList.size() > 0 ? fragmentList.size() : 0;
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            return super.instantiateItem(container, position);
         }
     }
 

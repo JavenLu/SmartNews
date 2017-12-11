@@ -17,6 +17,22 @@
         <item>时尚</item>
     </string-array>
 
+    <string-array name="news_request_type">
+
+        <!--定死不能更改的三个频道-->
+        <item>top</item>
+        <item>keji</item>
+        <item>caijing</item>
+
+        <item>shehui</item>
+        <item>guonei</item>
+        <item>guoji</item>
+        <item>yule</item>
+        <item>tiyu</item>
+        <item>junshi</item>
+        <item>shishang</item>
+    </string-array>
+
     <string-array name="news_channel_id">
 
         <!--定死不能更改的三个频道ID-->

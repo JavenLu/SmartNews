@@ -5,4 +5,5 @@ package javen.example.com.smartnews.main.fragment.home.iinterface;
  */
 
 public interface IHomeFragment {
+
 }

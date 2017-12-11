@@ -2,12 +2,15 @@
 /build.gradle
 /.idea
 app.iml
-.gradle/
+/.gradle/
 .iml
 workspace.xml
+/.idea/
 .idea/
 /.gradle/4.1
 .gradle/4.1
 build/android-profile/
+/build/android-profile/
+
 
 

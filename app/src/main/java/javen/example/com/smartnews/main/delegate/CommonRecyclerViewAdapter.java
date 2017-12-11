@@ -57,5 +57,9 @@ public class CommonRecyclerViewAdapter<T extends List<IDispalyNews>> extends Rec
         return itemList;
     }
 
+    public void setDataAndRefresh(T list) {
+        itemList = list;
+        notifyDataSetChanged();
+    }
 
 }

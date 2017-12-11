@@ -2,13 +2,13 @@ package javen.example.com.smartnews;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.v4.app.Fragment;
 
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.List;
+import java.util.TreeMap;
 
 import javen.example.com.smartnews.db.GreenDaoManager;
 import javen.example.com.smartnews.db.news_channel.DaoSession;
-import javen.example.com.smartnews.main.fragment.home.fragments.NewsFragment;
 
 
 /**
@@ -17,20 +17,28 @@ import javen.example.com.smartnews.main.fragment.home.fragments.NewsFragment;
 
 public class MyApplication extends Application {
     public static DaoSession daoSession;
-    public static HashMap<String, Fragment> typeHashMap = new HashMap<>();
+    public static TreeMap<String, String> typeTreeMap = new TreeMap<>();
     public static boolean isStaggeredGridLayoutManager = false;
     private static Context context;
+    public static List<String> channelName;
+    public static List<String> newsType;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
         daoSession = GreenDaoManager.getInstance(this).getDaoSession();
-        typeHashMap.put("头条", new NewsFragment());
+        channelName = Arrays.asList(getResources().getStringArray(R.array.news_channel_name));
+        newsType = Arrays.asList(getResources().getStringArray(R.array.news_request_type));
+
+        for (int i = 0; i < channelName.size(); i++) {
+            typeTreeMap.put(channelName.get(i), newsType.get(i));
+        }
+
         context = getApplicationContext();
     }
 
-    public  static Context getContext() {
+    public static Context getContext() {
         return context;
     }
 }
