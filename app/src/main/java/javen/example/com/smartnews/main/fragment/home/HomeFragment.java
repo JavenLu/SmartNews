@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,6 @@ import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.activity.home.NewsChannelActivity;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
 import javen.example.com.smartnews.main.fragment.BaseFragmentPresenter;
-import javen.example.com.smartnews.main.fragment.home.fragments.NewsFragment;
 import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeFragment;
 import javen.example.com.smartnews.main.fragment.home.model.HomeModel;
 import javen.example.com.smartnews.main.fragment.home.presenter.HomePresenter;
@@ -40,6 +38,8 @@ import javen.example.com.smartnews.utils.CommonUiUtil;
  */
 
 public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements IHomeFragment, INewsChannelActivity {
+    public static final int REQUEST_CODE = 0x10;
+
     private HomePresenter homePresenter;
     private List<Fragment> fragmentList;
     private ViewPager viewPager;
@@ -111,7 +111,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     private void initClickListener() {
         channelImageView.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), NewsChannelActivity.class);
-            getActivity().startActivity(intent);
+            getActivity().startActivityForResult(intent, REQUEST_CODE);
             getActivity().overridePendingTransition(R.anim.alpha_activity_in, R.anim.anim_stay);
         });
     }
@@ -191,4 +191,10 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
         }
     }
 
+    public void refreshUi(int resultCode) {
+        if (resultCode == 0 && MyApplication.isChannelChange) {
+            newsChannelPresenter.loadNewsChannelData();
+            MyApplication.isChannelChange = false;
+        }
+    }
 }

@@ -23,6 +23,7 @@ public class MyApplication extends Application {
     public static List<String> channelName;
     public static List<String> newsType;
     public static int screenWidth, screenHeight;
+    public static boolean isChannelChange = false;
 
     @Override
     public void onCreate() {

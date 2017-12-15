@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import javen.example.com.smartnews.BaseActivity;
+import javen.example.com.smartnews.MyApplication;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.CustomToolBar;
 import javen.example.com.smartnews.custom_view.FlexibleRecyclerView;
@@ -18,7 +19,6 @@ import javen.example.com.smartnews.db.DBConstant;
 import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.helper.LayoutManagerHelper;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
-import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnLongPressListener;
 import javen.example.com.smartnews.main.presenter.home.NewsChannelPresenter;
 import javen.example.com.smartnews.utils.ItemDragHelperCallback;
 import javen.example.com.smartnews.utils.WindowUtil;
@@ -59,6 +59,7 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
     private void finishCurrentActivity() {
         finish();
         overridePendingTransition(0, R.anim.alpha_activity_out);
+        setResult(0);
     }
 
     private void initCustomToolBar() {
@@ -144,6 +145,7 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
             boolean isNewsChannelFixed = newsChannelBean.getNewsChannelFixed();
 
             if (!isNewsChannelFixed) {
+                MyApplication.isChannelChange = true;
                 newsMineAdapter.add(newsMineAdapter.getItemCount(), newsChannelBean);
                 newsMoreAdapter.delete(position);
                 newsChannelPresenter.upDateDBWhenOnItemClick(newsChannelBean, false);
@@ -157,6 +159,7 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
             boolean isNewsChannelFixed = newsChannelBean.getNewsChannelFixed();
 
             if (!isNewsChannelFixed) {
+                MyApplication.isChannelChange = true;
                 newsMoreAdapter.add(newsMoreAdapter.getItemCount(), newsChannelBean);
                 newsMineAdapter.delete(position);
                 newsChannelPresenter.upDateDBWhenOnItemClick(newsChannelBean, true);

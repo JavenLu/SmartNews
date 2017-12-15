@@ -119,4 +119,16 @@ public class MainHelper {
         }
     }
 
+    public boolean isCheckFirstPageShow() {
+        if (homeFragment != null && !homeFragment.isHidden()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public Fragment getFirstPageInstance() {
+        return homeFragment;
+    }
+
 }

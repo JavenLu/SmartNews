@@ -10,6 +10,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import javen.example.com.smartnews.BaseActivity;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.main.activity.home.NewsDetailsActivity;
+import javen.example.com.smartnews.main.fragment.home.HomeFragment;
 import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsDelegate;
 import javen.example.com.smartnews.main.helper.MainHelper;
 import javen.example.com.smartnews.main.iinterface.IMainActivity;
@@ -84,5 +85,21 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
         startActivity(intent);
         overridePendingTransition(R.anim.common_right_in, R.anim.anim_stay);
     }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case 0x10:
+                if (mainHelper.isCheckFirstPageShow()) {
+                    HomeFragment homeFragment = (HomeFragment) mainHelper.getFirstPageInstance();
+                    homeFragment.refreshUi(resultCode);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
 
 }
