@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     private FragmentAdapter fragmentAdapter;
     private List<String> titleList;
     private TabLayout tabLayout;
+    private String currentTitleByChangePage;
 
 
     @Override
@@ -94,7 +96,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
 
             @Override
             public void onPageSelected(int position) {
-
+                currentTitleByChangePage = titleList.get(position);
             }
 
             @Override
@@ -121,13 +123,35 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
             Map<String, List> map = homePresenter.getHomeFragments(list);
 
             if (map != null && map.size() > 0) {
-                titleList = map.get(HomeModel.CHANNEL_NAME_LIST);
-                fragmentList = map.get(HomeModel.FRAGMENT_LIST);
-                fragmentAdapter.notifyDataSetChanged();
+                initDataAndRefreshAdapter(map);
                 CommonUiUtil.getInstance().dynamicSetTabLayoutMode(tabLayout);
+                int currentViewPagerPosition = getCurrentViewPagerPosition();
+                viewPager.setCurrentItem(currentViewPagerPosition);
             }
 
+
         }
+    }
+
+    private int getCurrentViewPagerPosition() {
+        int currentViewPagerPosition = 0;
+
+        for (int i = 0; i < titleList.size(); i++) {
+            if (!TextUtils.isEmpty(currentTitleByChangePage)) {
+                if (currentTitleByChangePage.equals(titleList.get(i))) {
+                    currentViewPagerPosition = i;
+                    return currentViewPagerPosition;
+                }
+            }
+        }
+
+        return currentViewPagerPosition;
+    }
+
+    private void initDataAndRefreshAdapter(Map<String, List> map) {
+        titleList = map.get(HomeModel.CHANNEL_NAME_LIST);
+        fragmentList = map.get(HomeModel.FRAGMENT_LIST);
+        fragmentAdapter.notifyDataSetChanged();
     }
 
     @Override
