@@ -22,7 +22,12 @@
                 android:id="@+id/slide_tab_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:tabIndicatorColor="@color/tab_layout_indicator_color"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="@android:color/holo_red_light"
+                app:tabTextAppearance="@android:style/TextAppearance.Holo.Medium"
+                app:tabTextColor="@android:color/white" />
 
             <ImageView
                 android:id="@+id/add_channel_image_view"

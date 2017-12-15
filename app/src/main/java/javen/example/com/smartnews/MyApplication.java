@@ -22,7 +22,7 @@ public class MyApplication extends Application {
     private static Context context;
     public static List<String> channelName;
     public static List<String> newsType;
-
+    public static int screenWidth, screenHeight;
 
     @Override
     public void onCreate() {
@@ -36,6 +36,9 @@ public class MyApplication extends Application {
         }
 
         context = getApplicationContext();
+
+        screenWidth = getResources().getDisplayMetrics().widthPixels;
+        screenHeight = getResources().getDisplayMetrics().heightPixels;
     }
 
     public static Context getContext() {

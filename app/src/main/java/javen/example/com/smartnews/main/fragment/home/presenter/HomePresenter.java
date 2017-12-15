@@ -3,6 +3,7 @@ package javen.example.com.smartnews.main.fragment.home.presenter;
 import android.support.v4.app.Fragment;
 
 import java.util.List;
+import java.util.Map;
 
 import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
@@ -26,7 +27,7 @@ public class HomePresenter extends BaseFragmentPresenter<BaseFragment> implement
     }
 
     @Override
-    public List<Fragment> getHomeFragments(List<NewsChannelBean> list) {
+    public Map<String, List> getHomeFragments(List<NewsChannelBean> list) {
         return iHomeModel.getHomeFragments(list);
     }
 

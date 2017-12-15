@@ -43,6 +43,7 @@
     <color name="black_87">#8a000000</color>
     <color name="news_channel_recycler_item_text">#de000000</color>
 
+    <color name="tab_layout_indicator_color">#76EEC6</color>
 
 </resources>
 

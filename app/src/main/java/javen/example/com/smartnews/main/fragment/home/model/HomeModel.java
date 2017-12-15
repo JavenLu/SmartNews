@@ -5,7 +5,9 @@ import android.support.v4.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javen.example.com.smartnews.MyApplication;
 import javen.example.com.smartnews.R;
@@ -18,26 +20,17 @@ import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeModel;
  */
 
 public class HomeModel implements IHomeModel {
-
-//    @Override
-//    public List<Fragment> getHomeFragments() {
-//        List<Fragment> list = new ArrayList<>();
-//        HashMap<String, Fragment> typeTreeMap = MyApplication.typeTreeMap;
-//
-//        for (Object o : typeTreeMap.entrySet()) {
-//            Map.Entry entry = (Map.Entry) o;
-//            list.add((Fragment) entry.getValue());
-//        }
-//
-//        return list;
-//    }
-
+    public static final String FRAGMENT_LIST = "fragmentList";
+    public static final String CHANNEL_NAME_LIST = "channelNameList";
 
     @Override
-    public List<Fragment> getHomeFragments(List<NewsChannelBean> list) {
+    public Map<String, List> getHomeFragments(List<NewsChannelBean> list) {
+        Map<String, List> map = null;
         List<Fragment> fragmentList = new ArrayList<>();
+        List<String> channelNameList = new ArrayList<>();
 
         if (list != null && list.size() > 0) {
+            map = new HashMap<>();
 
             for (NewsChannelBean newsChannelBean : list) {
                 NewsFragment newsFragment = new NewsFragment();
@@ -46,10 +39,16 @@ public class HomeModel implements IHomeModel {
                 bundle.putString("chineseNewsType", newsChannelBean.getNewsChannelName());
                 newsFragment.setArguments(bundle);
                 fragmentList.add(newsFragment);
+                channelNameList.add(newsChannelBean.getNewsChannelName());
             }
 
+            map.put(FRAGMENT_LIST, fragmentList);
+            map.put(CHANNEL_NAME_LIST, channelNameList);
         }
 
-        return fragmentList;
+
+        return map;
     }
+
+
 }

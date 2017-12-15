@@ -3,6 +3,7 @@ package javen.example.com.smartnews.main.fragment.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -27,9 +28,11 @@ import javen.example.com.smartnews.main.fragment.BaseFragment;
 import javen.example.com.smartnews.main.fragment.BaseFragmentPresenter;
 import javen.example.com.smartnews.main.fragment.home.fragments.NewsFragment;
 import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeFragment;
+import javen.example.com.smartnews.main.fragment.home.model.HomeModel;
 import javen.example.com.smartnews.main.fragment.home.presenter.HomePresenter;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
 import javen.example.com.smartnews.main.presenter.home.NewsChannelPresenter;
+import javen.example.com.smartnews.utils.CommonUiUtil;
 
 /**
  * Created by Javen on 10/11/2017.
@@ -43,6 +46,9 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     private ImageView channelImageView;
     private NewsChannelPresenter newsChannelPresenter;
     private FragmentAdapter fragmentAdapter;
+    private List<String> titleList;
+    private TabLayout tabLayout;
+
 
     @Override
     public BaseFragmentPresenter initPresent() {
@@ -52,6 +58,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     @Override
     public void initData() {
         fragmentList = new ArrayList<>();
+        titleList = new ArrayList<>();
         homePresenter = (HomePresenter) baseFragmentPresenter;
         newsChannelPresenter = new NewsChannelPresenter(HomeFragment.this);
     }
@@ -66,6 +73,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     @Override
     public void initView(View view) {
         channelImageView = view.findViewById(R.id.add_channel_image_view);
+        tabLayout = view.findViewById(R.id.slide_tab_layout);
 
         CustomToolBar customToolBar = view.findViewById(R.id.custom_toolbar);
         customToolBar.setToolbarType(CustomToolBar.TOOLBAR_FIRST_LEVEL);
@@ -75,6 +83,8 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
         fragmentManager = getChildFragmentManager();
         fragmentAdapter = new FragmentAdapter(fragmentManager);
         viewPager.setAdapter(fragmentAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        CommonUiUtil.getInstance().dynamicSetTabLayoutMode(tabLayout);
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -108,8 +118,15 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     public void getNewsChannelDataSuccess(Map<Integer, List<NewsChannelBean>> data) {
         if (fragmentList != null && fragmentAdapter != null) {
             List<NewsChannelBean> list = data.get(DBConstant.NEWS_CHANNEL_MINE);
-            fragmentList = homePresenter.getHomeFragments(list);
-            fragmentAdapter.notifyDataSetChanged();
+            Map<String, List> map = homePresenter.getHomeFragments(list);
+
+            if (map != null && map.size() > 0) {
+                titleList = map.get(HomeModel.CHANNEL_NAME_LIST);
+                fragmentList = map.get(HomeModel.FRAGMENT_LIST);
+                fragmentAdapter.notifyDataSetChanged();
+                CommonUiUtil.getInstance().dynamicSetTabLayoutMode(tabLayout);
+            }
+
         }
     }
 
@@ -132,6 +149,11 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
         @Override
         public Fragment getItem(int position) {
             return fragmentList.get(position);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titleList.get(position);
         }
 
         @Override
