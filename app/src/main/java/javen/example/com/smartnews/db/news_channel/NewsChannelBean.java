@@ -5,14 +5,14 @@ import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Property;
 import org.greenrobot.greendao.annotation.Generated;
 
-import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
+import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDisplayNews;
 
 /**
  * Created by Javen on 29/11/2017.
  */
 
 @Entity
-public class NewsChannelBean implements IDispalyNews {
+public class NewsChannelBean implements IDisplayNews {
     @Id(autoincrement = true)
     private Long id;
 

@@ -1,6 +1,7 @@
 package javen.example.com.smartnews.main.fragment.home.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,10 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import javen.example.com.irecyclerview.IRecyclerView;
+import javen.example.com.irecyclerview.OnRefreshListener;
+import javen.example.com.irecyclerview.RefreshTrigger;
+import javen.example.com.irecyclerview.WrapperAdapter;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.custom_view.FlexibleRecyclerView;
 import javen.example.com.smartnews.main.decoration.DividerDecoration;
@@ -26,12 +31,13 @@ import javen.example.com.smartnews.utils.CheckUtil;
  * Created by Javen on 17/11/2017.
  */
 
-public class NewsFragment extends BaseFragment<NewsPresenter> implements INewsFragment<NewsBean> {
+public class NewsFragment extends BaseFragment<NewsPresenter> implements INewsFragment<NewsBean>, OnRefreshListener {
     public static final String TAG = NewsFragment.class.getSimpleName();
-    private FlexibleRecyclerView topNewsRecyclerView;
+    private IRecyclerView topNewsRecyclerView;
     private String type, chineseNewsType;
     private List<NewsBean> list;
     private CommonRecyclerViewAdapter commonAdapter;
+    private Handler handler = null;
 
     @Override
     public NewsPresenter initPresent() {
@@ -40,6 +46,7 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements INewsFr
 
     @Override
     public void initData() {
+        handler = new Handler();
         Bundle bundle = getArguments();
 
         if (bundle != null) {
@@ -82,22 +89,26 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements INewsFr
         if (CheckUtil.getInstance().isCheckListUsable(list)) {
             this.list = list;
             commonAdapter.setDataAndRefresh(this.list);
+            topNewsRecyclerView.setRefreshing(false);
         }
     }
 
     private void initRecyclerView() {
-        RecyclerView.LayoutManager layoutManager = topNewsRecyclerView.createLayoutManager(LayoutManagerHelper.LINEAR_TYPE);
-
-        if (layoutManager instanceof LinearLayoutManager) {
-            ((LinearLayoutManager) layoutManager).setSmoothScrollbarEnabled(true);
-        }
-
-        topNewsRecyclerView.setHasFixedSize(true);
-        topNewsRecyclerView.setLayoutManager(layoutManager);
+        topNewsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         topNewsRecyclerView.addItemDecoration(new DividerDecoration(getActivity(), R.dimen.x1, R.dimen.x16, DividerDecoration.BOTTOM_LINE_TYPE));
         commonAdapter = new CommonRecyclerViewAdapter(getActivity(), list);
-        topNewsRecyclerView.setAdapter(commonAdapter);
+        topNewsRecyclerView.setIAdapter(commonAdapter);
+        topNewsRecyclerView.setOnRefreshListener(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
 
+    @Override
+    public void onRefresh() {
+        baseFragmentPresenter.requestNewsDataFromServer(this, type, chineseNewsType);
+    }
 }

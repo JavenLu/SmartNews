@@ -25,6 +25,7 @@ public class FlexibleRecyclerView extends RecyclerView {
     public FlexibleRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.context = context;
+        
     }
 
     public RecyclerView.LayoutManager createLayoutManager(int layoutType, int spanCount, int orientation, boolean reverseLayout) {
@@ -47,6 +48,8 @@ public class FlexibleRecyclerView extends RecyclerView {
 
         return LayoutManagerHelper.configurationLayoutManagerInformation(context, layoutType);
     }
+
+
 
 
 }

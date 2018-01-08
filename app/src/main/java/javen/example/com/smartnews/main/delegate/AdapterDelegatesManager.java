@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import java.util.Collections;
 import java.util.List;
 
+import javen.example.com.smartnews.main.activity.home.NewsChannelDelegate;
+
 
 /**
  * Created by LuJun on 02/11/2017.
@@ -21,7 +23,7 @@ import java.util.List;
  * So you have to add / register your {@link AdapterDelegate}s to this manager by calling {@link
  * #addDelegate(AdapterDelegate)}
  * </p>
- *
+ * <p>
  * <p>
  * Next you have to add this AdapterDelegateManager to the {@link RecyclerView.Adapter} by calling
  * corresponding methods:
@@ -33,7 +35,7 @@ import java.util.List;
  * <li> {@link #onBindViewHolder(Object, int, RecyclerView.ViewHolder)}: Must be called from {@link
  * RecyclerView.Adapter#onBindViewHolder(RecyclerView.ViewHolder, int)}</li>
  * </ul>
- *
+ * <p>
  * You can also set a fallback {@link AdapterDelegate} by using {@link
  * #setFallbackDelegate(AdapterDelegate)} that will be used if no {@link AdapterDelegate} is
  * responsible to handle a certain view type. If no fallback is specified, an Exception will be
@@ -66,7 +68,7 @@ public class AdapterDelegatesManager<T> {
      * Adds an {@link AdapterDelegate}.
      * <b>This method automatically assign internally the view type integer by using the next
      * unused</b>
-     *
+     * <p>
      * Internally calls {@link #addDelegate(int, boolean, AdapterDelegate)} with
      * allowReplacingDelegate = false as parameter.
      *
@@ -92,12 +94,12 @@ public class AdapterDelegatesManager<T> {
 
     /**
      * Adds an {@link AdapterDelegate} with the specified view type.
-     *
+     * <p>
      * Internally calls {@link #addDelegate(int, boolean, AdapterDelegate)} with
      * allowReplacingDelegate = false as parameter.
      *
      * @param viewType the view type integer if you want to assign manually the view type. Otherwise
-     * use {@link #addDelegate(AdapterDelegate)} where a viewtype will be assigned manually.
+     *                 use {@link #addDelegate(AdapterDelegate)} where a viewtype will be assigned manually.
      * @param delegate the delegate to add
      * @return self
      * @throws NullPointerException if passed delegate is null
@@ -112,17 +114,17 @@ public class AdapterDelegatesManager<T> {
     /**
      * Adds an {@link AdapterDelegate}.
      *
-     * @param viewType The viewType id
+     * @param viewType               The viewType id
      * @param allowReplacingDelegate if true, you allow to replacing the given delegate any previous
-     * delegate for the same view type. if false, you disallow and a {@link IllegalArgumentException}
-     * will be thrown if you try to replace an already registered {@link AdapterDelegate} for the
-     * same view type.
-     * @param delegate The delegate to add
+     *                               delegate for the same view type. if false, you disallow and a {@link IllegalArgumentException}
+     *                               will be thrown if you try to replace an already registered {@link AdapterDelegate} for the
+     *                               same view type.
+     * @param delegate               The delegate to add
      * @throws IllegalArgumentException if <b>allowReplacingDelegate</b>  is false and an {@link
-     * AdapterDelegate} is already added (registered)
-     * with the same ViewType.
+     *                                  AdapterDelegate} is already added (registered)
+     *                                  with the same ViewType.
      * @throws IllegalArgumentException if viewType is {@link #FALLBACK_DELEGATE_VIEW_TYPE} which is
-     * reserved
+     *                                  reserved
      * @see #addDelegate(AdapterDelegate)
      * @see #addDelegate(int, AdapterDelegate)
      * @see #setFallbackDelegate(AdapterDelegate)
@@ -190,13 +192,13 @@ public class AdapterDelegatesManager<T> {
      * Must be called from {@link RecyclerView.Adapter#getItemViewType(int)}. Internally it scans all
      * the registered {@link AdapterDelegate} and picks the right one to return the ViewType integer.
      *
-     * @param items Adapter's data source
+     * @param items    Adapter's data source
      * @param position the position in adapters data source
      * @return the ViewType (integer). Returns {@link #FALLBACK_DELEGATE_VIEW_TYPE} in case that the
      * fallback adapter delegate should be used
      * @throws NullPointerException if no {@link AdapterDelegate} has been found that is
-     * responsible for the given data element in data set (No {@link AdapterDelegate} for the given
-     * ViewType)
+     *                              responsible for the given data element in data set (No {@link AdapterDelegate} for the given
+     *                              ViewType)
      * @throws NullPointerException if items is null
      */
     public int getItemViewType(@NonNull T items, int position) {
@@ -224,13 +226,14 @@ public class AdapterDelegatesManager<T> {
     /**
      * This method must be called in {@link RecyclerView.Adapter#onCreateViewHolder(ViewGroup, int)}
      *
-     * @param parent the parent
+     * @param parent   the parent
      * @param viewType the view type
      * @return The new created ViewHolder
      * @throws NullPointerException if no AdapterDelegate has been registered for ViewHolders
-     * viewType
+     *                              viewType
      */
-    @NonNull public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @NonNull
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         AdapterDelegate<T> delegate = getDelegateForViewType(viewType);
         if (delegate == null) {
             throw new NullPointerException("No AdapterDelegate added for ViewType " + viewType);
@@ -251,12 +254,12 @@ public class AdapterDelegatesManager<T> {
      * Must be called from{@link RecyclerView.Adapter#onBindViewHolder(RecyclerView.ViewHolder, int,
      * List)}
      *
-     * @param items Adapter's data source
-     * @param position the position in data source
+     * @param items      Adapter's data source
+     * @param position   the position in data source
      * @param viewHolder the ViewHolder to bind
-     * @param payloads A non-null list of merged payloads. Can be empty list if requires full update.
+     * @param payloads   A non-null list of merged payloads. Can be empty list if requires full update.
      * @throws NullPointerException if no AdapterDelegate has been registered for ViewHolders
-     * viewType
+     *                              viewType
      */
     public void onBindViewHolder(@NonNull T items, int position,
                                  @NonNull RecyclerView.ViewHolder viewHolder, List payloads) {
@@ -276,11 +279,11 @@ public class AdapterDelegatesManager<T> {
      * Must be called from {@link RecyclerView.Adapter#onBindViewHolder(RecyclerView.ViewHolder, int,
      * List)}
      *
-     * @param items Adapter's data source
-     * @param position the position in data source
+     * @param items      Adapter's data source
+     * @param position   the position in data source
      * @param viewHolder the ViewHolder to bind
      * @throws NullPointerException if no AdapterDelegate has been registered for ViewHolders
-     * viewType
+     *                              viewType
      */
     public void onBindViewHolder(@NonNull T items, int position,
                                  @NonNull RecyclerView.ViewHolder viewHolder) {
@@ -309,7 +312,7 @@ public class AdapterDelegatesManager<T> {
      * Must be called from {@link RecyclerView.Adapter#onFailedToRecycleView(RecyclerView.ViewHolder)}
      *
      * @param viewHolder The ViewHolder containing the View that could not be recycled due to its
-     * transient state.
+     *                   transient state.
      * @return True if the View should be recycled, false otherwise. Note that if this method
      * returns <code>true</code>, RecyclerView <em>will ignore</em> the transient state of
      * the View and recycle it regardless. If this method returns <code>false</code>,
@@ -370,9 +373,9 @@ public class AdapterDelegatesManager<T> {
      * can handle a certain view type.
      *
      * @param fallbackDelegate The {@link AdapterDelegate} that should be used as fallback if no
-     * other AdapterDelegate has handled a certain view type. <code>null</code> you can set this to
-     * null if
-     * you want to remove a previously set fallback AdapterDelegate
+     *                         other AdapterDelegate has handled a certain view type. <code>null</code> you can set this to
+     *                         null if
+     *                         you want to remove a previously set fallback AdapterDelegate
      */
     public AdapterDelegatesManager<T> setFallbackDelegate(
             @Nullable AdapterDelegate<T> fallbackDelegate) {
@@ -402,12 +405,13 @@ public class AdapterDelegatesManager<T> {
      * Get the {@link AdapterDelegate} associated with the given view type integer
      *
      * @param viewType The view type integer we want to retrieve the associated
-     * delegate for.
+     *                 delegate for.
      * @return The {@link AdapterDelegate} associated with the view type param if it exists,
      * the fallback delegate otherwise if it is set or returns <code>null</code> if no delegate is
      * associated to this viewType (and no fallback has been set).
      */
-    @Nullable public AdapterDelegate<T> getDelegateForViewType(int viewType) {
+    @Nullable
+    public AdapterDelegate<T> getDelegateForViewType(int viewType) {
         return delegates.get(viewType, fallbackDelegate);
     }
 
@@ -417,7 +421,21 @@ public class AdapterDelegatesManager<T> {
      * @return The fallback delegate or <code>null</code> if no fallback delegate has been set
      * @see #setFallbackDelegate(AdapterDelegate)
      */
-    @Nullable public AdapterDelegate<T> getFallbackDelegate() {
+    @Nullable
+    public AdapterDelegate<T> getFallbackDelegate() {
         return fallbackDelegate;
+    }
+
+    public AdapterDelegate<T> getNewsChannelDelegate() {
+        AdapterDelegate<T> delegate;
+
+        for (int i = 0; i < delegates.size(); i++) {
+            delegate = delegates.valueAt(i);
+            if (delegate instanceof NewsChannelDelegate) {
+                return delegate;
+            }
+        }
+
+        return null;
     }
 }

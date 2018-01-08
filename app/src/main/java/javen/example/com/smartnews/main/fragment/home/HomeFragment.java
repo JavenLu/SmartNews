@@ -31,6 +31,7 @@ import javen.example.com.smartnews.main.fragment.home.model.HomeModel;
 import javen.example.com.smartnews.main.fragment.home.presenter.HomePresenter;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
 import javen.example.com.smartnews.main.presenter.home.NewsChannelPresenter;
+import javen.example.com.smartnews.utils.CheckUtil;
 import javen.example.com.smartnews.utils.CommonUiUtil;
 
 /**
@@ -120,6 +121,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     public void getNewsChannelDataSuccess(Map<Integer, List<NewsChannelBean>> data) {
         if (fragmentList != null && fragmentAdapter != null) {
             List<NewsChannelBean> list = data.get(DBConstant.NEWS_CHANNEL_MINE);
+            setCurrentTitleName(list);
             Map<String, List> map = homePresenter.getHomeFragments(list);
 
             if (map != null && map.size() > 0) {
@@ -130,6 +132,13 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
             }
 
 
+        }
+    }
+
+    private void setCurrentTitleName(List<NewsChannelBean> list) {
+        if (CheckUtil.getInstance().isCheckListUsable(list)) {
+            NewsChannelBean newsChannelBean = list.get(list.size() - 1);
+            currentTitleByChangePage = newsChannelBean.getNewsChannelName();
         }
     }
 

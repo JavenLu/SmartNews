@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IRecyclerView</string>
+    <string name="header_up_recommend">松开推荐</string>
+    <string name="header_pull_down_recommend">下拉推荐</string>
+</resources>

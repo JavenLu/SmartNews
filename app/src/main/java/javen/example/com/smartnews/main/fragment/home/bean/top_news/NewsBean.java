@@ -2,16 +2,12 @@ package javen.example.com.smartnews.main.fragment.home.bean.top_news;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.Keep;
 import org.greenrobot.greendao.annotation.Property;
-
-import java.io.Serializable;
 
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Unique;
 
 import javen.example.com.smartnews.BaseNewsBean;
-import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
 
 /**
  * Created by Javen on 16/11/2017.

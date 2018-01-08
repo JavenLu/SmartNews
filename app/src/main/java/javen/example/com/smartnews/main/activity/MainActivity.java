@@ -23,6 +23,8 @@ import static javen.example.com.smartnews.main.helper.MainHelper.SECOND_PAGE;
 import static javen.example.com.smartnews.main.helper.MainHelper.THIRD_PAGE;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements IMainActivity, NewsDelegate.OnItemClickListenerInTopNewsDelegate {
+    public static final int BACK_FROM_NEWS_CHANNEL_ACTIVITY = 0x10;
+
     private BottomNavigationViewEx bottomNavigationViewEx;
     private MainHelper mainHelper;
 
@@ -90,7 +92,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case 0x10:
+            case BACK_FROM_NEWS_CHANNEL_ACTIVITY:
                 if (mainHelper.isCheckFirstPageShow()) {
                     HomeFragment homeFragment = (HomeFragment) mainHelper.getFirstPageInstance();
                     homeFragment.refreshUi(resultCode);

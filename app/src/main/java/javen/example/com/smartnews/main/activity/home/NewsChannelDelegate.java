@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -15,17 +14,15 @@ import java.util.List;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.delegate.AdapterDelegate;
-import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
-import javen.example.com.smartnews.main.iinterface.home.INewsChannelActivity;
+import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDisplayNews;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnClickListener;
 import javen.example.com.smartnews.main.iinterface.home.INewsChannelOnLongPressListener;
-import javen.example.com.smartnews.utils.ItemDragHelperCallback;
 
 /**
  * Created by Javen on 01/12/2017.
  */
 
-public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
+public class NewsChannelDelegate extends AdapterDelegate<List<IDisplayNews>> {
     private LayoutInflater inflater;
     private Context context;
     private INewsChannelOnClickListener iNewsChannelOnClickListener;
@@ -45,7 +42,7 @@ public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
     }
 
     @Override
-    protected boolean isForViewType(@NonNull List<IDispalyNews> items, int position) {
+    protected boolean isForViewType(@NonNull List<IDisplayNews> items, int position) {
         return items.get(position) instanceof NewsChannelBean;
     }
 
@@ -57,7 +54,7 @@ public class NewsChannelDelegate extends AdapterDelegate<List<IDispalyNews>> {
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull List<IDispalyNews> items, int position, @NonNull RecyclerView.ViewHolder holder, @NonNull List<Object> payloads) {
+    protected void onBindViewHolder(@NonNull List<IDisplayNews> items, int position, @NonNull RecyclerView.ViewHolder holder, @NonNull List<Object> payloads) {
         ViewHolder viewHolder = (ViewHolder) holder;
         NewsChannelBean newsChannelBean = (NewsChannelBean) items.get(position);
         viewHolder.textView.setText(newsChannelBean.getNewsChannelName());

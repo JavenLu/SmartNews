@@ -9,28 +9,33 @@ import java.util.List;
 import javen.example.com.smartnews.main.activity.home.NewsChannelActivity;
 import javen.example.com.smartnews.main.activity.home.NewsChannelDelegate;
 import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsDelegate;
-import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
+import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDisplayNews;
 
 /**
  * Created by Javen on 22/11/2017.
  */
 
-public class CommonRecyclerViewAdapter<T extends List<IDispalyNews>> extends RecyclerView.Adapter {
+public class CommonRecyclerViewAdapter<T extends List<IDisplayNews>> extends RecyclerView.Adapter {
     private T itemList;
     private AdapterDelegatesManager<T> adapterDelegatesManager;
     public NewsChannelDelegate newsChannelDelegate;
 
+
     public CommonRecyclerViewAdapter(Activity activity, T itemList) {
         this.itemList = itemList;
+        init(activity);
+    }
+
+    private void init(Activity activity) {
         adapterDelegatesManager = new AdapterDelegatesManager<>();
 
-        newsChannelDelegate = new NewsChannelDelegate(activity);
-
         if (activity instanceof NewsChannelActivity) {
-            adapterDelegatesManager.addDelegate((AdapterDelegate<T>) newsChannelDelegate);
+            adapterDelegatesManager.addDelegate((AdapterDelegate<T>) new NewsChannelDelegate(activity));
         } else {
             adapterDelegatesManager.addDelegate((AdapterDelegate<T>) new NewsDelegate(activity));
         }
+
+        initNewsChannelDelegate();
     }
 
     @Override
@@ -61,5 +66,16 @@ public class CommonRecyclerViewAdapter<T extends List<IDispalyNews>> extends Rec
         itemList = list;
         notifyDataSetChanged();
     }
+
+    private NewsChannelDelegate initNewsChannelDelegate() {
+        AdapterDelegate<T> delegate = adapterDelegatesManager.getNewsChannelDelegate();
+
+        if (delegate != null) {
+            newsChannelDelegate = (NewsChannelDelegate) delegate;
+        }
+
+        return newsChannelDelegate;
+    }
+
 
 }

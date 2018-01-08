@@ -26,4 +26,6 @@
     <string name="more_channel">更多频道</string>
     <string name="channel_manage">频道管理</string>
 
+    <string name="pull_to_refresh">下拉可以刷新</string>
+
 </resources>

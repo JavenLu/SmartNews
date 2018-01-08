@@ -17,13 +17,13 @@ import java.util.List;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.image.ImageHelper;
 import javen.example.com.smartnews.main.delegate.AdapterDelegate;
-import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDispalyNews;
+import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.IDisplayNews;
 
 /**
  * Created by Javen on 22/11/2017.
  */
 
-public class NewsDelegate extends AdapterDelegate<List<IDispalyNews>> {
+public class NewsDelegate extends AdapterDelegate<List<IDisplayNews>> {
     private LayoutInflater inflater;
     private Context context;
     private OnItemClickListenerInTopNewsDelegate onItemClickListenerInTopNewsDelegate;
@@ -36,7 +36,7 @@ public class NewsDelegate extends AdapterDelegate<List<IDispalyNews>> {
     }
 
     @Override
-    protected boolean isForViewType(@NonNull List<IDispalyNews> items, int position) {
+    protected boolean isForViewType(@NonNull List<IDisplayNews> items, int position) {
         return items.get(position) instanceof NewsBean;
     }
 
@@ -47,7 +47,7 @@ public class NewsDelegate extends AdapterDelegate<List<IDispalyNews>> {
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull List<IDispalyNews> items, int position, @NonNull RecyclerView.ViewHolder holder, @NonNull List<Object> payloads) {
+    protected void onBindViewHolder(@NonNull List<IDisplayNews> items, int position, @NonNull RecyclerView.ViewHolder holder, @NonNull List<Object> payloads) {
         final NewsBean newsBean = (NewsBean) items.get(position);
         final ViewHolder viewHolder = (ViewHolder) holder;
 
