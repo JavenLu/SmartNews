@@ -22,7 +22,8 @@
             android:indeterminate="true"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/header_content"
-            android:visibility="gone"
+            android:layout_marginEnd="@dimen/x20"
+            android:visibility="visible"
             style="@style/Widget.MaterialProgressBar.ProgressBar.Small" />
     </RelativeLayout>
 
