@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +14,8 @@ import java.util.List;
 
 import javen.example.com.irecyclerview.IRecyclerView;
 import javen.example.com.irecyclerview.OnRefreshListener;
-import javen.example.com.irecyclerview.RefreshTrigger;
-import javen.example.com.irecyclerview.WrapperAdapter;
 import javen.example.com.smartnews.R;
-import javen.example.com.smartnews.custom_view.FlexibleRecyclerView;
-import javen.example.com.smartnews.main.activity.home.NewsDetailsActivity;
 import javen.example.com.smartnews.main.decoration.DividerDecoration;
-import javen.example.com.smartnews.main.helper.LayoutManagerHelper;
 import javen.example.com.smartnews.main.delegate.CommonRecyclerViewAdapter;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
 import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsBean;
@@ -30,6 +23,7 @@ import javen.example.com.smartnews.main.fragment.home.iinterface.top_news.INewsF
 import javen.example.com.smartnews.main.fragment.home.presenter.top_news.NewsPresenter;
 import javen.example.com.smartnews.utils.CheckUtil;
 import javen.example.com.smartnews.utils.NetUtil;
+import javen.example.com.smartnews.utils.ToastUtil;
 
 /**
  * Created by Javen on 17/11/2017.
@@ -121,9 +115,9 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements INewsFr
             baseFragmentPresenter.requestNewsDataFromServer(this, type, chineseNewsType);
         } else {
             topNewsRecyclerView.setRefreshing(false);
-            Toast toast = Toast.makeText(getActivity(), R.string.not_connect_internet_content, Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
+            ToastUtil.getInstance(getContext()).showNotConnectInternetToast();
         }
     }
+
+
 }

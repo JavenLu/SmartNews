@@ -18,11 +18,14 @@ public class ToastUtil {
     private static TextView toastContentTextView;
 
     private static ToastUtil toastUtil;
+    private static Context myContext;
 
     public ToastUtil() {
     }
 
     public static ToastUtil getInstance(Context context) {
+        myContext = context;
+
         if (toastUtil == null) {
             toastUtil = new ToastUtil();
             initToast(context);
@@ -55,5 +58,12 @@ public class ToastUtil {
 
     public void show() {
         toast.show();
+    }
+
+
+    public void showNotConnectInternetToast() {
+        setText(myContext.getResources().getString(R.string.not_connect_internet_content));
+        setDuration(Toast.LENGTH_SHORT);
+        show();
     }
 }
