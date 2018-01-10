@@ -1,9 +1,5 @@
 package javen.example.com.smartnews.main.presenter;
 
-import android.support.v4.app.Fragment;
-
-import java.util.List;
-
 import javen.example.com.smartnews.BasePresenter;
 import javen.example.com.smartnews.main.activity.MainActivity;
 import javen.example.com.smartnews.main.iinterface.IMainActivity;
@@ -30,4 +26,8 @@ public class MainPresenter extends BasePresenter<MainActivity> implements IMainP
     }
 
 
+    @Override
+    public void deleteAllNewsData() {
+        iMainModel.deleteAllNewsData();
+    }
 }

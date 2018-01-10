@@ -5,4 +5,5 @@ package javen.example.com.smartnews.main.iinterface;
  */
 
 public interface IMainPresenter {
+    void deleteAllNewsData();
 }

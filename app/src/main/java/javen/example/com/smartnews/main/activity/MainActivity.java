@@ -3,7 +3,6 @@ package javen.example.com.smartnews.main.activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -124,13 +123,23 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
 
     private void exitApp(long onKeyDownTime) {
         if (onKeyDownTime - pressOnKeyDownTime > EXIT_APP_TIME) {
-            ToastUtil toastUtil = ToastUtil.getInstance(this);
-            toastUtil.makeText(getResources().getString(R.string.exit_content),Toast.LENGTH_SHORT);
-            toastUtil.show();
+            showExitToast();
             pressOnKeyDownTime = System.currentTimeMillis();
         } else {
+            deleteAllNewsData();
             finish();
             System.exit(0);
         }
+    }
+
+    private void deleteAllNewsData() {
+        MainPresenter mainPresenter = basePresenter;
+        mainPresenter.deleteAllNewsData();
+    }
+
+    private void showExitToast() {
+        ToastUtil toastUtil = ToastUtil.getInstance(this);
+        toastUtil.makeText(getResources().getString(R.string.exit_content), Toast.LENGTH_SHORT);
+        toastUtil.show();
     }
 }

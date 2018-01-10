@@ -10,4 +10,5 @@ import java.util.List;
 
 public interface IMainModel {
     List<Fragment> getViewPagerData();
+    void deleteAllNewsData();
 }

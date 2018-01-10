@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import javen.example.com.smartnews.MyApplication;
 import javen.example.com.smartnews.main.fragment.a_little_video.ALittleVideoFragment;
 import javen.example.com.smartnews.main.fragment.home.HomeFragment;
 import javen.example.com.smartnews.main.fragment.person.PersonFragment;
@@ -29,5 +30,10 @@ public class MainModel implements IMainModel {
         viewPagerDataList.add(new ALittleVideoFragment());
         viewPagerDataList.add(new PersonFragment());
         return viewPagerDataList;
+    }
+
+    @Override
+    public void deleteAllNewsData() {
+        MyApplication.daoSession.getNewsBeanDao().deleteAll();
     }
 }

@@ -45,6 +45,11 @@ public class NewsModel implements INewsModel<NewsBean> {
     }
 
     @Override
+    public void deleteAllData() {
+        MyApplication.daoSession.getNewsBeanDao().deleteAll();
+    }
+
+    @Override
     public void updateSingleObject(NewsBean object) {
         MyApplication.daoSession.getNewsBeanDao().update(object);
     }

@@ -16,6 +16,8 @@ public interface INewsModel<T> {
 
     public void deleteSingleObject(T object);
 
+    public void deleteAllData();
+
     public void updateSingleObject(T object);
 
     public List<T> queryAllObject();
