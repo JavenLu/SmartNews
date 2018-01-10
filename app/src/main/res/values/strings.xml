@@ -29,4 +29,6 @@
     <string name="pull_to_refresh">下拉可以刷新</string>
     <string name="not_connect_internet_content">请连接网络!</string>
 
+    <string name="exit_content">再按一次退出!</string>
+
 </resources>

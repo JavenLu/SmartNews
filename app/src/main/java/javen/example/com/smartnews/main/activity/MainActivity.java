@@ -3,7 +3,10 @@ package javen.example.com.smartnews.main.activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -15,6 +18,7 @@ import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsDelegate
 import javen.example.com.smartnews.main.helper.MainHelper;
 import javen.example.com.smartnews.main.iinterface.IMainActivity;
 import javen.example.com.smartnews.main.presenter.MainPresenter;
+import javen.example.com.smartnews.utils.ToastUtil;
 import javen.example.com.smartnews.utils.WindowUtil;
 
 import static javen.example.com.smartnews.main.helper.MainHelper.FIRST_PAGE;
@@ -24,9 +28,11 @@ import static javen.example.com.smartnews.main.helper.MainHelper.THIRD_PAGE;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements IMainActivity, NewsDelegate.OnItemClickListenerInTopNewsDelegate {
     public static final int BACK_FROM_NEWS_CHANNEL_ACTIVITY = 0x10;
+    public static final int EXIT_APP_TIME = 2000;
 
     private BottomNavigationViewEx bottomNavigationViewEx;
     private MainHelper mainHelper;
+    private long pressOnKeyDownTime;
 
     @Override
     public int getLayout() {
@@ -103,5 +109,28 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
         }
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        long onKeyDownTime = System.currentTimeMillis();
 
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            exitApp(onKeyDownTime);
+            return true;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+
+    }
+
+    private void exitApp(long onKeyDownTime) {
+        if (onKeyDownTime - pressOnKeyDownTime > EXIT_APP_TIME) {
+            ToastUtil toastUtil = ToastUtil.getInstance(this);
+            toastUtil.makeText(getResources().getString(R.string.exit_content),Toast.LENGTH_SHORT);
+            toastUtil.show();
+            pressOnKeyDownTime = System.currentTimeMillis();
+        } else {
+            finish();
+            System.exit(0);
+        }
+    }
 }
