@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
@@ -35,7 +36,6 @@ public class IRecyclerView extends RecyclerView {
     protected static final int STATUS_RELEASE_TO_REFRESH = 2;
 
     private static final int STATUS_REFRESHING = 3;
-    public static final int DELAY_TIME_TO_DEFAULT_STATUS = 2000;
 
     private RefreshHeaderLayout mRefreshHeaderContainer;
 
@@ -45,9 +45,9 @@ public class IRecyclerView extends RecyclerView {
 
     private int mRefreshFinalMoveOffset;
 
-    private int mActivePointerId;
-    private int mLastTouchX;
-    private int mLastTouchY;
+    private int mActivePointerId = -1;
+    private int mLastTouchX = 0;
+    private int mLastTouchY = 0;
 
     private boolean mRefreshEnabled;
     private int mStatus;
@@ -55,6 +55,8 @@ public class IRecyclerView extends RecyclerView {
     private TextView headerContent;
     private LinearLayout mFooterViewContainer;
     private FrameLayout mLoadMoreFooterContainer;
+
+    private boolean isScrolling;
 
     private ValueAnimator mScrollAnimator;
 
@@ -168,6 +170,38 @@ public class IRecyclerView extends RecyclerView {
         }
     }
 
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        final int action = MotionEventCompat.getActionMasked(motionEvent);
+        final int actionIndex = MotionEventCompat.getActionIndex(motionEvent);
+        switch (action) {
+            case MotionEvent.ACTION_DOWN: {
+                mActivePointerId = MotionEventCompat.getPointerId(motionEvent, 0);
+                setLastTouchPosition(motionEvent, actionIndex);
+            }
+            break;
+
+            case MotionEvent.ACTION_POINTER_DOWN: {
+                mActivePointerId = MotionEventCompat.getPointerId(motionEvent, actionIndex);
+                setLastTouchPosition(motionEvent, actionIndex);
+            }
+            break;
+
+            case MotionEventCompat.ACTION_POINTER_UP: {
+                onPointerUp(motionEvent);
+            }
+            break;
+        }
+
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    private void setLastTouchPosition(MotionEvent motionEvent, int actionIndex) {
+        mLastTouchX = (int) (MotionEventCompat.getX(motionEvent, actionIndex) + 0.5f);
+        mLastTouchY = (int) (MotionEventCompat.getY(motionEvent, actionIndex) + 0.5f);
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
         final int action = MotionEventCompat.getActionMasked(motionEvent);
@@ -266,7 +300,7 @@ public class IRecyclerView extends RecyclerView {
     }
 
     private void startScrollReleaseStatusToRefreshingStatus() {
-         mRefreshTrigger.onRelease();
+        mRefreshTrigger.onRelease();
 
         final int targetHeight = mRefreshHeaderView.getMeasuredHeight();
         final int currentHeight = mRefreshHeaderContainer.getMeasuredHeight();
@@ -462,15 +496,13 @@ public class IRecyclerView extends RecyclerView {
         switch (action) {
             case MotionEvent.ACTION_DOWN: {
                 mActivePointerId = MotionEventCompat.getPointerId(event, 0);
-                mLastTouchX = (int) (MotionEventCompat.getX(event, actionIndex) + 0.5f);
-                mLastTouchY = (int) (MotionEventCompat.getY(event, actionIndex) + 0.5f);
+                setLastTouchPosition(event, actionIndex);
             }
             break;
 
             case MotionEvent.ACTION_POINTER_DOWN: {
                 mActivePointerId = MotionEventCompat.getPointerId(event, actionIndex);
-                mLastTouchX = (int) (MotionEventCompat.getX(event, actionIndex) + 0.5f);
-                mLastTouchY = (int) (MotionEventCompat.getY(event, actionIndex) + 0.5f);
+                setLastTouchPosition(event, actionIndex);
             }
             break;
 

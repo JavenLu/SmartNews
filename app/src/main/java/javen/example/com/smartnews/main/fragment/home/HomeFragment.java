@@ -105,8 +105,8 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
 
             }
         });
-
         initClickListener();
+
     }
 
     private void initClickListener() {
@@ -128,10 +128,19 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
                 initDataAndRefreshAdapter(map);
                 CommonUiUtil.getInstance().dynamicSetTabLayoutMode(tabLayout);
                 int currentViewPagerPosition = getCurrentViewPagerPosition();
-                viewPager.setCurrentItem(currentViewPagerPosition);
+                setViewPagerCurrentItem(currentViewPagerPosition);
             }
 
 
+        }
+    }
+
+    private void setViewPagerCurrentItem(int currentViewPagerPosition) {
+        if (MyApplication.isEnterApp) {
+            MyApplication.isEnterApp = false;
+            viewPager.setCurrentItem(0);
+        } else {
+            viewPager.setCurrentItem(currentViewPagerPosition);
         }
     }
 

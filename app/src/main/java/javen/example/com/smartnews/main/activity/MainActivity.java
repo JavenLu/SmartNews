@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import javen.example.com.smartnews.BaseActivity;
+import javen.example.com.smartnews.MyApplication;
 import javen.example.com.smartnews.R;
 import javen.example.com.smartnews.main.activity.home.NewsDetailsActivity;
 import javen.example.com.smartnews.main.fragment.home.HomeFragment;
@@ -17,6 +18,7 @@ import javen.example.com.smartnews.main.fragment.home.bean.top_news.NewsDelegate
 import javen.example.com.smartnews.main.helper.MainHelper;
 import javen.example.com.smartnews.main.iinterface.IMainActivity;
 import javen.example.com.smartnews.main.presenter.MainPresenter;
+import javen.example.com.smartnews.utils.SharedPreferencesUtil;
 import javen.example.com.smartnews.utils.ToastUtil;
 import javen.example.com.smartnews.utils.WindowUtil;
 
@@ -142,4 +144,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
         toastUtil.makeText(getResources().getString(R.string.exit_content), Toast.LENGTH_SHORT);
         toastUtil.show();
     }
+
+
 }

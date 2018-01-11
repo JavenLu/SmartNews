@@ -24,6 +24,7 @@ public class MyApplication extends Application {
     public static List<String> newsType;
     public static int screenWidth, screenHeight;
     public static boolean isChannelChange = false;
+    public static boolean isEnterApp = true;
 
     @Override
     public void onCreate() {
@@ -40,6 +41,8 @@ public class MyApplication extends Application {
 
         screenWidth = getResources().getDisplayMetrics().widthPixels;
         screenHeight = getResources().getDisplayMetrics().heightPixels;
+
+
     }
 
     public static Context getContext() {
