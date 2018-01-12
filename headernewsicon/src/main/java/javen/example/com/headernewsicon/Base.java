@@ -4,8 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -33,6 +31,7 @@ public abstract class Base extends View {
         stopAnim();
         startViewAnim(0f, 1f, 500);
     }
+
     /**
      * 开始动画 自定义时间
      */
@@ -51,6 +50,7 @@ public abstract class Base extends View {
             valueAnimator.setRepeatCount(0);
             valueAnimator.cancel();
             valueAnimator.end();
+
             if (OnStopAnim() == 0) {
                 valueAnimator.setRepeatCount(0);
                 valueAnimator.cancel();
@@ -60,10 +60,11 @@ public abstract class Base extends View {
         }
     }
 
-   public ValueAnimator valueAnimator;
+    public ValueAnimator valueAnimator;
 
     /**
      * 开始view动画
+     *
      * @param startF
      * @param endF
      * @param time
@@ -91,6 +92,7 @@ public abstract class Base extends View {
 
             }
         });
+
         valueAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -100,7 +102,6 @@ public abstract class Base extends View {
 
             @Override
             public void onAnimationStart(Animator animation) {
-
                 super.onAnimationStart(animation);
             }
 
@@ -110,8 +111,9 @@ public abstract class Base extends View {
                 OnAnimationRepeat(animation);
             }
         });
+
         if (!valueAnimator.isRunning()) {
-            AinmIsRunning();
+            AnimIsRunning();
             valueAnimator.start();
 
         }
@@ -132,10 +134,11 @@ public abstract class Base extends View {
 
     protected abstract int SetAnimRepeatCount();
 
-    protected abstract void AinmIsRunning();
+    protected abstract void AnimIsRunning();
 
     /**
      * dip 转 px
+     *
      * @param dpValue
      * @return
      */

@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.Log;
 
 public class HeaderNewsView extends Base {
 
@@ -46,7 +45,6 @@ public class HeaderNewsView extends Base {
     public void setValue(int value) {
         stopAnim();
         if (value <= 100) {
-            Log.e("value=", value + "");
             this.mValue = value;
             postInvalidate();
         } else {
@@ -454,7 +452,7 @@ public class HeaderNewsView extends Base {
     }
 
     @Override
-    protected void AinmIsRunning() {
+    protected void AnimIsRunning() {
 
     }
 
