@@ -10,10 +10,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/**
- * Created by lumingmin on 2016/12/2.
- */
-
 public abstract class Base extends View {
 
 
@@ -146,23 +142,5 @@ public abstract class Base extends View {
     public int dip2px(float dpValue) {
         final float scale = getContext().getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
-    }
-
-    public float getFontlength(Paint paint, String str) {
-        Rect rect = new Rect();
-        paint.getTextBounds(str, 0, str.length(), rect);
-        return rect.width();
-    }
-
-    public float getFontHeight(Paint paint, String str) {
-        Rect rect = new Rect();
-        paint.getTextBounds(str, 0, str.length(), rect);
-        return rect.height();
-
-    }
-
-    public float getFontHeight(Paint paint) {
-        Paint.FontMetrics fm = paint.getFontMetrics();
-        return fm.descent - fm.ascent;  //低于基线的单个间隔文本的推荐距离 - 高于基线的单个间隔文本的推荐距离
     }
 }
