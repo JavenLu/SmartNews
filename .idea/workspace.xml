@@ -5,7 +5,7 @@
       <filter>
         <option name="logLevel" value="verbose" />
         <option name="logMessagePattern" value="" />
-        <option name="logTagPattern" value="onDestroy" />
+        <option name="logTagPattern" value="movedheight|moved|height|caculate" />
         <option name="name" value="Unnamed-0" />
         <option name="packageNamePattern" value="" />
         <option name="pid" value="" />
@@ -18,10 +18,19 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Unnamed-0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee4f684f-81b0-4a23-9c90-6213d182db03" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/headernewsicon.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/proguard-rules.pro" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/src/androidTest/java/javen/example/com/headernewsicon/ExampleInstrumentedTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/src/main/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/Base.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/HeaderNewsView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/src/main/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headernewsicon/src/test/java/javen/example/com/headernewsicon/ExampleUnitTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
@@ -33,13 +42,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/MyApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/MyApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/activity/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/top_news_recycler_item_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/top_news_recycler_item_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/header_view_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/header_view_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/irecyclerview/build.gradle" afterPath="$PROJECT_DIR$/irecyclerview/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/irecyclerview/irecyclerview.iml" afterPath="$PROJECT_DIR$/irecyclerview/irecyclerview.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/Header.java" afterPath="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/Header.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java" afterPath="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/WrapperAdapter.java" afterPath="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/WrapperAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/irecyclerview/src/main/res/layout/header_layout.xml" afterPath="$PROJECT_DIR$/irecyclerview/src/main/res/layout/header_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,47 +91,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/activity/MainActivity.java">
+      <file leaf-file-name="IRecyclerView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="86" column="5" lean-forward="false" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+            <state relative-caret-position="256">
+              <caret line="132" column="44" lean-forward="false" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1808#1809#0" expanded="true" />
-                <element signature="e#1853#1854#0" expanded="true" />
-                <element signature="e#3467#3468#0" expanded="true" />
-                <element signature="e#3524#3525#0" expanded="true" />
+                <element signature="e#4051#4052#0" expanded="true" />
+                <element signature="e#4097#4098#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/MyApplication.java">
+      <file leaf-file-name="RefreshTrigger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/RefreshTrigger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/BaseActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SharedPreferencesUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/utils/SharedPreferencesUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="120">
+              <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -128,61 +117,109 @@
       <file leaf-file-name="NewsFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/fragments/NewsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+            <state relative-caret-position="75">
+              <caret line="90" column="9" lean-forward="false" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/Header.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
               <folding>
-                <element signature="e#1665#1666#0" expanded="true" />
-                <element signature="e#1711#1712#0" expanded="true" />
+                <element signature="e#1652#1653#0" expanded="true" />
+                <element signature="e#1698#1699#0" expanded="true" />
+                <element signature="e#1744#1745#0" expanded="true" />
+                <element signature="e#1785#1786#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/BaseFragment.java">
+      <file leaf-file-name="header_view_layout.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/header_view_layout.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="120">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#204#217#0" expanded="true" />
+                <element signature="e#241#253#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java">
+      <file leaf-file-name="header_layout.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/res/layout/header_layout.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="135">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#515#527#0" expanded="true" />
+                <element signature="e#561#573#0" expanded="true" />
+                <element signature="e#608#620#0" expanded="true" />
+                <element signature="e#770#782#0" expanded="true" />
+                <element signature="e#812#824#0" expanded="true" />
+                <marker date="1515747425497" expanded="false" signature="1328:1340" ph="&quot;8.88px&quot;" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommonUiUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/utils/CommonUiUtil.java">
+      <file leaf-file-name="Base.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/Base.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="24">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#496#497#0" expanded="true" />
+                <element signature="e#531#532#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsChannelPresenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/presenter/home/NewsChannelPresenter.java">
+      <file leaf-file-name="HeaderNewsView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/HeaderNewsView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="40" column="37" lean-forward="false" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="2160">
+              <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommonRecyclerViewAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/delegate/CommonRecyclerViewAdapter.java">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/android-sdk-macosx/sources/android-26/android/view/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+            <state relative-caret-position="116">
+              <caret line="15133" column="16" lean-forward="false" selection-start-line="15133" selection-start-column="16" selection-end-line="15133" selection-end-column="16" />
+              <folding>
+                <element signature="e#632944#632945#0" expanded="true" />
+                <element signature="e#632984#632985#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attrs.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/res/values/attrs.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -204,14 +241,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>requestNewsDataFromServer</find>
-      <find>mScrollAnimator</find>
-      <find>onRefresh</find>
-      <find>mOnRefreshListener</find>
-      <find>headerView</find>
-      <find>mRefreshHeaderView</find>
-      <find>dp</find>
-      <find>setRefreshing</find>
       <find>position</find>
       <find>newsChannelDelegate</find>
       <find>mineRecyclerView</find>
@@ -234,6 +263,14 @@
       <find>viewPager</find>
       <find>getNewsChannelDataFail</find>
       <find>init</find>
+      <find>setValue</find>
+      <find>setRefreshing</find>
+      <find>release</find>
+      <find>mRefreshTrigger.onStart</find>
+      <find>onStart</find>
+      <find>onMove</find>
+      <find>caculate</find>
+      <find>mValue</find>
     </findStrings>
     <replaceStrings>
       <replace>toolbar</replace>
@@ -271,6 +308,10 @@
               <ExternalProjectPojo>
                 <option name="name" value=":app" />
                 <option name="path" value="$PROJECT_DIR$/app" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value=":headernewsicon" />
+                <option name="path" value="$PROJECT_DIR$/headernewsicon" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value=":irecyclerview" />
@@ -1808,6 +1849,674 @@
             </list>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/headernewsicon">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of project ':headernewsicon'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="packageReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeReleaseConsumerProguardFiles" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="validateSigningDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformNativeLibsWithSyncJniLibsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assembleReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformClassesAndResourcesWithPrepareIntermediateJarsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a bundle containing the library in debug." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="bundleDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processReleaseJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateReleaseAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on the Debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="lintDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a bundle containing the library in release." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="bundleRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assembleDebugUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Creates a version of android.jar that's suitable for unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mockableAndroidJar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of project ':headernewsicon'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from project ':headernewsicon'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformClassesAndResourcesWithPrepareIntermediateJarsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="packageReleaseRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="deviceCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformNativeLibsWithIntermediateJniLibsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in project ':headernewsicon'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on all variants." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="lint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugAndroidTestBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processDebugUnitTestJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run unit tests for the release build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="testReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build cache directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="cleanBuildCache" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assembleDefault" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugAndroidTestShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugAndroidTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by project ':headernewsicon'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all Debug builds." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assembleDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processDebugAndroidTestManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugUnitTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformResourcesWithMergeJavaResForReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="preDebugAndroidTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Extracts Android annotations for the debug variant into the archive file" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="extractDebugAnnotations" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processDebugAndroidTestJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processReleaseUnitTestJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="javaPreCompileDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformClassesAndResourcesWithSyncLibJarsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformNativeLibsWithIntermediateJniLibsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugAndroidTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformClassesAndResourcesWithSyncLibJarsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="checkReleaseManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="javaPreCompileDebugUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="verifyReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="packageDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformNativeLibsWithSyncJniLibsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugAndroidTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeReleaseJniLibFolders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="prepareLintJar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs and runs instrumentation tests using all Device Providers." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="deviceAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugAndroidTestAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processReleaseManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstalls the android (on device) tests for the Debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="uninstallDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in project ':headernewsicon'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateReleaseSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="preReleaseBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all variants of all applications and secondary packages." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="createFullJarDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseUnitTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs the android (on device) tests for the Debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="installDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformClassesWithDexBuilderForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="javaPreCompileReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="javaPreCompileRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all device checks on currently connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="connectedCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs and runs the tests for debug on connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="connectedDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstall all applications." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="uninstallAll" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformNativeLibsWithMergeJniLibsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all the Test applications." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assembleAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processDebugAndroidTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Extracts Android annotations for the release variant into the archive file" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="extractReleaseAnnotations" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="preDebugUnitTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileLint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugAndroidTestResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformNativeLibsWithMergeJniLibsForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeReleaseShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the Android dependencies of the project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="androidDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugAndroidTestNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugUnitTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformNativeLibsWithMergeJniLibsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugAndroidTestJniLibFolders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="extractProguardFiles" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assembleDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processDebugJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="consumeConfigAttr" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugAndroidTestAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformResourcesWithMergeJavaResForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run unit tests for all variants." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugAndroidTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="preReleaseUnitTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="javaPreCompileDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run unit tests for the debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="testDebugUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs and runs instrumentation tests for all flavors on connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="connectedAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="preBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformResourcesWithMergeJavaResForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseUnitTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformResourcesWithMergeJavaResForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileReleaseAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on the Release build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="lintRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformDexArchiveWithDexMergerForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in project ':headernewsicon'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in project ':headernewsicon'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="checkDebugManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugJniLibFolders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prints out all the source sets defined in this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="sourceSets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="transformResourcesWithMergeJavaResForDebugUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeReleaseAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="createFullJarRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="packageDebugRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateReleaseBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="platformAttrExtractor" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the signing info for each variant." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="signingReport" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugAndroidTestAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugAndroidTestShaders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="preDebugBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all Release builds." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="assembleRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="resolveConfigAttr" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="mergeDebugConsumerProguardFiles" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="compileDebugAndroidTestRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateDebugAndroidTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="processDebugManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="packageDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="generateReleaseResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of project ':headernewsicon'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/headernewsicon" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/irecyclerview">
           <value>
             <list>
@@ -3337,6 +4046,98 @@
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
+                  <entry key="$PROJECT_DIR$/headernewsicon">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle/3.0.1/gradle-3.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/66d8eba1cf853aaf607043e8965350a3b020adf0/greendao-gradle-plugin-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-gradle-plugin/3.2.2/db4da9243ef0d65ffb94cd48445da259e696d90b/greendao-gradle-plugin-3.2.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-core/3.0.1/gradle-core-3.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/8852525e8ba779b0ff34ab27113737354c7cde2c/greendao-code-modifier-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-code-modifier/3.2.2/e8c030500864d74dc46a3b4f100c05e3382b9b02/greendao-code-modifier-3.2.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder/3.0.1/builder-3.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint/26.0.1/lint-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/org-jetbrains/uast/26.0.1/uast-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-api/3.0.1/gradle-api-3.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/compilerCommon/3.0.1/compilerCommon-3.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jetbrains/kotlin/kotlin-stdlib/1.1.3-2/kotlin-stdlib-1.1.3-2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/transform-api/2.0.0-deprecated-use-gradle-api/transform-api-2.0.0-deprecated-use-gradle-api.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/5.1/asm-5.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/5.1/asm-analysis-5.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-commons/5.1/asm-commons-5.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-util/5.1/asm-util-5.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jacoco/org.jacoco.core/0.7.4.201502262128/org.jacoco.core-0.7.4.201502262128.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jacoco/org.jacoco.report/0.7.4.201502262128/org.jacoco.report-0.7.4.201502262128.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.3.3/proguard-gradle-5.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/protobuf/protobuf-java/3.0.0/protobuf-java-3.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jetbrains/kotlin/kotlin-reflect/1.1.3-2/kotlin-reflect-1.1.3-2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/559f8c279e3270402cde9e284092231db788d657/greendao-api-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-api/3.2.2/e9bbf7a184b0b4914a10d8179c993cc9aa9b1b33/greendao-api-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/3aa6fdc100162491467c548786d69a8fc8cedf04/greendao-generator-3.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao-generator/3.2.2/c1d222f0f518f6d32150c566ef378e0dcba8de1e/greendao-generator-3.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/2e4c9a6a2b6b13737114cdb204764bc22fcd7290/greenrobot-jdt-3.12.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greenrobot-jdt/3.12.2/56bbe5ebf141455ca196fa6fa668930daa6e6dc/greenrobot-jdt-3.12.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/eea524c7b7db9702a2dddd12e431882f3055e991/essentials-3.0.0-RC1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/dfc6cd070e196e63df53c90abd2c3e1e02ee40e9/essentials-3.0.0-RC1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-model/3.0.1/builder-model-3.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-test-api/3.0.1/builder-test-api-3.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdklib/26.0.1/sdklib-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdk-common/26.0.1/sdk-common-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/common/26.0.1/common-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/manifest-merger/26.0.1/manifest-merger-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/ddms/ddmlib/26.0.1/ddmlib-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/protos/26.0.1/protos-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/shared/26.0.1/shared-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/tracker/26.0.1/tracker-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/apksig/3.0.1/apksig-3.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.56/bcpkix-jdk15on-1.56.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/5.1/asm-tree-5.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/it/unimi/dsi/fastutil/7.2.0/fastutil-7.2.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-checks/26.0.1/lint-checks-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/22.0/guava-22.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/baseLibrary/3.0.1/baseLibrary-3.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/antlr/antlr4/4.5.3/antlr4-4.5.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/annotations/26.0.1/annotations-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.3.3/proguard-base-5.3.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.23/51b98b3e60f2d78624137437f34a3e70ab5d55ec/freemarker-2.3.23-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.23/cd143cd8c02a9f838e3cb75a6dfe133750437f6d/freemarker-2.3.23.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/layoutlib/layoutlib-api/26.0.1/layoutlib-api-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/dvlib/26.0.1/dvlib-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/repository/26.0.1/repository-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/code/gson/gson/2.3/gson-2.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.12/commons-compress-1.12.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.2.6/httpclient-4.2.6.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-api/26.0.1/lint-api-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/jimfs/jimfs/1.1/jimfs-1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.2.5/httpcore-4.2.5.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/com-intellij/intellij-core/26.0.1/intellij-core-26.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jetbrains/annotations/13.0/annotations-13.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jetbrains/trove4j/trove4j/20160824/trove4j-20160824.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/headernewsicon" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
                   <entry key="$PROJECT_DIR$/irecyclerview">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
@@ -3674,9 +4475,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/utils/CommonUiUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/home_fragment_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/helper/MainHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/presenter/home/NewsChannelPresenter.java" />
@@ -3688,7 +4486,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/delegate/HeaderDelegate.java" />
         <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/SimpleAnimatorListener.java" />
         <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/OnRefreshListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/header_view_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/delegate/AdapterDelegatesManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/activity/home/NewsChannelActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/delegate/CommonRecyclerViewAdapter.java" />
@@ -3699,9 +4496,7 @@
         <option value="$PROJECT_DIR$/irecyclerview/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/CircularProgressDrawable.java" />
         <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/SingleCircularProgressDrawable.java" />
-        <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/Header.java" />
         <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/RefreshTrigger.java" />
-        <option value="$PROJECT_DIR$/irecyclerview/src/main/res/layout/header_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/custom_view/CustomToast.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_toast_layout.xml" />
@@ -3720,17 +4515,23 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/top_news_recycler_item_layout.xml" />
         <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/WrapperAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/bean/top_news/NewsDelegate.java" />
-        <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/utils/SharedPreferencesUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/MyApplication.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/Base.java" />
+        <option value="$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/LVNews.java" />
+        <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java" />
+        <option value="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/Header.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/header_view_layout.xml" />
+        <option value="$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/HeaderNewsView.java" />
+        <option value="$PROJECT_DIR$/irecyclerview/src/main/res/layout/header_layout.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-19" />
-    <option name="y" value="23" />
+    <option name="x" value="14" />
+    <option name="y" value="27" />
     <option name="width" value="1440" />
     <option name="height" value="823" />
   </component>
@@ -3749,6 +4550,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3842,6 +4644,90 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="irecyclerview" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headernewsicon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headernewsicon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headernewsicon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartNews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headernewsicon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headernewsicon" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -4003,7 +4889,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
@@ -4025,21 +4910,22 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/app/build.gradle" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="javen.example.com.headernewsicon" />
+      <recent name="javen.example.com.irecyclerview" />
+      <recent name="javen.example.com.smartnews.main.decoration" />
+      <recent name="javen.example.com.smartnews.custom_view" />
+      <recent name="javen.example.com.smartnews.main.delegate" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/irecyclerview/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/irecyclerview/src/main/res/values" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="javen.example.com.irecyclerview" />
-      <recent name="javen.example.com.smartnews.main.decoration" />
-      <recent name="javen.example.com.smartnews.custom_view" />
-      <recent name="javen.example.com.smartnews.main.delegate" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -4124,7 +5010,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515677327529" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515747534912" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -4171,7 +5057,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515677327529" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515747534912" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -4216,6 +5102,27 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -4345,7 +5252,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515677327532" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515747534913" />
       </method>
     </configuration>
     <list size="1">
@@ -4396,32 +5303,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-19" y="23" width="1440" height="823" extended-state="0" />
+    <frame x="14" y="27" width="1440" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.6258941" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3493635" sideWeight="0.5200286" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.407355" sideWeight="0.65808296" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.509299" sideWeight="0.51578945" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39179632" sideWeight="0.59942776" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.48855507" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3493635" sideWeight="0.47997138" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3493635" sideWeight="0.5200286" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21530758" sideWeight="0.48421052" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.8741059" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23196605" sideWeight="0.8125894" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21499293" sideWeight="0.52646637" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.407355" sideWeight="0.65808296" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28755364" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28755364" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.509299" sideWeight="0.51578945" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39179632" sideWeight="0.59942776" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -4429,7 +5337,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21530758" sideWeight="0.48421052" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.4914163" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -4560,7 +5467,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java</url>
-          <line>124</line>
+          <line>121</line>
           <properties />
           <option name="timeStamp" value="97" />
         </line-breakpoint>
@@ -4572,7 +5479,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java</url>
-          <line>150</line>
+          <line>156</line>
           <properties />
           <option name="timeStamp" value="104" />
         </line-breakpoint>
@@ -4584,75 +5491,34 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java</url>
-          <line>214</line>
+          <line>540</line>
           <properties />
-          <option name="timeStamp" value="148" />
+          <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java</url>
-          <line>109</line>
+          <url>file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java</url>
+          <line>233</line>
           <properties />
-          <option name="timeStamp" value="155" />
+          <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java</url>
-          <line>133</line>
+          <url>file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java</url>
+          <line>461</line>
           <properties />
-          <option name="timeStamp" value="156" />
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/Header.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="162" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="157" />
+      <option name="time" value="164" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/android-sdk-macosx/sources/android-26/android/support/wear/internal/widget/drawer/SinglePageUi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2568">
-          <caret line="138" column="34" lean-forward="false" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/android-sdk-macosx/sources/android-26/java/lang/Runtime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="140" column="25" lean-forward="false" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/custom_view/CustomToolBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/android-sdk-macosx/sources/android-26/android/widget/Toast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/custom_view/CustomToast.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/utils/DialogUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-608">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/utils/CheckUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -4744,16 +5610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/header_view_layout.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/top_news_only_one_pic_layout.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -4817,7 +5673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="428" column="30" lean-forward="false" selection-start-line="428" selection-start-column="30" selection-end-line="428" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4858,10 +5713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1776">
           <caret line="153" column="38" lean-forward="false" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
-          <folding>
-            <element signature="e#47786#47787#0" expanded="false" />
-            <element signature="e#47817#47818#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4885,7 +5736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4893,9 +5743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4903,13 +5750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1378#1379#0" expanded="false" />
-            <element signature="e#1428#1429#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1841#1842#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -5018,495 +5858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/android-sdk-macosx/sources/android-26/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289032">
-          <caret line="12316" column="25" lean-forward="false" selection-start-line="12316" selection-start-column="25" selection-end-line="12316" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#1045447#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#176430#176431#0" expanded="false" />
-            <element signature="e#176469#176470#0" expanded="false" />
-            <element signature="e#229744#229745#0" expanded="false" />
-            <element signature="e#229793#229794#0" expanded="false" />
-            <element signature="e#247786#247787#0" expanded="false" />
-            <element signature="e#247859#247860#0" expanded="false" />
-            <element signature="e#250494#250495#0" expanded="false" />
-            <element signature="e#250538#250539#0" expanded="false" />
-            <element signature="e#252059#252060#0" expanded="false" />
-            <element signature="e#252123#252124#0" expanded="false" />
-            <element signature="e#256814#256815#0" expanded="false" />
-            <element signature="e#256866#256867#0" expanded="false" />
-            <element signature="e#257079#257080#0" expanded="false" />
-            <element signature="e#257133#257134#0" expanded="false" />
-            <element signature="e#257655#257656#0" expanded="false" />
-            <element signature="e#257709#257710#0" expanded="false" />
-            <element signature="e#258154#258155#0" expanded="false" />
-            <element signature="e#258207#258208#0" expanded="false" />
-            <element signature="e#267689#267690#0" expanded="false" />
-            <element signature="e#267748#267749#0" expanded="false" />
-            <element signature="e#269925#269926#0" expanded="false" />
-            <element signature="e#269973#269974#0" expanded="false" />
-            <element signature="e#290118#290119#0" expanded="false" />
-            <element signature="e#290167#290168#0" expanded="false" />
-            <element signature="e#292762#292763#0" expanded="false" />
-            <element signature="e#292805#292806#0" expanded="false" />
-            <element signature="e#309820#309821#0" expanded="false" />
-            <element signature="e#309861#309862#0" expanded="false" />
-            <element signature="e#310405#310406#0" expanded="false" />
-            <element signature="e#310442#310443#0" expanded="false" />
-            <element signature="e#310508#310509#0" expanded="false" />
-            <element signature="e#310575#310576#0" expanded="false" />
-            <element signature="e#310941#310942#0" expanded="false" />
-            <element signature="e#310968#310969#0" expanded="false" />
-            <element signature="e#335926#335927#0" expanded="false" />
-            <element signature="e#335970#335971#0" expanded="false" />
-            <element signature="e#338781#338782#0" expanded="false" />
-            <element signature="e#338826#338827#0" expanded="false" />
-            <element signature="e#342960#342961#0" expanded="false" />
-            <element signature="e#343002#343003#0" expanded="false" />
-            <element signature="e#346452#346453#0" expanded="false" />
-            <element signature="e#346506#346507#0" expanded="false" />
-            <element signature="e#348260#348261#0" expanded="false" />
-            <element signature="e#348313#348314#0" expanded="false" />
-            <element signature="e#348566#348567#0" expanded="false" />
-            <element signature="e#348600#348601#0" expanded="false" />
-            <element signature="e#349832#349833#0" expanded="false" />
-            <element signature="e#349867#349868#0" expanded="false" />
-            <element signature="e#350381#350382#0" expanded="false" />
-            <element signature="e#350440#350441#0" expanded="false" />
-            <element signature="e#350691#350692#0" expanded="false" />
-            <element signature="e#350764#350765#0" expanded="false" />
-            <element signature="e#352707#352708#0" expanded="false" />
-            <element signature="e#352769#352770#0" expanded="false" />
-            <element signature="e#353751#353752#0" expanded="false" />
-            <element signature="e#353808#353809#0" expanded="false" />
-            <element signature="e#354540#354541#0" expanded="false" />
-            <element signature="e#354579#354580#0" expanded="false" />
-            <element signature="e#354919#354920#0" expanded="false" />
-            <element signature="e#354969#354970#0" expanded="false" />
-            <element signature="e#355270#355271#0" expanded="false" />
-            <element signature="e#355310#355311#0" expanded="false" />
-            <element signature="e#355655#355656#0" expanded="false" />
-            <element signature="e#355707#355708#0" expanded="false" />
-            <element signature="e#355999#356000#0" expanded="false" />
-            <element signature="e#356036#356037#0" expanded="false" />
-            <element signature="e#356366#356367#0" expanded="false" />
-            <element signature="e#356412#356413#0" expanded="false" />
-            <element signature="e#356710#356711#0" expanded="false" />
-            <element signature="e#356749#356750#0" expanded="false" />
-            <element signature="e#357089#357090#0" expanded="false" />
-            <element signature="e#357139#357140#0" expanded="false" />
-            <element signature="e#357446#357447#0" expanded="false" />
-            <element signature="e#357488#357489#0" expanded="false" />
-            <element signature="e#358226#358227#0" expanded="false" />
-            <element signature="e#358270#358271#0" expanded="false" />
-            <element signature="e#374853#374854#0" expanded="false" />
-            <element signature="e#374898#374899#0" expanded="false" />
-            <element signature="e#375378#375379#0" expanded="false" />
-            <element signature="e#375419#375420#0" expanded="false" />
-            <element signature="e#376527#376528#0" expanded="false" />
-            <element signature="e#376578#376579#0" expanded="false" />
-            <element signature="e#376874#376875#0" expanded="false" />
-            <element signature="e#376927#376928#0" expanded="false" />
-            <element signature="e#377194#377195#0" expanded="false" />
-            <element signature="e#377255#377256#0" expanded="false" />
-            <element signature="e#388660#388661#0" expanded="false" />
-            <element signature="e#388729#388730#0" expanded="false" />
-            <element signature="e#391486#391487#0" expanded="false" />
-            <element signature="e#391528#391529#0" expanded="false" />
-            <element signature="e#392582#392583#0" expanded="false" />
-            <element signature="e#392646#392647#0" expanded="false" />
-            <element signature="e#393878#393879#0" expanded="false" />
-            <element signature="e#393938#393939#0" expanded="false" />
-            <element signature="e#394403#394404#0" expanded="false" />
-            <element signature="e#394465#394466#0" expanded="false" />
-            <element signature="e#394768#394769#0" expanded="false" />
-            <element signature="e#394838#394839#0" expanded="false" />
-            <element signature="e#398294#398295#0" expanded="false" />
-            <element signature="e#398365#398366#0" expanded="false" />
-            <element signature="e#398863#398864#0" expanded="false" />
-            <element signature="e#398931#398932#0" expanded="false" />
-            <element signature="e#400174#400175#0" expanded="false" />
-            <element signature="e#400247#400248#0" expanded="false" />
-            <element signature="e#403753#403754#0" expanded="false" />
-            <element signature="e#403813#403814#0" expanded="false" />
-            <element signature="e#411799#411800#0" expanded="false" />
-            <element signature="e#411842#411843#0" expanded="false" />
-            <element signature="e#414860#414861#0" expanded="false" />
-            <element signature="e#414912#414913#0" expanded="false" />
-            <element signature="e#416567#416568#0" expanded="false" />
-            <element signature="e#416649#416650#0" expanded="false" />
-            <element signature="e#429274#429275#0" expanded="false" />
-            <element signature="e#429326#429327#0" expanded="false" />
-            <element signature="e#430104#430105#0" expanded="false" />
-            <element signature="e#430156#430157#0" expanded="false" />
-            <element signature="e#430499#430500#0" expanded="false" />
-            <element signature="e#430551#430552#0" expanded="false" />
-            <element signature="e#431504#431505#0" expanded="false" />
-            <element signature="e#431556#431557#0" expanded="false" />
-            <element signature="e#461062#461063#0" expanded="false" />
-            <element signature="e#461108#461109#0" expanded="false" />
-            <element signature="e#461314#461315#0" expanded="false" />
-            <element signature="e#461342#461343#0" expanded="false" />
-            <element signature="e#461422#461423#0" expanded="false" />
-            <element signature="e#461473#461474#0" expanded="false" />
-            <element signature="e#461551#461552#0" expanded="false" />
-            <element signature="e#461606#461607#0" expanded="false" />
-            <element signature="e#478512#478513#0" expanded="false" />
-            <element signature="e#478540#478541#0" expanded="false" />
-            <element signature="e#478975#478976#0" expanded="false" />
-            <element signature="e#479003#479004#0" expanded="false" />
-            <element signature="e#479432#479433#0" expanded="false" />
-            <element signature="e#479460#479461#0" expanded="false" />
-            <element signature="e#480618#480619#0" expanded="false" />
-            <element signature="e#480664#480665#0" expanded="false" />
-            <element signature="e#482189#482190#0" expanded="false" />
-            <element signature="e#482262#482263#0" expanded="false" />
-            <element signature="e#483797#483798#0" expanded="false" />
-            <element signature="e#483832#483833#0" expanded="false" />
-            <element signature="e#495234#495235#0" expanded="false" />
-            <element signature="e#495262#495263#0" expanded="false" />
-            <element signature="e#497549#497550#0" expanded="false" />
-            <element signature="e#497577#497578#0" expanded="false" />
-            <element signature="e#499730#499731#0" expanded="false" />
-            <element signature="e#499758#499759#0" expanded="false" />
-            <element signature="e#500393#500394#0" expanded="false" />
-            <element signature="e#500421#500422#0" expanded="false" />
-            <element signature="e#501391#501392#0" expanded="false" />
-            <element signature="e#501419#501420#0" expanded="false" />
-            <element signature="e#502545#502546#0" expanded="false" />
-            <element signature="e#502572#502573#0" expanded="false" />
-            <element signature="e#503144#503145#0" expanded="false" />
-            <element signature="e#503172#503173#0" expanded="false" />
-            <element signature="e#504894#504895#0" expanded="false" />
-            <element signature="e#504921#504922#0" expanded="false" />
-            <element signature="e#505853#505854#0" expanded="false" />
-            <element signature="e#505881#505882#0" expanded="false" />
-            <element signature="e#507681#507682#0" expanded="false" />
-            <element signature="e#507709#507710#0" expanded="false" />
-            <element signature="e#512969#512970#0" expanded="false" />
-            <element signature="e#513028#513029#0" expanded="false" />
-            <element signature="e#530159#530160#0" expanded="false" />
-            <element signature="e#530200#530201#0" expanded="false" />
-            <element signature="e#530308#530309#0" expanded="false" />
-            <element signature="e#530345#530346#0" expanded="false" />
-            <element signature="e#545552#545553#0" expanded="false" />
-            <element signature="e#545582#545583#0" expanded="false" />
-            <element signature="e#545864#545865#0" expanded="false" />
-            <element signature="e#545905#545906#0" expanded="false" />
-            <element signature="e#546185#546186#0" expanded="false" />
-            <element signature="e#546226#546227#0" expanded="false" />
-            <element signature="e#546606#546607#0" expanded="false" />
-            <element signature="e#546637#546638#0" expanded="false" />
-            <element signature="e#547003#547004#0" expanded="false" />
-            <element signature="e#547034#547035#0" expanded="false" />
-            <element signature="e#547237#547238#0" expanded="false" />
-            <element signature="e#547274#547275#0" expanded="false" />
-            <element signature="e#547476#547477#0" expanded="false" />
-            <element signature="e#547513#547514#0" expanded="false" />
-            <element signature="e#548458#548459#0" expanded="false" />
-            <element signature="e#548516#548517#0" expanded="false" />
-            <element signature="e#549291#549292#0" expanded="false" />
-            <element signature="e#549328#549329#0" expanded="false" />
-            <element signature="e#549617#549618#0" expanded="false" />
-            <element signature="e#549676#549677#0" expanded="false" />
-            <element signature="e#550455#550456#0" expanded="false" />
-            <element signature="e#550493#550494#0" expanded="false" />
-            <element signature="e#551905#551906#0" expanded="false" />
-            <element signature="e#551959#551960#0" expanded="false" />
-            <element signature="e#555854#555855#0" expanded="false" />
-            <element signature="e#555902#555903#0" expanded="false" />
-            <element signature="e#557102#557103#0" expanded="false" />
-            <element signature="e#557151#557152#0" expanded="false" />
-            <element signature="e#558578#558579#0" expanded="false" />
-            <element signature="e#558627#558628#0" expanded="false" />
-            <element signature="e#560130#560131#0" expanded="false" />
-            <element signature="e#560176#560177#0" expanded="false" />
-            <element signature="e#561304#561305#0" expanded="false" />
-            <element signature="e#561350#561351#0" expanded="false" />
-            <element signature="e#562522#562523#0" expanded="false" />
-            <element signature="e#562568#562569#0" expanded="false" />
-            <element signature="e#563961#563962#0" expanded="false" />
-            <element signature="e#564007#564008#0" expanded="false" />
-            <element signature="e#565269#565270#0" expanded="false" />
-            <element signature="e#565352#565353#0" expanded="false" />
-            <element signature="e#568601#568602#0" expanded="false" />
-            <element signature="e#568628#568629#0" expanded="false" />
-            <element signature="e#574973#574974#0" expanded="false" />
-            <element signature="e#575000#575001#0" expanded="false" />
-            <element signature="e#577208#577209#0" expanded="false" />
-            <element signature="e#577238#577239#0" expanded="false" />
-            <element signature="e#577408#577409#0" expanded="false" />
-            <element signature="e#577470#577471#0" expanded="false" />
-            <element signature="e#579621#579622#0" expanded="false" />
-            <element signature="e#579649#579650#0" expanded="false" />
-            <element signature="e#581879#581880#0" expanded="false" />
-            <element signature="e#581908#581909#0" expanded="false" />
-            <element signature="e#584202#584203#0" expanded="false" />
-            <element signature="e#584250#584251#0" expanded="false" />
-            <element signature="e#584631#584632#0" expanded="false" />
-            <element signature="e#584673#584674#0" expanded="false" />
-            <element signature="e#585036#585037#0" expanded="false" />
-            <element signature="e#585083#585084#0" expanded="false" />
-            <element signature="e#585462#585463#0" expanded="false" />
-            <element signature="e#585503#585504#0" expanded="false" />
-            <element signature="e#585878#585879#0" expanded="false" />
-            <element signature="e#585935#585936#0" expanded="false" />
-            <element signature="e#586326#586327#0" expanded="false" />
-            <element signature="e#586377#586378#0" expanded="false" />
-            <element signature="e#586626#586627#0" expanded="false" />
-            <element signature="e#586675#586676#0" expanded="false" />
-            <element signature="e#587523#587524#0" expanded="false" />
-            <element signature="e#587575#587576#0" expanded="false" />
-            <element signature="e#588789#588790#0" expanded="false" />
-            <element signature="e#588841#588842#0" expanded="false" />
-            <element signature="e#589916#589917#0" expanded="false" />
-            <element signature="e#589968#589969#0" expanded="false" />
-            <element signature="e#591015#591016#0" expanded="false" />
-            <element signature="e#591056#591057#0" expanded="false" />
-            <element signature="e#592252#592253#0" expanded="false" />
-            <element signature="e#592305#592306#0" expanded="false" />
-            <element signature="e#595410#595411#0" expanded="false" />
-            <element signature="e#595449#595450#0" expanded="false" />
-            <element signature="e#597123#597124#0" expanded="false" />
-            <element signature="e#597169#597170#0" expanded="false" />
-            <element signature="e#599435#599436#0" expanded="false" />
-            <element signature="e#599468#599469#0" expanded="false" />
-            <element signature="e#600772#600773#0" expanded="false" />
-            <element signature="e#600824#600825#0" expanded="false" />
-            <element signature="e#605853#605854#0" expanded="false" />
-            <element signature="e#605889#605890#0" expanded="false" />
-            <element signature="e#608056#608057#0" expanded="false" />
-            <element signature="e#608108#608109#0" expanded="false" />
-            <element signature="e#617418#617419#0" expanded="false" />
-            <element signature="e#617450#617451#0" expanded="false" />
-            <element signature="e#620514#620515#0" expanded="false" />
-            <element signature="e#620556#620557#0" expanded="false" />
-            <element signature="e#632944#632945#0" expanded="false" />
-            <element signature="e#632984#632985#0" expanded="false" />
-            <element signature="e#651852#651853#0" expanded="false" />
-            <element signature="e#651909#651910#0" expanded="false" />
-            <element signature="e#652596#652597#0" expanded="false" />
-            <element signature="e#652629#652630#0" expanded="false" />
-            <element signature="e#653398#653399#0" expanded="false" />
-            <element signature="e#653429#653430#0" expanded="false" />
-            <element signature="e#654196#654197#0" expanded="false" />
-            <element signature="e#654229#654230#0" expanded="false" />
-            <element signature="e#654877#654878#0" expanded="false" />
-            <element signature="e#654911#654912#0" expanded="false" />
-            <element signature="e#655664#655665#0" expanded="false" />
-            <element signature="e#655695#655696#0" expanded="false" />
-            <element signature="e#656445#656446#0" expanded="false" />
-            <element signature="e#656479#656480#0" expanded="false" />
-            <element signature="e#669456#669457#0" expanded="false" />
-            <element signature="e#669484#669485#0" expanded="false" />
-            <element signature="e#674113#674114#0" expanded="false" />
-            <element signature="e#674162#674163#0" expanded="false" />
-            <element signature="e#676198#676199#0" expanded="false" />
-            <element signature="e#676266#676267#0" expanded="false" />
-            <element signature="e#684451#684452#0" expanded="false" />
-            <element signature="e#684497#684498#0" expanded="false" />
-            <element signature="e#684688#684689#0" expanded="false" />
-            <element signature="e#684746#684747#0" expanded="false" />
-            <element signature="e#686515#686516#0" expanded="false" />
-            <element signature="e#686556#686557#0" expanded="false" />
-            <element signature="e#688603#688604#0" expanded="false" />
-            <element signature="e#688675#688676#0" expanded="false" />
-            <element signature="e#695366#695367#0" expanded="false" />
-            <element signature="e#695416#695417#0" expanded="false" />
-            <element signature="e#704338#704339#0" expanded="false" />
-            <element signature="e#704411#704412#0" expanded="false" />
-            <element signature="e#711450#711451#0" expanded="false" />
-            <element signature="e#711483#711484#0" expanded="false" />
-            <element signature="e#720967#720968#0" expanded="false" />
-            <element signature="e#721012#721013#0" expanded="false" />
-            <element signature="e#724521#724522#0" expanded="false" />
-            <element signature="e#724572#724573#0" expanded="false" />
-            <element signature="e#724772#724773#0" expanded="false" />
-            <element signature="e#724812#724813#0" expanded="false" />
-            <element signature="e#736205#736206#0" expanded="false" />
-            <element signature="e#736233#736234#0" expanded="false" />
-            <element signature="e#736950#736951#0" expanded="false" />
-            <element signature="e#736978#736979#0" expanded="false" />
-            <element signature="e#737300#737301#0" expanded="false" />
-            <element signature="e#737324#737325#0" expanded="false" />
-            <element signature="e#737649#737650#0" expanded="false" />
-            <element signature="e#737673#737674#0" expanded="false" />
-            <element signature="e#737992#737993#0" expanded="false" />
-            <element signature="e#738016#738017#0" expanded="false" />
-            <element signature="e#738344#738345#0" expanded="false" />
-            <element signature="e#738368#738369#0" expanded="false" />
-            <element signature="e#740982#740983#0" expanded="false" />
-            <element signature="e#741057#741058#0" expanded="false" />
-            <element signature="e#772934#772935#0" expanded="false" />
-            <element signature="e#772958#772959#0" expanded="false" />
-            <element signature="e#783810#783811#0" expanded="false" />
-            <element signature="e#783843#783844#0" expanded="false" />
-            <element signature="e#788859#788860#0" expanded="false" />
-            <element signature="e#788907#788908#0" expanded="false" />
-            <element signature="e#788952#788953#0" expanded="false" />
-            <element signature="e#789011#789012#0" expanded="false" />
-            <element signature="e#810439#810440#0" expanded="false" />
-            <element signature="e#810473#810474#0" expanded="false" />
-            <element signature="e#829852#829853#0" expanded="false" />
-            <element signature="e#829886#829887#0" expanded="false" />
-            <element signature="e#830172#830173#0" expanded="false" />
-            <element signature="e#830209#830210#0" expanded="false" />
-            <element signature="e#834045#834046#0" expanded="false" />
-            <element signature="e#834083#834084#0" expanded="false" />
-            <element signature="e#835607#835608#0" expanded="false" />
-            <element signature="e#835667#835668#0" expanded="false" />
-            <element signature="e#837240#837241#0" expanded="false" />
-            <element signature="e#837301#837302#0" expanded="false" />
-            <element signature="e#851619#851620#0" expanded="false" />
-            <element signature="e#851686#851687#0" expanded="false" />
-            <element signature="e#852043#852044#0" expanded="false" />
-            <element signature="e#852069#852070#0" expanded="false" />
-            <element signature="e#852344#852345#0" expanded="false" />
-            <element signature="e#852371#852372#0" expanded="false" />
-            <element signature="e#852815#852816#0" expanded="false" />
-            <element signature="e#852841#852842#0" expanded="false" />
-            <element signature="e#855334#855335#0" expanded="false" />
-            <element signature="e#855358#855359#0" expanded="false" />
-            <element signature="e#858463#858464#0" expanded="false" />
-            <element signature="e#858488#858489#0" expanded="false" />
-            <element signature="e#874266#874267#0" expanded="false" />
-            <element signature="e#874299#874300#0" expanded="false" />
-            <element signature="e#875119#875120#0" expanded="false" />
-            <element signature="e#875151#875152#0" expanded="false" />
-            <element signature="e#875894#875895#0" expanded="false" />
-            <element signature="e#875934#875935#0" expanded="false" />
-            <element signature="e#878171#878172#0" expanded="false" />
-            <element signature="e#878227#878228#0" expanded="false" />
-            <element signature="e#878580#878581#0" expanded="false" />
-            <element signature="e#878637#878638#0" expanded="false" />
-            <element signature="e#879314#879315#0" expanded="false" />
-            <element signature="e#879342#879343#0" expanded="false" />
-            <element signature="e#888256#888257#0" expanded="false" />
-            <element signature="e#888298#888299#0" expanded="false" />
-            <element signature="e#893283#893284#0" expanded="false" />
-            <element signature="e#893344#893345#0" expanded="false" />
-            <element signature="e#893863#893864#0" expanded="false" />
-            <element signature="e#893924#893925#0" expanded="false" />
-            <element signature="e#894457#894458#0" expanded="false" />
-            <element signature="e#894499#894500#0" expanded="false" />
-            <element signature="e#908206#908207#0" expanded="false" />
-            <element signature="e#908234#908235#0" expanded="false" />
-            <element signature="e#908383#908384#0" expanded="false" />
-            <element signature="e#908433#908434#0" expanded="false" />
-            <element signature="e#910739#910740#0" expanded="false" />
-            <element signature="e#910808#910809#0" expanded="false" />
-            <element signature="e#918788#918789#0" expanded="false" />
-            <element signature="e#918826#918827#0" expanded="false" />
-            <element signature="e#925345#925346#0" expanded="false" />
-            <element signature="e#925398#925399#0" expanded="false" />
-            <element signature="e#959323#959324#0" expanded="false" />
-            <element signature="e#959358#959359#0" expanded="false" />
-            <element signature="e#961931#961932#0" expanded="false" />
-            <element signature="e#961959#961960#0" expanded="false" />
-            <element signature="e#963276#963277#0" expanded="false" />
-            <element signature="e#963322#963323#0" expanded="false" />
-            <element signature="e#963381#963382#0" expanded="false" />
-            <element signature="e#963429#963430#0" expanded="false" />
-            <element signature="e#963811#963812#0" expanded="false" />
-            <element signature="e#963864#963865#0" expanded="false" />
-            <element signature="e#963931#963932#0" expanded="false" />
-            <element signature="e#963986#963987#0" expanded="false" />
-            <element signature="e#964368#964369#0" expanded="false" />
-            <element signature="e#964421#964422#0" expanded="false" />
-            <element signature="e#964480#964481#0" expanded="false" />
-            <element signature="e#964535#964536#0" expanded="false" />
-            <element signature="e#964917#964918#0" expanded="false" />
-            <element signature="e#964970#964971#0" expanded="false" />
-            <element signature="e#965029#965030#0" expanded="false" />
-            <element signature="e#965084#965085#0" expanded="false" />
-            <element signature="e#965410#965411#0" expanded="false" />
-            <element signature="e#965452#965453#0" expanded="false" />
-            <element signature="e#965511#965512#0" expanded="false" />
-            <element signature="e#965555#965556#0" expanded="false" />
-            <element signature="e#965881#965882#0" expanded="false" />
-            <element signature="e#965923#965924#0" expanded="false" />
-            <element signature="e#965982#965983#0" expanded="false" />
-            <element signature="e#966026#966027#0" expanded="false" />
-            <element signature="e#966352#966353#0" expanded="false" />
-            <element signature="e#966394#966395#0" expanded="false" />
-            <element signature="e#966453#966454#0" expanded="false" />
-            <element signature="e#966497#966498#0" expanded="false" />
-            <element signature="e#966858#966859#0" expanded="false" />
-            <element signature="e#966907#966908#0" expanded="false" />
-            <element signature="e#966966#966967#0" expanded="false" />
-            <element signature="e#967017#967018#0" expanded="false" />
-            <element signature="e#967384#967385#0" expanded="false" />
-            <element signature="e#967434#967435#0" expanded="false" />
-            <element signature="e#967493#967494#0" expanded="false" />
-            <element signature="e#967545#967546#0" expanded="false" />
-            <element signature="e#967912#967913#0" expanded="false" />
-            <element signature="e#967962#967963#0" expanded="false" />
-            <element signature="e#968021#968022#0" expanded="false" />
-            <element signature="e#968073#968074#0" expanded="false" />
-            <element signature="e#968425#968426#0" expanded="false" />
-            <element signature="e#968472#968473#0" expanded="false" />
-            <element signature="e#968531#968532#0" expanded="false" />
-            <element signature="e#968580#968581#0" expanded="false" />
-            <element signature="e#968932#968933#0" expanded="false" />
-            <element signature="e#968979#968980#0" expanded="false" />
-            <element signature="e#969038#969039#0" expanded="false" />
-            <element signature="e#969087#969088#0" expanded="false" />
-            <element signature="e#973930#973931#0" expanded="false" />
-            <element signature="e#973987#973988#0" expanded="false" />
-            <element signature="e#976232#976233#0" expanded="false" />
-            <element signature="e#976303#976304#0" expanded="false" />
-            <element signature="e#976349#976350#0" expanded="false" />
-            <element signature="e#976408#976409#0" expanded="false" />
-            <element signature="e#976846#976847#0" expanded="false" />
-            <element signature="e#976884#976885#0" expanded="false" />
-            <element signature="e#977616#977617#0" expanded="false" />
-            <element signature="e#977664#977665#0" expanded="false" />
-            <element signature="e#978099#978100#0" expanded="false" />
-            <element signature="e#978137#978138#0" expanded="false" />
-            <element signature="e#988530#988531#0" expanded="false" />
-            <element signature="e#988571#988572#0" expanded="false" />
-            <element signature="e#990100#990101#0" expanded="false" />
-            <element signature="e#990142#990143#0" expanded="false" />
-            <element signature="e#990975#990976#0" expanded="false" />
-            <element signature="e#991016#991017#0" expanded="false" />
-            <element signature="e#991566#991567#0" expanded="false" />
-            <element signature="e#991627#991628#0" expanded="false" />
-            <element signature="e#991883#991884#0" expanded="false" />
-            <element signature="e#991946#991947#0" expanded="false" />
-            <element signature="e#1024604#1024605#0" expanded="false" />
-            <element signature="e#1024639#1024640#0" expanded="false" />
-            <element signature="e#1026022#1026023#0" expanded="false" />
-            <element signature="e#1026070#1026071#0" expanded="false" />
-            <element signature="e#1026246#1026247#0" expanded="false" />
-            <element signature="e#1026309#1026310#0" expanded="false" />
-            <element signature="e#1039553#1039554#0" expanded="false" />
-            <element signature="e#1039596#1039597#0" expanded="false" />
-            <element signature="e#1040296#1040297#0" expanded="false" />
-            <element signature="e#1040335#1040336#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="559" column="22" lean-forward="false" selection-start-line="559" selection-start-column="22" selection-end-line="559" selection-end-column="22" />
-          <folding>
-            <element signature="e#12117#12698#0" expanded="true" />
-            <element signature="e#12697#12698#0" expanded="true" />
-            <element signature="e#12760#13963#0" expanded="true" />
-            <element signature="e#13962#13963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/android-sdk-macosx/sources/android-26/android/app/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="2876" column="25" lean-forward="false" selection-start-line="2876" selection-start-column="25" selection-end-line="2876" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5514,13 +5869,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/delegate/CommonRecyclerViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="1272">
           <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
           <folding />
         </state>
@@ -5528,7 +5882,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/presenter/home/NewsChannelPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="672">
           <caret line="40" column="37" lean-forward="false" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
           <folding />
         </state>
@@ -5536,7 +5890,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="624">
           <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding />
         </state>
@@ -5544,58 +5898,209 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="2016">
           <caret line="86" column="5" lean-forward="false" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1808#1809#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
-            <element signature="e#3467#3468#0" expanded="true" />
-            <element signature="e#3524#3525#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/fragments/NewsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-          <folding>
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
+            <element signature="e#3381#3382#0" expanded="false" />
+            <element signature="e#3427#3428#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/BaseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="552">
           <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/MyApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="576">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1531#1532#0" expanded="false" />
+            <element signature="e#1561#1562#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/utils/CommonUiUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
+        <state relative-caret-position="456">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-core-ui/26.1.0/4d52cef4a24bf9939de1d256ca9f0974c6e636a4/support-core-ui-26.1.0-sources.jar!/android/support/v4/view/ViewPager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12984">
+          <caret line="602" column="16" lean-forward="false" selection-start-line="602" selection-start-column="16" selection-end-line="602" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#123614#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5115#5116#0" expanded="false" />
+            <element signature="e#5173#5174#0" expanded="false" />
+            <element signature="e#21659#21660#0" expanded="false" />
+            <element signature="e#21690#21691#0" expanded="false" />
+            <element signature="e#23454#23455#0" expanded="false" />
+            <element signature="e#23485#23486#0" expanded="false" />
+            <element signature="e#31732#31733#0" expanded="false" />
+            <element signature="e#31774#31775#0" expanded="false" />
+            <element signature="e#33806#33807#0" expanded="false" />
+            <element signature="e#33840#33841#0" expanded="false" />
+            <element signature="e#35677#35678#0" expanded="false" />
+            <element signature="e#35716#35717#0" expanded="false" />
+            <element signature="e#41130#41131#0" expanded="false" />
+            <element signature="e#41164#41165#0" expanded="false" />
+            <element signature="e#54141#54142#0" expanded="false" />
+            <element signature="e#54182#54183#0" expanded="false" />
+            <element signature="e#54990#54991#0" expanded="false" />
+            <element signature="e#55053#55054#0" expanded="false" />
+            <element signature="e#55128#55129#0" expanded="false" />
+            <element signature="e#55187#55188#0" expanded="false" />
+            <element signature="e#103785#103786#0" expanded="false" />
+            <element signature="e#103821#103822#0" expanded="false" />
+            <element signature="e#118684#118685#0" expanded="false" />
+            <element signature="e#118725#118726#0" expanded="false" />
+            <element signature="e#121280#121281#0" expanded="false" />
+            <element signature="e#121358#121359#0" expanded="false" />
+            <element signature="e#121512#121513#0" expanded="false" />
+            <element signature="e#121552#121553#0" expanded="false" />
+            <element signature="e#121608#121609#0" expanded="false" />
+            <element signature="e#121648#121649#0" expanded="false" />
+            <element signature="e#122813#122814#0" expanded="false" />
+            <element signature="e#122870#122871#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+        <state relative-caret-position="2044">
+          <caret line="156" column="35" lean-forward="false" selection-start-line="156" selection-start-column="35" selection-end-line="156" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/Base.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/javen/example/com/smartnews/main/fragment/home/fragments/NewsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="90" column="9" lean-forward="false" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/RefreshTrigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/header_view_layout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#204#217#0" expanded="true" />
+            <element signature="e#241#253#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/android-sdk-macosx/sources/android-26/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="15133" column="16" lean-forward="false" selection-start-line="15133" selection-start-column="16" selection-end-line="15133" selection-end-column="16" />
+          <folding>
+            <element signature="e#632944#632945#0" expanded="true" />
+            <element signature="e#632984#632985#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headernewsicon/src/main/java/javen/example/com/headernewsicon/HeaderNewsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/res/layout/header_layout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#515#527#0" expanded="true" />
+            <element signature="e#561#573#0" expanded="true" />
+            <element signature="e#608#620#0" expanded="true" />
+            <element signature="e#770#782#0" expanded="true" />
+            <element signature="e#812#824#0" expanded="true" />
+            <marker date="1515747425497" expanded="false" signature="1328:1340" ph="&quot;8.88px&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/IRecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="132" column="44" lean-forward="false" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
+          <folding>
+            <element signature="e#4051#4052#0" expanded="true" />
+            <element signature="e#4097#4098#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irecyclerview/src/main/java/javen/example/com/irecyclerview/Header.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+          <folding>
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#1744#1745#0" expanded="true" />
+            <element signature="e#1785#1786#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

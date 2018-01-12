@@ -1,12 +1,15 @@
 package javen.example.com.irecyclerview;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import javen.example.com.headernewsicon.HeaderNewsView;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 /**
@@ -16,7 +19,7 @@ import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 public class Header extends FrameLayout implements RefreshTrigger {
 
     private TextView headerContentTextView;
-    private MaterialProgressBar progressBar;
+    private HeaderNewsView headerNewsView;
 
     public Header(@NonNull Context context) {
         this(context, null);
@@ -30,19 +33,21 @@ public class Header extends FrameLayout implements RefreshTrigger {
         super(context, attrs, defStyleAttr);
         inflate(context, R.layout.header_layout, this);
         headerContentTextView = findViewById(R.id.header_content);
-        progressBar = findViewById(R.id.progress_bar);
-        progressBar.setVisibility(GONE);
-
+        headerNewsView = findViewById(R.id.header_news_view);
+        headerNewsView.setViewColor(Color.GRAY);
     }
 
     @Override
     public void onStart(boolean automatic, int headerHeight, int finalHeight) {
-
     }
 
     @Override
     public void onMove(boolean finished, boolean automatic, int moved) {
-
+        if (!finished) {
+            headerNewsView.setValue((int) (moved * 0.5));
+        } else {
+            headerNewsView.setValue((int) (moved * 0.5));
+        }
     }
 
     @Override
@@ -52,12 +57,12 @@ public class Header extends FrameLayout implements RefreshTrigger {
 
     @Override
     public void onRelease() {
-        progressBar.setVisibility(VISIBLE);
+        headerNewsView.startAnim(1000);
     }
 
     @Override
     public void onComplete() {
-        progressBar.setVisibility(GONE);
+        headerNewsView.stopAnim();
     }
 
     @Override

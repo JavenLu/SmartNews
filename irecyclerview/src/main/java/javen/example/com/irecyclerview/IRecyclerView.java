@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
@@ -458,6 +459,7 @@ public class IRecyclerView extends RecyclerView {
         if (dy != 0) {
             int height = mRefreshHeaderContainer.getMeasuredHeight() + dy;
             setRefreshHeaderContainerHeight(height);
+            mRefreshTrigger.onMove(false, false, height);
         }
     }
 
@@ -473,9 +475,16 @@ public class IRecyclerView extends RecyclerView {
     public void setRefreshing(boolean refreshing) {
         if (mStatus == STATUS_DEFAULT && refreshing) {
             setStatus(STATUS_SWIPING_TO_REFRESH);
+            startScrollDefaultStatusToRefreshingStatus();
         } else if (mStatus == STATUS_REFRESHING && !refreshing) {
             refreshingToDefaultStatus();
         }
+    }
+
+    private void startScrollDefaultStatusToRefreshingStatus() {
+        int targetHeight = mRefreshHeaderView.getMeasuredHeight();
+        int currentHeight = mRefreshHeaderContainer.getMeasuredHeight();
+        startScrollAnimation(400, new AccelerateInterpolator(), currentHeight, targetHeight);
     }
 
     private void refreshingToDefaultStatus() {
@@ -521,12 +530,18 @@ public class IRecyclerView extends RecyclerView {
 
         @Override
         public void onStart(boolean automatic, int headerHeight, int finalHeight) {
-
+            if (mRefreshHeaderView != null && mRefreshHeaderView instanceof RefreshTrigger) {
+                RefreshTrigger trigger = (RefreshTrigger) mRefreshHeaderView;
+                trigger.onStart(automatic, headerHeight, finalHeight);
+            }
         }
 
         @Override
         public void onMove(boolean finished, boolean automatic, int moved) {
-
+            if (mRefreshHeaderView != null && mRefreshHeaderView instanceof RefreshTrigger) {
+                RefreshTrigger trigger = (RefreshTrigger) mRefreshHeaderView;
+                trigger.onMove(finished, automatic, moved);
+            }
         }
 
         @Override
