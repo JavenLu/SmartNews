@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -18,8 +19,8 @@ import javen.example.com.smartnews.R;
  */
 
 public class CustomToolBar extends FrameLayout {
-    public static final int TOOLBAR_FIRST_LEVEL = 0;
-    public static final int TOOLBAR_SECOND_LEVEL = 1;
+    public static final int TOOLBAR_HOME_ACTIVITY = 0;
+    public static final int TOOLBAR_NEWS_DETAIL = 1;
 
 
     private Toolbar toolbar;
@@ -29,6 +30,7 @@ public class CustomToolBar extends FrameLayout {
     private ToolbarTitleClickListener toolbarTitleClickListener;
     private CircleImageView circleImageView;
     private TextView searchTextView;
+    private LinearLayout homeTitleLayout, newsDetailTitleLayout;
 
     public CustomToolBar(@NonNull Context context) {
         this(context, null);
@@ -37,11 +39,18 @@ public class CustomToolBar extends FrameLayout {
     public CustomToolBar(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         View.inflate(getContext(), R.layout.custom_toolbar_layout, this);
+        initView();
+
+    }
+
+    private void initView() {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         toolbarTitleTextView = findViewById(R.id.toolbar_title_text_view);
         circleImageView = findViewById(R.id.profile_image);
         searchTextView = findViewById(R.id.search_text_view);
+        homeTitleLayout = findViewById(R.id.home_title_layout);
+        newsDetailTitleLayout = findViewById(R.id.news_detail_title_layout);
     }
 
     /**
@@ -180,14 +189,12 @@ public class CustomToolBar extends FrameLayout {
 
     public void setToolbarType(int titleType) {
 
-        if (titleType == TOOLBAR_FIRST_LEVEL) {
-            toolbarTitleTextView.setVisibility(GONE);
-            circleImageView.setVisibility(VISIBLE);
-            searchTextView.setVisibility(VISIBLE);
-        } else if (titleType == TOOLBAR_SECOND_LEVEL) {
-            toolbarTitleTextView.setVisibility(VISIBLE);
-            circleImageView.setVisibility(GONE);
-            searchTextView.setVisibility(GONE);
+        if (titleType == TOOLBAR_HOME_ACTIVITY) {
+            homeTitleLayout.setVisibility(VISIBLE);
+            newsDetailTitleLayout.setVisibility(GONE);
+        } else if (titleType == TOOLBAR_NEWS_DETAIL) {
+            homeTitleLayout.setVisibility(GONE);
+            newsDetailTitleLayout.setVisibility(VISIBLE);
         }
 
     }

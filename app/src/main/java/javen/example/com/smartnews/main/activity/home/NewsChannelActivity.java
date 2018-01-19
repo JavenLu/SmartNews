@@ -65,7 +65,7 @@ public class NewsChannelActivity extends BaseActivity<NewsChannelPresenter> impl
     private void initCustomToolBar() {
         CustomToolBar customToolBar = findViewById(R.id.custom_toolbar);
         customToolBar.setNavigationIcon(R.drawable.back_arrow);
-        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_SECOND_LEVEL);
+        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_NEWS_DETAIL);
         customToolBar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
         customToolBar.setNavigationOnClickListener(v -> finishCurrentActivity());

@@ -5,38 +5,14 @@
     android:clipToPadding="true"
     android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical">
+    <include
+        android:id="@+id/home_title_layout"
+        layout="@layout/home_title_layout"
+        android:visibility="gone" />
 
-        <TextView
-            android:id="@+id/toolbar_title_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="@dimen/x40" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="@dimen/x60"
-            android:layout_height="@dimen/x60"
-            android:src="@drawable/head" />
-
-        <TextView
-            android:id="@+id/search_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/y60"
-            android:layout_marginStart="@dimen/x20"
-            android:background="@drawable/home_fragment_search_shap"
-            android:drawablePadding="@dimen/x20"
-            android:layout_marginEnd="@dimen/x30"
-            android:paddingStart="@dimen/x20"
-            android:drawableStart="@drawable/search_icon"
-            android:gravity="center_vertical"
-            android:text="@string/search_text_color"
-            android:textColor="@color/gray_dark_search_text" />
-    </LinearLayout>
+    <include
+        android:id="@+id/news_detail_title_layout"
+        layout="@layout/news_detail_title_layout"
+        android:visibility="gone" />
 
 </android.support.v7.widget.Toolbar>

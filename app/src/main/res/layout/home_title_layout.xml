@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/x60"
+            android:src="@drawable/head" />
+
+        <TextView
+            android:id="@+id/search_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y60"
+            android:layout_marginEnd="@dimen/x30"
+            android:layout_marginStart="@dimen/x20"
+            android:background="@drawable/home_fragment_search_shap"
+            android:drawablePadding="@dimen/x20"
+            android:drawableStart="@drawable/search_icon"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/x20"
+            android:text="@string/search_text_color"
+            android:textColor="@color/gray_dark_search_text" />
+    </LinearLayout>
+
+</LinearLayout>

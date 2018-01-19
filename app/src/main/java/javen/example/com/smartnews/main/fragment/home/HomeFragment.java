@@ -79,7 +79,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
         tabLayout = view.findViewById(R.id.slide_tab_layout);
 
         CustomToolBar customToolBar = view.findViewById(R.id.custom_toolbar);
-        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_FIRST_LEVEL);
+        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_HOME_ACTIVITY);
         customToolBar.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
 
         viewPager = view.findViewById(R.id.viewPager);
