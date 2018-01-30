@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/headernewsicon/headernewsicon.iml" filepath="$PROJECT_DIR$/headernewsicon/headernewsicon.iml" />
       <module fileurl="file://$PROJECT_DIR$/irecyclerview/irecyclerview.iml" filepath="$PROJECT_DIR$/irecyclerview/irecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/resource/resource.iml" filepath="$PROJECT_DIR$/resource/resource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/searchview/searchview.iml" filepath="$PROJECT_DIR$/searchview/searchview.iml" />
     </modules>
   </component>
 </project>

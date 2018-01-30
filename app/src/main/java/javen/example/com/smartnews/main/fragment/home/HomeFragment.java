@@ -1,5 +1,6 @@
 package javen.example.com.smartnews.main.fragment.home;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ import javen.example.com.smartnews.custom_view.CustomToolBar;
 import javen.example.com.smartnews.db.DBConstant;
 import javen.example.com.smartnews.db.news_channel.NewsChannelBean;
 import javen.example.com.smartnews.main.activity.home.NewsChannelActivity;
+import javen.example.com.smartnews.main.activity.home.NewsSearchActivity;
 import javen.example.com.smartnews.main.fragment.BaseFragment;
 import javen.example.com.smartnews.main.fragment.BaseFragmentPresenter;
 import javen.example.com.smartnews.main.fragment.home.iinterface.IHomeFragment;
@@ -77,11 +79,7 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
     public void initView(View view) {
         channelImageView = view.findViewById(R.id.add_channel_image_view);
         tabLayout = view.findViewById(R.id.slide_tab_layout);
-
-        CustomToolBar customToolBar = view.findViewById(R.id.custom_toolbar);
-        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_HOME_ACTIVITY);
-        customToolBar.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
-
+        initToolBar(view);
         viewPager = view.findViewById(R.id.viewPager);
         fragmentManager = getChildFragmentManager();
         fragmentAdapter = new FragmentAdapter(fragmentManager);
@@ -107,6 +105,13 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
         });
         initClickListener();
 
+    }
+
+    private void initToolBar(View view) {
+        CustomToolBar customToolBar = view.findViewById(R.id.custom_toolbar);
+        customToolBar.setToolbarType(CustomToolBar.TOOLBAR_HOME_ACTIVITY);
+        customToolBar.setBackgroundColor(getActivity().getResources().getColor(R.color.colorPrimary));
+        customToolBar.setOnClickListenerOnHomeFragment(this::goToNewsSearchActivity);
     }
 
     private void initClickListener() {
@@ -214,5 +219,11 @@ public class HomeFragment extends BaseFragment<BaseFragmentPresenter> implements
             newsChannelPresenter.loadNewsChannelData();
             MyApplication.isChannelChange = false;
         }
+    }
+
+    public void goToNewsSearchActivity() {
+        Intent intent = new Intent(getActivity(), NewsSearchActivity.class);
+        getActivity().startActivity(intent);
+        getActivity().overridePendingTransition(R.anim.common_right_in, R.anim.anim_stay);
     }
 }

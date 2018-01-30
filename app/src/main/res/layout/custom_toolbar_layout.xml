@@ -15,4 +15,9 @@
         layout="@layout/news_detail_title_layout"
         android:visibility="gone" />
 
+    <include
+        android:id="@+id/search_title_layout"
+        layout="@layout/search_title_layout"
+        android:visibility="gone" />
+
 </android.support.v7.widget.Toolbar>

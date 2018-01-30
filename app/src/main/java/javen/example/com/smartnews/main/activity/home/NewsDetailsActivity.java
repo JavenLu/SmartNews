@@ -8,9 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -39,7 +37,7 @@ public class NewsDetailsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.ContentActivityTheme);
-        setContentView(R.layout.common_content_layout);
+        setContentView(R.layout.news_detail_layout);
         initView();
         showContent();
     }
@@ -95,12 +93,7 @@ public class NewsDetailsActivity extends AppCompatActivity {
         containerFrameLayout.setVisibility(View.VISIBLE);
 
         WebViewErrorFragment fragment = new WebViewErrorFragment();
-        fragment.setReLoadClickListener(new WebViewErrorFragment.OnClickReloadText() {
-            @Override
-            public void reloadWeb() {
-                reload();
-            }
-        });
+        fragment.setReLoadClickListener(this::reload);
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
@@ -120,20 +113,12 @@ public class NewsDetailsActivity extends AppCompatActivity {
         customToolBar.setNavigationIcon(R.drawable.back_arrow);
         customToolBar.setToolbarType(CustomToolBar.TOOLBAR_NEWS_DETAIL);
 
-        customToolBar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finishCurrentActivity();
-            }
-        });
+        customToolBar.setNavigationOnClickListener(v -> finishCurrentActivity());
 
         customToolBar.setMenu(R.menu.common_content_menu);
-        customToolBar.setMenuListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                DialogUtil.getInstance().showCustomBottomShareDialog(NewsDetailsActivity.this, R.style.ContentActivityBottomDialog, R.layout.share_dialog_layout, R.style.BottomDialog_Animation);
-                return false;
-            }
+        customToolBar.setMenuListener(item -> {
+            DialogUtil.getInstance().showCustomBottomShareDialog(NewsDetailsActivity.this, R.style.ContentActivityBottomDialog, R.layout.share_dialog_layout, R.style.BottomDialog_Animation);
+            return false;
         });
     }
 

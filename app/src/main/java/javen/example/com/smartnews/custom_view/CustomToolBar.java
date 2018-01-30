@@ -21,6 +21,7 @@ import javen.example.com.smartnews.R;
 public class CustomToolBar extends FrameLayout {
     public static final int TOOLBAR_HOME_ACTIVITY = 0;
     public static final int TOOLBAR_NEWS_DETAIL = 1;
+    public static final int TOOLBAR_SEARCH_ACTIVITY = 2;
 
 
     private Toolbar toolbar;
@@ -30,7 +31,8 @@ public class CustomToolBar extends FrameLayout {
     private ToolbarTitleClickListener toolbarTitleClickListener;
     private CircleImageView circleImageView;
     private TextView searchTextView;
-    private LinearLayout homeTitleLayout, newsDetailTitleLayout;
+    private LinearLayout homeTitleLayout, newsDetailTitleLayout, searchTitleLayout;
+    private ToolbarSearchHomeFragmentClickListener toolbarSearchHomeFragmentClickListener;
 
     public CustomToolBar(@NonNull Context context) {
         this(context, null);
@@ -40,7 +42,16 @@ public class CustomToolBar extends FrameLayout {
         super(context, attrs);
         View.inflate(getContext(), R.layout.custom_toolbar_layout, this);
         initView();
+        initClickListener();
 
+    }
+
+    private void initClickListener() {
+        searchTextView.setOnClickListener(v -> {
+            if (toolbarSearchHomeFragmentClickListener != null) {
+                toolbarSearchHomeFragmentClickListener.toolbarSearchHomeFragmentClickListener();
+            }
+        });
     }
 
     private void initView() {
@@ -51,6 +62,7 @@ public class CustomToolBar extends FrameLayout {
         searchTextView = findViewById(R.id.search_text_view);
         homeTitleLayout = findViewById(R.id.home_title_layout);
         newsDetailTitleLayout = findViewById(R.id.news_detail_title_layout);
+        searchTitleLayout = findViewById(R.id.search_title_layout);
     }
 
     /**
@@ -192,9 +204,15 @@ public class CustomToolBar extends FrameLayout {
         if (titleType == TOOLBAR_HOME_ACTIVITY) {
             homeTitleLayout.setVisibility(VISIBLE);
             newsDetailTitleLayout.setVisibility(GONE);
+            searchTitleLayout.setVisibility(GONE);
         } else if (titleType == TOOLBAR_NEWS_DETAIL) {
             homeTitleLayout.setVisibility(GONE);
             newsDetailTitleLayout.setVisibility(VISIBLE);
+            searchTitleLayout.setVisibility(GONE);
+        } else if (titleType == TOOLBAR_SEARCH_ACTIVITY) {
+            homeTitleLayout.setVisibility(GONE);
+            newsDetailTitleLayout.setVisibility(GONE);
+            searchTitleLayout.setVisibility(VISIBLE);
         }
 
     }
@@ -205,6 +223,15 @@ public class CustomToolBar extends FrameLayout {
      */
     public interface ToolbarTitleClickListener {
         void toolbarTitleListener();
+    }
+
+    public interface ToolbarSearchHomeFragmentClickListener {
+        void toolbarSearchHomeFragmentClickListener();
+    }
+
+
+    public void setOnClickListenerOnHomeFragment(ToolbarSearchHomeFragmentClickListener toolbarSearchHomeFragmentClickListener) {
+        this.toolbarSearchHomeFragmentClickListener = toolbarSearchHomeFragmentClickListener;
     }
 
 

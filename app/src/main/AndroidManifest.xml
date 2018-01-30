@@ -33,6 +33,11 @@
             android:name=".main.activity.home.NewsChannelActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.activity.home.NewsSearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
 
     </application>
 
