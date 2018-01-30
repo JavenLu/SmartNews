@@ -1,6 +1,8 @@
 package javen.example.com.searchview;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatEditText;
@@ -30,7 +32,7 @@ public class EditTextClear extends AppCompatEditText {
 
     private void init() {
         clearDrawable = getResources().getDrawable(R.drawable.delete_search);
-        searchDrawable = getResources().getDrawable(R.drawable.search);
+        searchDrawable = getResources().getDrawable(R.drawable.search_icon);
         setCompoundDrawablesWithIntrinsicBounds(searchDrawable, null, null, null);
     }
 
@@ -77,5 +79,5 @@ public class EditTextClear extends AppCompatEditText {
         return drawable != null && event.getX() <= (getWidth() - getPaddingRight())
                 && event.getX() >= (getWidth() - getPaddingRight() - drawable.getBounds().width());
     }
-}
 
+}

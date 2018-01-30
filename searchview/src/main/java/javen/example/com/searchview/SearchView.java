@@ -61,6 +61,8 @@ public class SearchView extends LinearLayout {
         editTextClear = findViewById(R.id.et_search);
         editTextClear.setTextSize(textSize);
         editTextClear.setTextColor(textColor);
+        editTextClear.setFocusable(true);
+        editTextClear.setFocusableInTouchMode(true);
         editTextClear.setHint(textHint);
     }
 

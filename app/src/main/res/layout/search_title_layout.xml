@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:searchBlockColor="@color/white"
-        app:searchBlockHeight="150"
+        app:searchBlockHeight="120"
         app:textColor="@color/colorText"
         app:textHint="输入查询关键字"
-        app:textSize="@dimen/x12" />
+        app:textSize="@dimen/x8" />
 </LinearLayout>

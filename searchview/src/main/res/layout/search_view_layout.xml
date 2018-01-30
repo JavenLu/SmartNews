@@ -9,20 +9,22 @@
     <LinearLayout
         android:id="@+id/search_block_layout"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="@dimen/x20"
         android:orientation="horizontal"
-        android:paddingEnd="10dp">
+        android:paddingEnd="@dimen/x20">
 
         <javen.example.com.searchview.EditTextClear
             android:id="@+id/et_search"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@null"
-            android:drawablePadding="8dp"
-            android:theme="@style/SearchEditText"
+            android:layout_weight="264"
+            android:paddingStart="@dimen/x20"
+            android:drawablePadding="@dimen/x20"
+            android:background="@drawable/home_fragment_search_shape"
             android:gravity="start|center_vertical"
             android:imeOptions="actionSearch"
-            android:singleLine="true" />
+            android:singleLine="true"
+            />
 
     </LinearLayout>
 

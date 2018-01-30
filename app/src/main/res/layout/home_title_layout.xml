@@ -20,11 +20,12 @@
             android:layout_height="@dimen/y60"
             android:layout_marginEnd="@dimen/x30"
             android:layout_marginStart="@dimen/x20"
-            android:background="@drawable/home_fragment_search_shap"
+            android:background="@drawable/home_fragment_search_shape"
             android:drawablePadding="@dimen/x20"
             android:drawableStart="@drawable/search_icon"
             android:gravity="center_vertical"
             android:paddingStart="@dimen/x20"
+            android:textSize="@dimen/x25"
             android:text="@string/search_text_color"
             android:textColor="@color/gray_dark_search_text" />
     </LinearLayout>
