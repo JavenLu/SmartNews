@@ -3,6 +3,10 @@ package javen.example.com.searchview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.SpannedString;
+import android.text.style.AbsoluteSizeSpan;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
@@ -15,10 +19,11 @@ import android.widget.LinearLayout;
 public class SearchView extends LinearLayout {
 
     private Float textSize;
-    private int textColor;
+    private int textColor, hintColor;
     private String textHint;
     private int blockHeight;
     private int blockColor;
+    private int hintTextSize;
     private EditTextClear editTextClear;
     private LinearLayout searchBlockLayout;
 
@@ -40,7 +45,7 @@ public class SearchView extends LinearLayout {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-                   //按下软键盘的搜索按键，对历史搜索记录表进行查找，没有就插入数据库，并显示在RecyclerView中
+                    //按下软键盘的搜索按键，对历史搜索记录表进行查找，没有就插入数据库，并显示在RecyclerView中
                     //有的话不插入，直接查询出来显示在RecyclerView 中
 
                 }
@@ -63,7 +68,15 @@ public class SearchView extends LinearLayout {
         editTextClear.setTextColor(textColor);
         editTextClear.setFocusable(true);
         editTextClear.setFocusableInTouchMode(true);
-        editTextClear.setHint(textHint);
+        editTextClear.setHintTextColor(hintColor);
+        setHint();
+    }
+
+    private void setHint() {
+        SpannableString string = new SpannableString(textHint);
+        AbsoluteSizeSpan absoluteSizeSpan = new AbsoluteSizeSpan(hintTextSize, false);
+        string.setSpan(absoluteSizeSpan, 0, string.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        editTextClear.setHint(new SpannedString(string));
     }
 
     private void initAttrs(Context context, @Nullable AttributeSet attrs) {
@@ -72,6 +85,7 @@ public class SearchView extends LinearLayout {
         textSize = typedArray.getDimension(R.styleable.SearchView_textSize, 20);
         textHint = typedArray.getString(R.styleable.SearchView_textHint);
         blockHeight = typedArray.getInteger(R.styleable.SearchView_searchBlockHeight, 150);
+        hintTextSize = typedArray.getDimensionPixelSize(R.styleable.SearchView_textHintSize, 12);
         setSearchViewBlockColor(context, typedArray);
     }
 
@@ -83,6 +97,7 @@ public class SearchView extends LinearLayout {
     private void setSearchViewTextColor(Context context, TypedArray typedArray) {
         int defaultColor = context.getResources().getColor(R.color.colorText);
         textColor = typedArray.getColor(R.styleable.SearchView_textColor, defaultColor);
+        hintColor = typedArray.getColor(R.styleable.SearchView_textHintColor, defaultColor);
     }
 
 

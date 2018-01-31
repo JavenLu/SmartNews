@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SearchView</string>
+    <string name="search_view_hint_text">请输入查询关键字</string>
 </resources>

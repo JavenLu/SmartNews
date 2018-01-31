@@ -11,6 +11,8 @@
         app:searchBlockColor="@color/white"
         app:searchBlockHeight="120"
         app:textColor="@color/colorText"
-        app:textHint="输入查询关键字"
+        app:textHint="@string/search_view_hint_text"
+        app:textHintColor="@color/colorText"
+        app:textHintSize="@dimen/x30"
         app:textSize="@dimen/x8" />
 </LinearLayout>
