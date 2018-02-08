@@ -1,0 +1,49 @@
+ext {
+    isModularizationMode = false //false:作为集成模式  true:作为组件模式
+
+    android = [
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.2",
+            minSdkVersion    : 21,
+            targetSdkVersion : 26,
+            versionCode      : 1,
+            versionName      : "1.0"
+
+    ]
+
+    libsVersion = [
+            appcompatVersion = "26.1.0",
+            supportVersion = "26.1.0",
+            designVersion = "26.1.0",
+            bottomNavigationViewExVersion = "1.2.3",
+            greendaoVersion = "3.2.2",
+            retrofitVersion = "2.3.0",
+            recyclerviewVersion = "26.1.0",
+            retrofitConverterGsonVersion = "2.3.0",
+            okioVersion = "1.13.0",
+            okhttp3Version = "3.9.0",
+            glideVersion = "4.0.0",
+            rxjava2RxJavaVersion = "2.1.1",
+            rxjava2RxandroidVersion = "2.0.1",
+            circleimageviewVersion = "2.2.0"
+    ]
+
+    dependencies = [
+            appcompatV7           : "com.android.support:appcompat-v7:$rootProject.appcompatVersion",
+            supportV4             : "com.android.support:support-v4:$rootProject.supportVersion",
+            design                : "com.android.support:design:$rootProject.designVersion",
+            bottomNavigationViewEx: "com.github.ittianyu:BottomNavigationViewEx:$rootProject.bottomNavigationViewExVersion",
+            greendao              : "org.greenrobot:greendao:$rootProject.greendaoVersion",
+            retrofit2             : "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion",
+            recyclerview          : "com.android.support:recyclerview-v7:$rootProject.recyclerviewVersion",
+            retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$rootProject.retrofitConverterGsonVersion",
+            okio                  : "com.squareup.okio:okio:$rootProject.okioVersion",
+            okhttp3               : "com.squareup.okhttp3:okhttp:$rootProject.okhttp3Version",
+            glide                 : "com.github.bumptech.glide:glide:$rootProject.glideVersion",
+            rxjava                : "io.reactivex.rxjava2:rxjava:$rootProject.rxjava2RxJavaVersion",
+            rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rootProject.rxjava2RxandroidVersion",
+            circleimageview       : "de.hdodenhof:circleimageview:$rootProject.circleimageviewVersion"
+    ]
+
+
+}

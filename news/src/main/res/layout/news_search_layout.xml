@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ResourceName">
+
+    <include layout="@layout/include_custom_toolbar_layout" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x2"
+        android:layout_below="@+id/custom_toolbar"
+        android:background="@color/separator"
+        tools:ignore="UnknownId" />
+
+    <javen.example.com.commonlibrary.custom_view.FlexibleRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/separator" />
+
+</RelativeLayout>

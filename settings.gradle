@@ -1,1 +1,1 @@
-include ':app', ':resource', ':irecyclerview', ':headernewsicon', ':searchview'
+include ':app', ':news', ':commonlibrary'

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<javen.example.com.commonlibrary.custom_view.irecycler_view.Header xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x100"
+    android:paddingTop="@dimen/x10"
+    tools:ignore="ResourceName">
+
+</javen.example.com.commonlibrary.custom_view.irecycler_view.Header>

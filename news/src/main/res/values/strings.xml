@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <string name="app_name">SmartNews</string>
+
+    <string name="nav_home_name">首页</string>
+    <string name="nav_second_name">西瓜视频</string>
+    <string name="nav_third_name">小视频</string>
+    <string name="nav_fourth_name">我的</string>
+
+    <string name="bottom_menu_second_name">西瓜视频</string>
+    <string name="bottom_menu_third_name">小视频</string>
+    <string name="bottom_menu_first_name">首页</string>
+    <string name="bottom_menu_fourth_name">我的</string>
+
+    <string name="action_settings">设置</string>
+
+
+
+    <string name="data_load_failed">数据获取失败</string>
+    <string name="retry_text">请检查网络后,点击<u>重新加载</u></string>
+
+    <!--News Channel-->
+    <string name="channel_explain">点击可增删/长按并拖拽可排序</string>
+    <string name="my_channel">我的频道</string>
+    <string name="more_channel">更多频道</string>
+    <string name="channel_manage">频道管理</string>
+
+    <string name="pull_to_refresh">下拉可以刷新</string>
+
+
+    <string name="exit_content">再按一次退出!</string>
+
+</resources>

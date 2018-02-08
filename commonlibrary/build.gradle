@@ -1,0 +1,74 @@
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+
+        //applicationId "javen.example.com.commonlibrary"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        debug {}
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        releaseSdk {
+            debuggable true
+        }
+    }
+
+    greendao {
+        schemaVersion 1
+        targetGenDir 'src/main/java/'
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile (rootProject.ext.dependencies.appcompatV7)
+    compile (rootProject.ext.dependencies.supportV4)
+    compile (rootProject.ext.dependencies.design)
+    compile (rootProject.ext.dependencies.bottomNavigationViewEx)
+    compile (rootProject.ext.dependencies.greendao)
+    compile (rootProject.ext.dependencies.retrofit2)
+    compile (rootProject.ext.dependencies.recyclerview)
+    compile (rootProject.ext.dependencies.retrofit2ConverterGson)
+    compile (rootProject.ext.dependencies.okio)
+    compile (rootProject.ext.dependencies.okhttp3)
+    compile (rootProject.ext.dependencies.glide)
+    compile (rootProject.ext.dependencies.rxjava)
+    compile (rootProject.ext.dependencies.rxAndroid)
+    compile (rootProject.ext.dependencies.circleimageview)
+
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+}
+
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+
+}

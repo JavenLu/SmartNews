@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SearchEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="ToolBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <!--<item name="android:layout_height">?attr/actionBarSize</item>-->
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/x90</item>
+        <item name="android:background">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:theme">@style/PopWindowStyle</item>
+        <item name="android:navigationIcon">@drawable/back_arrow</item>
+    </style>
+
+    <style name="PopWindowStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/gray_light</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="actionMenuTextAppearance">@style/ToolbarMenuTextSize</item>
+    </style>
+
+    <!-- toolbar菜单文字尺寸 -->
+    <style name="ToolbarMenuTextSize" parent="@style/TextAppearance.AppCompat.Menu">
+        <item name="android:textSize">@dimen/x35</item>
+    </style>
+
+</resources>

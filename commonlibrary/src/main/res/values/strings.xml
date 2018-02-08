@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Resource</string>
+
+    <string name="header_up_recommend">松开推荐</string>
+    <string name="header_pull_down_recommend">下拉推荐</string>
+
+    <string name="search_view_hint_text">请输入查询关键字</string>
+    <string name="not_connect_internet_content">请连接网络!</string>
+
+    <string name="search_text_color">吃相难看 | 脂肪肝检查 | 人工智能专业</string>
+
+    <string name="qq_share_text">QQ</string>
+    <string name="we_chat_share_text">微信</string>
+    <string name="friends_share_text">朋友圈</string>
+
+    <string name="cancel_text_share_layout">取消</string>
+</resources>

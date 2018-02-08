@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ResourceName">
+
+    <javen.example.com.commonlibrary.custom_view.irecycler_view.IRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="@dimen/x40"
+        android:paddingStart="@dimen/x40"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        app:refreshEnabled="true"
+        app:refreshHeaderLayout="@layout/header_view_layout"
+        />
+
+</RelativeLayout>

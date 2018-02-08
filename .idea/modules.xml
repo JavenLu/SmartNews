@@ -4,10 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SmartNews.iml" filepath="$PROJECT_DIR$/SmartNews.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/headernewsicon/headernewsicon.iml" filepath="$PROJECT_DIR$/headernewsicon/headernewsicon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/irecyclerview/irecyclerview.iml" filepath="$PROJECT_DIR$/irecyclerview/irecyclerview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/resource/resource.iml" filepath="$PROJECT_DIR$/resource/resource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/searchview/searchview.iml" filepath="$PROJECT_DIR$/searchview/searchview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonlibrary/commonlibrary.iml" filepath="$PROJECT_DIR$/commonlibrary/commonlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/news/news.iml" filepath="$PROJECT_DIR$/news/news.iml" />
     </modules>
   </component>
 </project>
