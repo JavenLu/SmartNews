@@ -1,7 +1,8 @@
 package javen.example.com.commonlibrary;
 
-import android.app.Application;
 import android.content.Context;
+
+import com.spinytech.macore.MaApplication;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +16,7 @@ import javen.example.com.commonlibrary.green_dao.GreenDaoManager;
  * Created by Javen on 16/11/2017.
  */
 
-public class CommonLibraryApplication extends Application {
+public class CommonLibraryApplication extends MaApplication {
     public static TreeMap<String, String> typeTreeMap = new TreeMap<>();
     public static DaoSession daoSession;
     public static int screenWidth, screenHeight;
@@ -41,6 +42,21 @@ public class CommonLibraryApplication extends Application {
         }
 
         context = getApplicationContext();
+    }
+
+    @Override
+    public void initializeAllProcessRouter() {
+
+    }
+
+    @Override
+    protected void initializeLogic() {
+
+    }
+
+    @Override
+    public boolean needMultipleProcess() {
+        return false;
     }
 
     public static Context getContext() {

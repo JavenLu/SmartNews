@@ -14,10 +14,17 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.spinytech.macore.MaActionResult;
+import com.spinytech.macore.router.RouterResponse;
 
 import java.util.List;
 
 import javen.example.com.commonlibrary.R;
+import javen.example.com.commonlibrary.bean.news.NewsSearchHistoryBean;
+import javen.example.com.commonlibrary.local_router.RouterManager;
+import javen.example.com.commonlibrary.utils.CheckUtil;
 
 /**
  * Created by Javen on 22/01/2018.
@@ -65,17 +72,19 @@ public class SearchView extends LinearLayout {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-                    //按下软键盘的搜索按键，对历史搜索记录表进行查找，没有就插入数据库，并显示在RecyclerView中
-                    //有的话不插入，直接查询出来显示在RecyclerView 中
-                    AccurateSearchHistoryKey accurateSearchHistoryKey = (AccurateSearchHistoryKey) context;
-                    accurateSearchHistoryKey.doSearchNews(editTextClear.getText().toString().trim());
+                    //1.按下软键盘的搜索按键，对历史搜索记录表进行查找，没有就插入历史搜索数据库
+                    //2.跳转到新的Activity页面去查询并显示与key匹配的数据
+
+                    insertHistoryKey(context);
+                    RouterManager.executeJumpToNewsShowActivity(context, "%" + editTextClear.getText().toString().trim() + "%");
+
+
                 }
                 return false;
             }
         });
 
         editTextClear.addTextChangedListener(new TextWatcher() {
-            SearchHistoryKey searchHistoryKey;
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -89,12 +98,34 @@ public class SearchView extends LinearLayout {
 
             @Override
             public void afterTextChanged(Editable s) {
-                //=Observable.just(editTextClear.getText().toString());
-//                =(NewsSearchActivity) context;
-//                searchHistoryKey = (NewsSearchActivity) context;
-//                searchHistoryKey.doSearchHistoryKey(editTextClear.getText().toString());
+//                RouterResponse response = RouterManager.executeNewsHistoryKeyEqQuery(context, editTextClear.getText().toString().trim());
+//
+//                try {
+//                    List<NewsSearchHistoryBean> list = (List<NewsSearchHistoryBean>) response.getObject();
+//
+//                    Log.e("listSize=", list.size() + "");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
             }
         });
+    }
+
+    private void insertHistoryKey(Context context) {
+        RouterResponse response = RouterManager.executeNewsHistoryKeyEqQuery(context, editTextClear.getText().toString().trim());
+
+        try {
+            int resultCode = response.getCode();
+
+            if (resultCode != MaActionResult.CODE_SUCCESS) {
+                Toast.makeText(context, "没有查询到相关结果", Toast.LENGTH_SHORT).show();
+                RouterManager.executeNewsHistoryKeyInsert(context, editTextClear.getText().toString().trim());
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void initSearchBlockLayout() {
@@ -141,14 +172,6 @@ public class SearchView extends LinearLayout {
         int defaultColor = context.getResources().getColor(R.color.colorText);
         textColor = typedArray.getColor(R.styleable.SearchView_textColor, defaultColor);
         hintColor = typedArray.getColor(R.styleable.SearchView_textHintColor, defaultColor);
-    }
-
-    public interface SearchHistoryKey {
-        void doSearchHistoryKey(String key);
-    }
-
-    public interface AccurateSearchHistoryKey {
-        void doSearchNews(String key);
     }
 
     public void setHistoryKeyData(List historyList) {

@@ -59,7 +59,7 @@ dependencies {
     compile (rootProject.ext.dependencies.rxjava)
     compile (rootProject.ext.dependencies.rxAndroid)
     compile (rootProject.ext.dependencies.circleimageview)
-
+    compile (rootProject.ext.dependencies.modularizationArchitecture)
     testCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support.test:runner:1.0.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'

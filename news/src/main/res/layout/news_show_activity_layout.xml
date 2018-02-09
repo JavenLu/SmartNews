@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/include_custom_toolbar_layout" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x2"
+        android:layout_below="@+id/custom_toolbar"
+        android:background="@color/separator"
+        tools:ignore="UnknownId" />
+
+    <javen.example.com.commonlibrary.custom_view.irecycler_view.IRecyclerView
+        android:id="@+id/news_show_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/separator"
+        android:paddingEnd="@dimen/x40"
+        android:paddingStart="@dimen/x40"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        />
+
+
+
+</RelativeLayout>

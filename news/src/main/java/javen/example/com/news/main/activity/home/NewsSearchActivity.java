@@ -25,7 +25,7 @@ import javen.example.com.news.main.presenter.home.NewsSearchPresenter;
  * Created by Javen on 19/01/2018.
  */
 
-public class NewsSearchActivity extends BaseActivity<NewsSearchPresenter> implements INewsSearchActivity, SearchView.SearchHistoryKey, SearchView.AccurateSearchHistoryKey,NewsDelegate.OnItemClickListenerInTopNewsDelegate {
+public class NewsSearchActivity extends BaseActivity<NewsSearchPresenter> implements INewsSearchActivity,NewsDelegate.OnItemClickListenerInTopNewsDelegate {
     private CustomToolBar customToolBar;
     private List<NewsSearchHistoryBean> historyList;
     private List<NewsBean> newsList;
@@ -79,19 +79,6 @@ public class NewsSearchActivity extends BaseActivity<NewsSearchPresenter> implem
         overridePendingTransition(0, R.anim.common_right_out);
     }
 
-
-    @Override
-    public void doSearchHistoryKey(String key) {
-        historyList = basePresenter.getHistorySearchKeyFromDataBase(key);
-        customToolBar.setHistoryKeyData(historyList);
-    }
-
-    @Override
-    public void doSearchNews(String key) {
-        newsList = basePresenter.getNewsListBySearchNewsDataBase(key);
-        commonRecyclerViewAdapter.setDataAndRefresh(newsList);
-        basePresenter.insertSearchKeyToDataBase(key);
-    }
 
     /**
      * RecyclerView ItemClickListener
