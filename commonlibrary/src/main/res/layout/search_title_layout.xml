@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         app:searchBlockColor="@color/white"
         app:searchBlockHeight="120"
-        app:textColor="@color/colorText"
+        app:textColor="@color/colorAccent"
         app:textHint="@string/search_view_hint_text"
         app:textHintColor="@color/colorText"
         app:textHintSize="@dimen/x30"

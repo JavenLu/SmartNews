@@ -1,7 +1,6 @@
 package javen.example.com.commonlibrary.local_router;
 
 import android.content.Context;
-import android.content.Intent;
 
 import com.spinytech.macore.MaApplication;
 import com.spinytech.macore.router.LocalRouter;
@@ -23,7 +22,24 @@ public class RouterManager {
             response = LocalRouter.getInstance(MaApplication.getMaApplication())
                     .route(context, RouterRequest.obtain(context)
                             .provider(Constant.NEWS_PROVIDER)
-                            .action(Constant.QUERY_LIKE_HISTORY_KEY_ACTION)
+                            .action(Constant.QUERY_EQ_HISTORY_KEY_ACTION)
+                            .data(Constant.HISTORY_KEY_NAME, key));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return response;
+    }
+
+    public static RouterResponse executeShowHistoryKey(Context context, String key) {
+        RouterResponse response = null;
+
+        try {
+            response = LocalRouter.getInstance(MaApplication.getMaApplication())
+                    .route(context, RouterRequest.obtain(context)
+                            .provider(Constant.NEWS_PROVIDER)
+                            .action(Constant.SHOW_HISTORY_KEY_ACTION)
                             .data(Constant.HISTORY_KEY_NAME, key));
 
         } catch (Exception e) {
@@ -51,7 +67,7 @@ public class RouterManager {
         return response;
     }
 
-    public static void executeJumpToNewsShowActivity(Context context,String key) {
+    public static void executeJumpToNewsShowActivity(Context context, String key) {
         try {
             LocalRouter.getInstance(MaApplication.getMaApplication())
                     .route(context, RouterRequest.obtain(context)
@@ -62,4 +78,39 @@ public class RouterManager {
             e.printStackTrace();
         }
     }
+
+
+    public static RouterResponse executeNewsHistoryKeyLikeQuery(Context context, String key) {
+        RouterResponse response = null;
+
+        try {
+            response = LocalRouter.getInstance(MaApplication.getMaApplication())
+                    .route(context, RouterRequest.obtain(context)
+                            .provider(Constant.NEWS_PROVIDER)
+                            .action(Constant.QUERY_LIKE_HISTORY_KEY_ACTION)
+                            .data(Constant.HISTORY_KEY_NAME, key));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return response;
+    }
+
+    public static RouterResponse executeClearNewsHistoryKey(Context context) {
+        RouterResponse response = null;
+
+        try {
+            response = LocalRouter.getInstance(MaApplication.getMaApplication())
+                    .route(context, RouterRequest.obtain(context)
+                            .provider(Constant.NEWS_PROVIDER)
+                            .action(Constant.CLEAR_HISTORY_KEY_ACTION));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return response;
+    }
+
 }

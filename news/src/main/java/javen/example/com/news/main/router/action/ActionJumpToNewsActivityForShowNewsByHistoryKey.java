@@ -28,7 +28,7 @@ public class ActionJumpToNewsActivityForShowNewsByHistoryKey extends MaAction {
 
             if (!TextUtils.isEmpty(historyKey)) {
                 SearchHistoryPresenter.jumpToNewsShowActivity(context, historyKey);
-                return null;
+                return new MaActionResult.Builder().build();
 
             }
         }

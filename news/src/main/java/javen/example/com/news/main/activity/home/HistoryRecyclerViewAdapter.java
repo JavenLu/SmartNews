@@ -1,4 +1,4 @@
-package javen.example.com.commonlibrary.custom_view.search_view;
+package javen.example.com.news.main.activity.home;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -19,9 +19,11 @@ import javen.example.com.commonlibrary.bean.news.NewsSearchHistoryBean;
 public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter {
     private Context context;
     private List<NewsSearchHistoryBean> list;
+    private OnItemClickListener onItemClickListener;
 
-    public HistoryRecyclerViewAdapter(Context context) {
+    public HistoryRecyclerViewAdapter(Context context, List<NewsSearchHistoryBean> list) {
         this.context = context;
+        this.list = list;
     }
 
     @Override
@@ -34,6 +36,10 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
         viewHolder.historyName.setText(list.get(position).getNewsKey());
+        viewHolder.historyName.setOnClickListener(v -> {
+            onItemClickListener.onItemClickListener(list.get(position).getNewsKey());
+            clearData();
+        });
     }
 
     @Override
@@ -51,7 +57,8 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter {
     }
 
     public void setData(List list) {
-        this.list = list;
+        this.list.clear();
+        this.list.addAll(list);
         notifyDataSetChanged();
     }
 
@@ -59,4 +66,13 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter {
         list.clear();
         notifyDataSetChanged();
     }
+
+    public interface OnItemClickListener {
+        void onItemClickListener(String key);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
 }

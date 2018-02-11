@@ -131,6 +131,12 @@ public class NewsDetailsActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        destroyWebView();
+    }
+
+    private void destroyWebView() {
+        webView.destroyDrawingCache();
+        webView.destroy();
     }
 
     @Override

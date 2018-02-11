@@ -21,6 +21,12 @@ public class SearchHistoryModel {
         return queryBuilder.list();
     }
 
+    public static List<NewsSearchHistoryBean> queryHistoryLikeKey(String key) {
+        QueryBuilder<NewsSearchHistoryBean> queryBuilder = CommonLibraryApplication.daoSession.getNewsSearchHistoryBeanDao().queryBuilder();
+        queryBuilder.where(NewsSearchHistoryBeanDao.Properties.NewsKey.like(key)).build();
+        return queryBuilder.list();
+    }
+
     public static void insertHistoryKey(String key) {
         NewsSearchHistoryBean newsSearchHistoryBean = new NewsSearchHistoryBean();
         newsSearchHistoryBean.setNewsKey(key);

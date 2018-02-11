@@ -29,5 +29,6 @@
 
 
     <string name="exit_content">再按一次退出!</string>
+    <string name="show_activity_no_result">没有查询到任何结果</string>
 
 </resources>

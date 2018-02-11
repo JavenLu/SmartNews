@@ -31,6 +31,7 @@
         <activity
             android:name=".main.activity.home.NewsSearchActivity"
             android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustNothing"
             android:screenOrientation="portrait" />
         <activity
             android:name=".main.activity.home.NewsShowActivity"

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ import javen.example.com.commonlibrary.bean.news.NewsBeanDao;
 import javen.example.com.commonlibrary.custom_view.CustomToolBar;
 import javen.example.com.commonlibrary.custom_view.decoration.DividerDecoration;
 import javen.example.com.commonlibrary.glide.ImageHelper;
+import javen.example.com.commonlibrary.utils.CheckUtil;
 import javen.example.com.commonlibrary.utils.WindowUtil;
 import javen.example.com.news.R;
 
@@ -39,19 +41,26 @@ public class NewsShowActivity extends AppCompatActivity {
         setTheme(R.style.ContentActivityTheme);
         setContentView(R.layout.news_show_activity_layout);
         init();
-        initVIew();
+        initView();
         showDataToRecyclerView();
     }
 
     private void showDataToRecyclerView() {
         list = CommonLibraryApplication.daoSession.getNewsBeanDao().queryBuilder().where(NewsBeanDao.Properties.Title.like(historyKey)).list();
+        showNotSearchResult();
+    }
+
+    private void showNotSearchResult() {
+        if (!CheckUtil.getInstance().isCheckListUsable(list)) {
+            Toast.makeText(NewsShowActivity.this, R.string.show_activity_no_result, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void init() {
         historyKey = getIntent().getStringExtra("key");
     }
 
-    private void initVIew() {
+    private void initView() {
         WindowUtil.getInstance().setStatusBarTextAndIconDark(NewsShowActivity.this);
         initCustomToolBar();
         initRecyclerView();

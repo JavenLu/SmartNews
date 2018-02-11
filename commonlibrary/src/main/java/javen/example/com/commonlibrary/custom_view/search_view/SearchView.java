@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.SpannedString;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.AbsoluteSizeSpan;
 import android.util.AttributeSet;
@@ -16,15 +17,16 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.spinytech.macore.MaAction;
 import com.spinytech.macore.MaActionResult;
 import com.spinytech.macore.router.RouterResponse;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javen.example.com.commonlibrary.R;
 import javen.example.com.commonlibrary.bean.news.NewsSearchHistoryBean;
 import javen.example.com.commonlibrary.local_router.RouterManager;
-import javen.example.com.commonlibrary.utils.CheckUtil;
 
 /**
  * Created by Javen on 22/01/2018.
@@ -41,7 +43,8 @@ public class SearchView extends LinearLayout {
     private EditTextClear editTextClear;
     private LinearLayout searchBlockLayout;
     private RecyclerView historyRecyclerView;
-    private HistoryRecyclerViewAdapter historyRecyclerViewAdapter;
+    private List<NewsSearchHistoryBean> list;
+
 
     public SearchView(Context context) {
         this(context, null);
@@ -56,15 +59,8 @@ public class SearchView extends LinearLayout {
         initAttrs(context, attrs);
         inflate(context, R.layout.search_view_layout, this);
         initEditText();
-        initRecyclerView(context);
         initSearchBlockLayout();
         initListener(context);
-    }
-
-    private void initRecyclerView(Context context) {
-        historyRecyclerView = findViewById(R.id.recycler_view);
-        historyRecyclerViewAdapter = new HistoryRecyclerViewAdapter(context);
-        historyRecyclerView.setAdapter(historyRecyclerViewAdapter);
     }
 
     private void initListener(final Context context) {
@@ -72,13 +68,8 @@ public class SearchView extends LinearLayout {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-                    //1.按下软键盘的搜索按键，对历史搜索记录表进行查找，没有就插入历史搜索数据库
-                    //2.跳转到新的Activity页面去查询并显示与key匹配的数据
-
                     insertHistoryKey(context);
                     RouterManager.executeJumpToNewsShowActivity(context, "%" + editTextClear.getText().toString().trim() + "%");
-
-
                 }
                 return false;
             }
@@ -98,16 +89,16 @@ public class SearchView extends LinearLayout {
 
             @Override
             public void afterTextChanged(Editable s) {
-//                RouterResponse response = RouterManager.executeNewsHistoryKeyEqQuery(context, editTextClear.getText().toString().trim());
-//
-//                try {
-//                    List<NewsSearchHistoryBean> list = (List<NewsSearchHistoryBean>) response.getObject();
-//
-//                    Log.e("listSize=", list.size() + "");
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
+                String content = editTextClear.getText().toString().trim();
+
+                if (!TextUtils.isEmpty(content)) {
+                    RouterManager.executeNewsHistoryKeyLikeQuery(context, "%" + content + "%");
+
+                } else {
+                    RouterManager.executeClearNewsHistoryKey(context);
+                }
             }
+
         });
     }
 
@@ -174,8 +165,10 @@ public class SearchView extends LinearLayout {
         hintColor = typedArray.getColor(R.styleable.SearchView_textHintColor, defaultColor);
     }
 
-    public void setHistoryKeyData(List historyList) {
-        historyRecyclerViewAdapter.setData(historyList);
+
+    public void setEditTextContent(String key) {
+        editTextClear.setText(key);
+        editTextClear.setSelection(key.length());
     }
 
 

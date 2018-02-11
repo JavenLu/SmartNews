@@ -240,8 +240,10 @@ public class CustomToolBar extends FrameLayout {
         this.toolbarSearchHomeFragmentClickListener = toolbarSearchHomeFragmentClickListener;
     }
 
-    public void setHistoryKeyData(List historyList) {
-        searchView.setHistoryKeyData(historyList);
+    public void setEditTextContent(String key) {
+        if (searchTitleLayout.getVisibility() == VISIBLE && searchView != null) {
+            searchView.setEditTextContent(key);
+        }
     }
 
 
