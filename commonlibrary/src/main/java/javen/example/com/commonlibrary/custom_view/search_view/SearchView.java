@@ -109,7 +109,6 @@ public class SearchView extends LinearLayout {
             int resultCode = response.getCode();
 
             if (resultCode != MaActionResult.CODE_SUCCESS) {
-                Toast.makeText(context, "没有查询到相关结果", Toast.LENGTH_SHORT).show();
                 RouterManager.executeNewsHistoryKeyInsert(context, editTextClear.getText().toString().trim());
             }
 

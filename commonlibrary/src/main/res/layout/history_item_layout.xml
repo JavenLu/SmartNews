@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/history_name"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x80"
+        android:layout_marginTop="@dimen/x12"
+        android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
         android:textColor="@color/black"
         android:textSize="@dimen/x30" />

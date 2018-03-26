@@ -134,8 +134,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainAc
     }
 
     private void deleteAllNewsData() {
-        MainPresenter mainPresenter = basePresenter;
-        mainPresenter.deleteAllNewsData();
+        basePresenter.deleteAllNewsData();
     }
 
     private void showExitToast() {

@@ -1,7 +1,5 @@
 package javen.example.com.smartnews;
 
-import com.spinytech.macore.MaApplication;
-
 import javen.example.com.commonlibrary.CommonLibraryApplication;
 import javen.example.com.news.main.router.logic.NewsApplicationLogic;
 
